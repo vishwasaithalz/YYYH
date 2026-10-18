@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YinYangYoHackers - Sovereign AI, Offensive Security &amp; Defensive Blueprints</title>
+  <subtitle>Deep-dive penetration testing tutorials, local LLM execution, zero-trust sysadmin blueprints, and open-source ethical hacking tools founded by Vishwas Aithal.</subtitle>
+  <link href="https://yinyangyohackers.ai.studio/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://yinyangyohackers.ai.studio/" />
+  <id>https://yinyangyohackers.ai.studio/</id>
+  <updated>2026-09-21T15:46:13.962Z</updated>
+  <author>
+    <name>Vishwas Aithal</name>
+    <email>vishwasaithal@proton.me</email>
+    <uri>https://yinyangyohackers.ai.studio/about</uri>
+  </author>
+  <rights>© 2013–2026 YinYangYoHackers. Founded by Vishwas Aithal.</rights>
+  <icon>https://yinyangyohackers.ai.studio/favicon.ico</icon>
+  <logo>https://yinyangyohackers.ai.studio/favicon.ico</logo>
+
+  <entry>
+    <title>Top Open Source AI Research Assistants: 2026</title>
+    <link href="https://yinyangyohackers.ai.studio/top-open-source-ai-research-assistants" />
+    <id>https://yinyangyohackers.ai.studio/top-open-source-ai-research-assistants</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Discover the top open-source AI research assistants in 2026. Self-host Perplexica and SearXNG with local LLMs for grounded web research.</summary>
+    <category term="Trending AI &amp; Productivity" />
+    <category term="AI Research &amp; Discovery" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Wireshark Packet Analysis Guide for Beginners</title>
+    <link href="https://yinyangyohackers.ai.studio/wireshark-packet-analysis-guide-for-beginners" />
+    <id>https://yinyangyohackers.ai.studio/wireshark-packet-analysis-guide-for-beginners</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Learn Wireshark packet analysis from scratch. Master capture filters, display filters, TCP stream reconstruction, and network forensics.</summary>
+    <category term="Tools &amp; Apps" />
+    <category term="Network Forensics &amp; Packet Analysis" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Phishing Awareness &amp; Social Engineering Defense</title>
+    <link href="https://yinyangyohackers.ai.studio/phishing-awareness-and-social-engineering-defense" />
+    <id>https://yinyangyohackers.ai.studio/phishing-awareness-and-social-engineering-defense</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Defend your organization against advanced phishing and social engineering. Understand AiTM reverse proxies, email security protocols, and FIDO2 WebAuthn.</summary>
+    <category term="Cybersecurity" />
+    <category term="Human Defense &amp; Social Engineering" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Troubleshoot Network Connectivity on Linux CLI</title>
+    <link href="https://yinyangyohackers.ai.studio/troubleshoot-network-connectivity-on-linux-cli" />
+    <id>https://yinyangyohackers.ai.studio/troubleshoot-network-connectivity-on-linux-cli</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Master Linux network troubleshooting. Diagnose DNS failures, latency spikes, and firewall drops using ip, ss, dig, mtr, and tcpdump.</summary>
+    <category term="Blueprint" />
+    <category term="Networking &amp; Diagnostics" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>AI Security: A Practical Guide to Securing AI Systems</title>
+    <link href="https://yinyangyohackers.ai.studio/ai-security-a-practical-guide-to-securing-ai-systems" />
+    <id>https://yinyangyohackers.ai.studio/ai-security-a-practical-guide-to-securing-ai-systems</id>
+    <updated>2026-03-29T00:00:00.000Z</updated>
+    <summary>Discover how to secure AI systems and LLM pipelines. Learn practical defenses against prompt injection, data poisoning, RAG exfiltration, and model supply chain attacks.</summary>
+    <category term="Trending AI &amp; Productivity" />
+    <category term="AI Security &amp; Alignment" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Best Free Developer Tools for API &amp; Code Auditing</title>
+    <link href="https://yinyangyohackers.ai.studio/best-free-developer-tools-for-api-and-code-auditing" />
+    <id>https://yinyangyohackers.ai.studio/best-free-developer-tools-for-api-and-code-auditing</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Discover the top free open-source developer security tools in 2026. Explore Bruno (Postman alternative), Semgrep SAST, and Caido web proxy.</summary>
+    <category term="Tools &amp; Apps" />
+    <category term="Developer &amp; Security Tools" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Privacy-First AI Note-Taking with Obsidian</title>
+    <link href="https://yinyangyohackers.ai.studio/privacy-first-ai-note-taking-obsidian" />
+    <id>https://yinyangyohackers.ai.studio/privacy-first-ai-note-taking-obsidian</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Supercharge Obsidian with local AI. Connect Ollama and Smart Connections plugin to query your entire Markdown vault with 100% privacy.</summary>
+    <category term="Trending AI &amp; Productivity" />
+    <category term="Knowledge Management" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Web Reconnaissance: Subdomains &amp; Port Mapping</title>
+    <link href="https://yinyangyohackers.ai.studio/web-reconnaissance-subdomains-port-mapping" />
+    <id>https://yinyangyohackers.ai.studio/web-reconnaissance-subdomains-port-mapping</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Master web reconnaissance and subdomain enumeration. Learn passive OSINT, DNS resolution with MassDNS, and live HTTP probing with httpx.</summary>
+    <category term="Cybersecurity" />
+    <category term="Web Application Security" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Essential Browser Extensions for Privacy: 2026</title>
+    <link href="https://yinyangyohackers.ai.studio/essential-browser-extensions-for-privacy" />
+    <id>https://yinyangyohackers.ai.studio/essential-browser-extensions-for-privacy</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Protect your browser with the best open-source privacy extensions in 2026: uBlock Origin, ClearURLs, Decentraleyes, and Multi-Account Containers.</summary>
+    <category term="Tools &amp; Apps" />
+    <category term="Browser Privacy &amp; Add-ons" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>How to Secure Docker Containers in Production</title>
+    <link href="https://yinyangyohackers.ai.studio/how-to-secure-docker-containers-in-production" />
+    <id>https://yinyangyohackers.ai.studio/how-to-secure-docker-containers-in-production</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Production Docker container security guide. Harden Docker Compose, drop Linux kernel capabilities, enforce read-only filesystems, and scan with Trivy.</summary>
+    <category term="Blueprint" />
+    <category term="Container Security &amp; DevSecOps" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Cybersecurity Fundamentals: The Complete Beginner&apos;s Guide</title>
+    <link href="https://yinyangyohackers.ai.studio/cybersecurity-fundamentals-the-complete-beginners-guide" />
+    <id>https://yinyangyohackers.ai.studio/cybersecurity-fundamentals-the-complete-beginners-guide</id>
+    <updated>2026-03-29T00:00:00.000Z</updated>
+    <summary>Learn cybersecurity fundamentals from scratch. Master the CIA triad, defense-in-depth, threat modeling, zero-trust networks, and hands-on baseline security commands.</summary>
+    <category term="Cybersecurity" />
+    <category term="Core Security Architecture" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Autonomous AI Agents for Cyber Threat Hunting</title>
+    <link href="https://yinyangyohackers.ai.studio/autonomous-ai-agents-cyber-threat-hunting" />
+    <id>https://yinyangyohackers.ai.studio/autonomous-ai-agents-cyber-threat-hunting</id>
+    <updated>2026-03-31T00:00:00.000Z</updated>
+    <summary>Deploy autonomous AI agents for cybersecurity threat hunting. Build multi-agent SOC workflows with LangGraph, Wazuh SIEM, and local LLMs.</summary>
+    <category term="Trending AI &amp; Productivity" />
+    <category term="AI Security &amp; Automation" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Linux Security Hardening: Essential Commands</title>
+    <link href="https://yinyangyohackers.ai.studio/linux-security-hardening-essential-commands" />
+    <id>https://yinyangyohackers.ai.studio/linux-security-hardening-essential-commands</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Step-by-step production Linux security hardening checklist. Harden SSH, configure kernel sysctl parameters, deploy UFW, and enable auditd.</summary>
+    <category term="Cybersecurity" />
+    <category term="Server Hardening &amp; Defense" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Top Linux Security Tools for Sysadmins: 2026</title>
+    <link href="https://yinyangyohackers.ai.studio/top-linux-security-tools-for-sysadmins" />
+    <id>https://yinyangyohackers.ai.studio/top-linux-security-tools-for-sysadmins</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Discover the top Linux security tools for sysadmins. Master Lynis auditing, Falco eBPF behavioral detection, Auditd logging, and rootkit scanners.</summary>
+    <category term="Tools &amp; Apps" />
+    <category term="SysAdmin Tools &amp; Auditing" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Automate Encrypted Backups with Borg &amp; Rclone</title>
+    <link href="https://yinyangyohackers.ai.studio/automate-encrypted-backups-with-borg-and-rclone" />
+    <id>https://yinyangyohackers.ai.studio/automate-encrypted-backups-with-borg-and-rclone</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Automate encrypted, deduplicated backups with BorgBackup and Rclone. Implement a 3-2-1 backup strategy with automated systemd timers.</summary>
+    <category term="Blueprint" />
+    <category term="Data Protection &amp; Backups" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Open Source AI Productivity Tools: 2026 List</title>
+    <link href="https://yinyangyohackers.ai.studio/open-source-ai-productivity-tools-2026" />
+    <id>https://yinyangyohackers.ai.studio/open-source-ai-productivity-tools-2026</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Discover the best open-source AI productivity tools in 2026. Explore Faster-Whisper, n8n, Open WebUI, and local workflow automation.</summary>
+    <category term="Trending AI &amp; Productivity" />
+    <category term="Productivity Workflows" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>How to Build a Legal Hacking Lab at Home</title>
+    <link href="https://yinyangyohackers.ai.studio/how-to-build-a-legal-hacking-lab" />
+    <id>https://yinyangyohackers.ai.studio/how-to-build-a-legal-hacking-lab</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Build an isolated ethical hacking homelab. Step-by-step guide with pfSense network routing, Kali Linux, vulnerable VMs, and Active Directory.</summary>
+    <category term="Cybersecurity" />
+    <category term="Homelab &amp; Virtualization" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>How to Configure Firefox for Maximum Privacy</title>
+    <link href="https://yinyangyohackers.ai.studio/how-to-configure-firefox-for-maximum-privacy" />
+    <id>https://yinyangyohackers.ai.studio/how-to-configure-firefox-for-maximum-privacy</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Harden Mozilla Firefox for maximum privacy. Master about:config settings, resist canvas fingerprinting, stop WebRTC IP leaks, and deploy Arkenfox user.js.</summary>
+    <category term="Blueprint" />
+    <category term="Browser Privacy &amp; Hardening" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Build a Private Local RAG Knowledge Base</title>
+    <link href="https://yinyangyohackers.ai.studio/build-a-private-local-rag-knowledge-base" />
+    <id>https://yinyangyohackers.ai.studio/build-a-private-local-rag-knowledge-base</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Step-by-step guide to building an offline local RAG system. Index confidential PDFs and documents with ChromaDB, Ollama, and LangChain.</summary>
+    <category term="Trending AI &amp; Productivity" />
+    <category term="Retrieval Augmented Generation" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+  <entry>
+    <title>Top Self-Hosted Productivity Apps: 2026 Guide</title>
+    <link href="https://yinyangyohackers.ai.studio/top-self-hosted-productivity-apps" />
+    <id>https://yinyangyohackers.ai.studio/top-self-hosted-productivity-apps</id>
+    <updated>2026-03-30T00:00:00.000Z</updated>
+    <summary>Discover the best self-hosted productivity apps in 2026. Replace cloud SaaS with Nextcloud, AppFlowy, Vikunja, and Mattermost on your own hardware.</summary>
+    <category term="Tools &amp; Apps" />
+    <category term="Self-Hosting &amp; Homelab" />
+    <author>
+      <name>Vishwas Aithal</name>
+      <email>vishwasaithal@proton.me</email>
+    </author>
+  </entry>
+</feed>

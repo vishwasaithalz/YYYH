@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta content='width=device-width, initial-scale=1, minimum-scale=1' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  <b:include data='blog' name='all-head-content'/>
+  <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap' rel='stylesheet'/>
+  <b:skin><![CDATA[
+  /*
+  -----------------------------------------------
+  Blogger Template Style
+  Name:     YinYangYoHackers Sovereign Cyber Theme
+  Author:   Vishwas Aithal (Founded 2013)
+  License:  Defensive Authorized Research
+  Website:  https://yinyangyohackers.com
+  -----------------------------------------------
+  Variable definitions
+  ====================
+  <Variable name="keycolor" description="Main Color" type="color" default="#10b981" value="#10b981"/>
+  <Variable name="bgcolor" description="Background Color" type="color" default="#050811" value="#050811"/>
+  <Variable name="textcolor" description="Text Color" type="color" default="#f8fafc" value="#f8fafc"/>
+  */
+
+  :root {
+    --bg-primary: #050811;
+    --bg-secondary: #090d16;
+    --bg-card: #0b0f19;
+    --border-color: #1e293b;
+    --border-hover: #10b981;
+    --accent-emerald: #10b981;
+    --accent-cyan: #06b6d4;
+    --accent-red: #ef4444;
+    --accent-amber: #f59e0b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: var(--accent-emerald);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  a:hover {
+    color: #34d399;
+  }
+
+  /* 1. Top Advisory Bar */
+  .yyyh-topbar {
+    background: #03060d;
+    border-bottom: 1px solid var(--border-color);
+    padding: 6px 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .yyyh-advisory-pill {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--accent-red);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .yyyh-zerotrust-pill {
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--accent-emerald);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 10px;
+  }
+
+  /* 2. Header & Branding */
+  .yyyh-header-wrap {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 16px;
+  }
+  .yyyh-header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .yyyh-brand-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .yyyh-logo-badge {
+    width: 42px;
+    height: 42px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 2px solid var(--accent-emerald);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--accent-emerald);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  }
+  .yyyh-brand-title {
+    font-family: var(--font-mono);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .yyyh-brand-yin { color: var(--accent-emerald); }
+  .yyyh-brand-yang { color: #ffffff; }
+  .yyyh-brand-yo { color: var(--accent-cyan); }
+  .yyyh-brand-hackers { color: #cbd5e1; font-family: var(--font-sans); margin-left: 2px; }
+  .yyyh-brand-tagline {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* Header Search Bar */
+  .yyyh-search-form {
+    display: flex;
+    align-items: center;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;
+  }
+  .yyyh-search-input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 8px 12px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    width: 100%;
+    outline: none;
+  }
+  .yyyh-search-btn {
+    background: #1e293b;
+    border: none;
+    color: var(--accent-emerald);
+    padding: 8px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .yyyh-search-btn:hover {
+    background: #334155;
+  }
+
+  /* 3. Streamlined 4-Tab Navigation Bar */
+  .yyyh-nav {
+    background: rgba(5, 8, 17, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .yyyh-nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .yyyh-nav-inner::-webkit-scrollbar { display: none; }
+  .yyyh-tab {
+    padding: 12px 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  .yyyh-tab:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .yyyh-tab.tab-all:hover, .yyyh-tab.tab-all.active {
+    color: var(--accent-emerald);
+    border-bottom-color: var(--accent-emerald);
+  }
+  .yyyh-tab.tab-cyber:hover {
+    color: var(--accent-red);
+    border-bottom-color: var(--accent-red);
+  }
+  .yyyh-tab.tab-ai:hover {
+    color: var(--accent-cyan);
+    border-bottom-color: var(--accent-cyan);
+  }
+  .yyyh-tab.tab-tools:hover {
+    color: var(--accent-amber);
+    border-bottom-color: var(--accent-amber);
+  }
+
+  /* 4. Layout Grid */
+  .yyyh-container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 28px;
+    flex: 1;
+  }
+  @media (max-width: 960px) {
+    .yyyh-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* 5. Post Cards & Blog Layout */
+  .yyyh-posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .yyyh-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.25s ease;
+    overflow: hidden;
+  }
+  .yyyh-card:hover {
+    border-color: var(--accent-emerald);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 12px rgba(16, 185, 129, 0.15);
+  }
+  .yyyh-card-thumb img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 16px;
+  }
+  .yyyh-card-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .yyyh-label-badge {
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--accent-emerald);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .yyyh-label-badge:hover {
+    background: var(--accent-emerald);
+    color: #000000;
+  }
+  .yyyh-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+  .yyyh-card-title a {
+    color: #ffffff;
+  }
+  .yyyh-card-title a:hover {
+    color: var(--accent-emerald);
+  }
+  .yyyh-card-body {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+  .yyyh-card-body pre {
+    background: #03060d;
+    border: 1px solid var(--border-color);
+    color: #38bdf8;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    margin: 16px 0;
+  }
+  .yyyh-card-body code {
+    background: #0f172a;
+    color: #38bdf8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .yyyh-card-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin: 16px 0;
+  }
+  .yyyh-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 14px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+  }
+  .yyyh-author-text {
+    color: var(--text-muted);
+  }
+  .yyyh-readmore-btn {
+    color: var(--accent-emerald);
+    font-weight: 600;
+  }
+  .yyyh-readmore-btn:hover {
+    text-decoration: underline;
+  }
+
+  /* Status message (search results / label info) */
+  .yyyh-status-message {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-emerald);
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  /* Pagination */
+  .yyyh-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .yyyh-page-link {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: var(--text-primary);
+  }
+  .yyyh-page-link:hover {
+    border-color: var(--accent-emerald);
+    color: var(--accent-emerald);
+  }
+
+  /* 6. Sidebar Widgets */
+  .yyyh-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .yyyh-widget-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .yyyh-widget-title {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .yyyh-author-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .yyyh-author-avatar-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.15);
+    border: 2px solid var(--accent-emerald);
+    color: var(--accent-emerald);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .yyyh-author-name {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15px;
+  }
+  .yyyh-author-role {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-emerald);
+  }
+  .yyyh-author-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .yyyh-author-bio {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+  .yyyh-labels-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .yyyh-label-chip {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .yyyh-label-chip:hover {
+    border-color: var(--accent-emerald);
+    color: var(--accent-emerald);
+    background: rgba(16, 185, 129, 0.08);
+  }
+  .yyyh-archive-list ul {
+    list-style: none;
+  }
+  .yyyh-archive-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+
+  /* 7. Footer */
+  .yyyh-footer {
+    background: #03060d;
+    border-top: 1px solid var(--border-color);
+    padding: 30px 16px;
+    margin-top: 40px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+  }
+  .yyyh-footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .yyyh-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .yyyh-footer-links a {
+    color: var(--text-secondary);
+  }
+  .yyyh-footer-links a:hover {
+    color: var(--accent-emerald);
+  }
+
+  /* Comments */
+  .yyyh-comments-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+  }
+  .yyyh-comments-title {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+  ]]></b:skin>
+  <b:template-skin><![CDATA[
+  /* Standard template directives */
+  ]]></b:template-skin>
+</head>
+<body>
+  <!-- Top Advisory Bar -->
+  <div class='yyyh-topbar'>
+    <div style='display: flex; align-items: center; gap: 8px;'>
+      <span class='yyyh-advisory-pill'>LIVE ADVISORY</span>
+      <span>Zero-Trust Infrastructure &#8226; Sovereign Local AI Stack Operational</span>
+    </div>
+    <div style='display: flex; align-items: center; gap: 12px;'>
+      <span class='yyyh-zerotrust-pill'>ZERO-TRUST DEFENSE</span>
+      <span>EST. 2013</span>
+    </div>
+  </div>
+
+  <!-- Header Section with Official Blogger Header Widget -->
+  <header class='yyyh-header-wrap'>
+    <div class='yyyh-header-inner'>
+      <b:section id='header' class='header' maxwidgets='1' showaddelement='no'>
+        <b:widget id='Header1' locked='true' title='YinYangYoHackers (Header)' type='Header'>
+          <b:includable id='main'>
+            <a class='yyyh-brand-link' expr:href='data:blog.homepageUrl'>
+              <div class='yyyh-logo-badge'>☯</div>
+              <div>
+                <div class='yyyh-brand-title'>
+                  <span class='yyyh-brand-yin'>Yin</span><span class='yyyh-brand-yang'>Yang</span><span class='yyyh-brand-yo'>Yo</span><span class='yyyh-brand-hackers'>Hackers</span>
+                </div>
+                <div class='yyyh-brand-tagline'>Autonomous Cybersecurity Research &#8226; Sovereign Local AI &#8226; Defensive Architecture</div>
+              </div>
+            </a>
+          </b:includable>
+          <b:includable id='description'>
+            <div class='yyyh-brand-tagline'><data:description/></div>
+          </b:includable>
+          <b:includable id='title'>
+            <a expr:href='data:blog.homepageUrl'><data:title/></a>
+          </b:includable>
+        </b:widget>
+      </b:section>
+
+      <!-- Header Search Form -->
+      <form action='/search' class='yyyh-search-form' method='get'>
+        <input class='yyyh-search-input' name='q' placeholder='Search research &amp; tools...' type='text'/>
+        <button class='yyyh-search-btn' type='submit'>SEARCH</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- 4 Clean Categories Navigation Bar -->
+  <nav class='yyyh-nav'>
+    <div class='yyyh-nav-inner'>
+      <a class='yyyh-tab tab-all' expr:href='data:blog.homepageUrl'>
+        <span>&#128214;</span> All Articles
+      </a>
+      <a class='yyyh-tab tab-cyber' href='/search/label/Cyber%20Security'>
+        <span>&#128737;</span> Cyber Security
+      </a>
+      <a class='yyyh-tab tab-ai' href='/search/label/Sovereign%20AI%20Hub'>
+        <span>&#9881;</span> Sovereign AI Hub
+      </a>
+      <a class='yyyh-tab tab-tools' href='/search/label/Security%20Tools'>
+        <span>&#128295;</span> Security Tools
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Grid Container -->
+  <div class='yyyh-container'>
+    <main class='yyyh-main'>
+      <b:section id='main' class='main' showaddelement='no'>
+        <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+          <b:includable id='main' var='top'>
+            <b:include data='top' name='status-message'/>
+            <div class='yyyh-posts-grid'>
+              <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='post'/>
+              </b:loop>
+            </div>
+            <b:include name='nextprev'/>
+          </b:includable>
+
+          <b:includable id='post' var='post'>
+            <article class='yyyh-card' expr:id='&quot;post-&quot; + data:post.id'>
+              <b:if cond='data:post.firstImageUrl'>
+                <div class='yyyh-card-thumb'>
+                  <a expr:href='data:post.url'>
+                    <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl' loading='lazy'/>
+                  </a>
+                </div>
+              </b:if>
+              
+              <div class='yyyh-card-meta'>
+                <span><data:post.dateHeader/></span>
+                <b:if cond='data:post.labels'>
+                  <span>&#8226;</span>
+                  <b:loop values='data:post.labels' var='label'>
+                    <a class='yyyh-label-badge' expr:href='data:label.url'><data:label.name/></a>
+                  </b:loop>
+                </b:if>
+              </div>
+
+              <h2 class='yyyh-card-title'>
+                <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                  <data:post.title/>
+                <b:else/>
+                  <a expr:href='data:post.url'><data:post.title/></a>
+                </b:if>
+              </h2>
+
+              <div class='yyyh-card-body'>
+                <data:post.body/>
+              </div>
+
+              <div class='yyyh-card-footer'>
+                <span class='yyyh-author-text'>Author: Vishwas Aithal</span>
+                <a class='yyyh-readmore-btn' expr:href='data:post.url'>Read Blueprint &#8594;</a>
+              </div>
+
+              <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                <b:include data='post' name='comments'/>
+              </b:if>
+            </article>
+          </b:includable>
+
+          <b:includable id='status-message'>
+            <b:if cond='data:navMessage'>
+              <div class='yyyh-status-message'>
+                <data:navMessage/>
+              </div>
+            </b:if>
+          </b:includable>
+
+          <b:includable id='nextprev'>
+            <div class='yyyh-pagination'>
+              <b:if cond='data:newerPageUrl'>
+                <a class='yyyh-page-link' expr:href='data:newerPageUrl'>&#8592; Newer Articles</a>
+              </b:if>
+              <b:if cond='data:olderPageUrl'>
+                <a class='yyyh-page-link' expr:href='data:olderPageUrl'>Older Articles &#8594;</a>
+              </b:if>
+            </div>
+          </b:includable>
+
+          <b:includable id='comments' var='post'>
+            <div class='yyyh-comments-box' id='comments'>
+              <h3 class='yyyh-comments-title'>Peer Verification &amp; Cryptographic Comments</h3>
+              <b:if cond='data:post.allowComments'>
+                <div class='comment-form'>
+                  <b:if cond='data:post.commentFormIframeSrc'>
+                    <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:src='data:post.commentFormIframeSrc' frameborder='0' height='410' id='comment-editor' name='comment-editor' width='100%'/>
+                  </b:if>
+                </div>
+              </b:if>
+            </div>
+          </b:includable>
+
+          <b:includable id='backlinks' var='post'/>
+          <b:includable id='feedLinks'/>
+          <b:includable id='feedLinksBody' var='links'/>
+        </b:widget>
+      </b:section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class='yyyh-sidebar'>
+      <!-- Author Profile Card -->
+      <div class='yyyh-widget-card'>
+        <div class='yyyh-widget-title'>Lead Security Researcher</div>
+        <div class='yyyh-author-profile'>
+          <div class='yyyh-author-avatar-badge'>☯</div>
+          <div>
+            <div class='yyyh-author-name'>Vishwas Aithal</div>
+            <div class='yyyh-author-role'>Cybersecurity Researcher</div>
+            <div class='yyyh-author-sub'>Founder &amp; Technical Author</div>
+          </div>
+        </div>
+        <p class='yyyh-author-bio'>Independent security researcher and founder of YinYangYoHackers (est. 2013). Practical engineering blueprints on penetration testing, zero-trust infrastructure, and sovereign local AI.</p>
+      </div>
+
+      <b:section id='sidebar' class='sidebar' showaddelement='yes'>
+        <b:widget id='Label1' locked='false' title='Categories and Threat Labels' type='Label'>
+          <b:includable id='main'>
+            <div class='yyyh-widget-card'>
+              <div class='yyyh-widget-title'>Categories &amp; Threat Labels</div>
+              <div class='yyyh-labels-cloud'>
+                <b:loop values='data:labels' var='label'>
+                  <a class='yyyh-label-chip' expr:href='data:label.url'>
+                    <data:label.name/> (<data:label.count/>)
+                  </a>
+                </b:loop>
+              </div>
+            </div>
+          </b:includable>
+        </b:widget>
+
+        <b:widget id='BlogArchive1' locked='false' title='Intelligence Archive' type='BlogArchive'>
+          <b:includable id='main'>
+            <div class='yyyh-widget-card'>
+              <div class='yyyh-widget-title'>Intelligence Archive</div>
+              <div class='yyyh-archive-list'>
+                <ul>
+                  <b:loop values='data:data' var='i'>
+                    <li>
+                      <a expr:href='data:i.url'><data:i.name/> (<data:i.post-count/>)</a>
+                    </li>
+                  </b:loop>
+                </ul>
+              </div>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class='yyyh-footer'>
+    <div class='yyyh-footer-inner'>
+      <div>
+        &#169; 2013&#8211;2026 YinYangYoHackers &#8226; Founded by Vishwas Aithal. Educational &amp; Authorized Defensive Use Only.
+      </div>
+      <div class='yyyh-footer-links'>
+        <a expr:href='data:blog.homepageUrl'>All Articles</a>
+        <span>&#8226;</span>
+        <a href='/search/label/Cyber%20Security'>Cyber Security</a>
+        <span>&#8226;</span>
+        <a href='/search/label/Sovereign%20AI%20Hub'>Sovereign AI Hub</a>
+        <span>&#8226;</span>
+        <a href='/search/label/Security%20Tools'>Security Tools</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

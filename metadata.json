@@ -1,0 +1,6 @@
+{
+  "name": "YinYangYoHackers",
+  "description": "Founded in 2013 by Vishwas Aithal, YinYangYoHackers fuses three core computational pillars: Yin (defensive zero-trust hardening), Yang (adversarial red teaming and penetration testing), and Yo (autonomous open source computing freedom). We deliver battle tested Cybersecurity Research, hardened infrastructure blueprints, and audited OpenSource Tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

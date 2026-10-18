@@ -1,0 +1,17 @@
+# ==============================================================================
+# YinYangYoHackers Static Hosting 301 Redirects & SPA Fallback Rules
+# ==============================================================================
+
+# 1. Canonical Domain 301 Redirect (Enforce single version of domain)
+https://www.yinyangyohackers.com/*  https://yinyangyohackers.com/:splat  301!
+
+# 2. Legacy index & article redirects (Preserves 100% backlink equity)
+/index.html   /  301
+/index.php    /  301
+/articles/*   /:splat  301
+/feed         /feed.xml  301
+/rss          /rss.xml   301
+/cheatsheet   /cheatsheets 301
+
+# 3. SPA Route Fallback for all descriptive URLs
+/*  /index.html  200

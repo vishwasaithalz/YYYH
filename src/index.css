@@ -1,0 +1,506 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    background-color: #050811;
+    color: #f1f5f9;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    scrollbar-gutter: stable;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: #050811;
+    color: #f1f5f9;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  code, kbd, samp, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060913;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Unique YinYangYoHackers Aesthetic Themes */
+/* 1. Obsidian Stealth (Default Dark Matrix) */
+html.theme-obsidian-stealth,
+html.theme-obsidian-stealth body {
+  background-color: #050811;
+  color: #f1f5f9;
+}
+html.theme-obsidian-stealth #site-main-header {
+  border-bottom-color: rgba(16, 185, 129, 0.4);
+  background-color: #090d16;
+}
+
+/* 2. Crimson Hacker (Red Team Offensive Cyber) */
+html.theme-crimson-hacker,
+html.theme-crimson-hacker body {
+  background-color: #0d0406;
+  color: #ffe4e6;
+}
+html.theme-crimson-hacker #site-main-header {
+  border-bottom-color: rgba(244, 63, 94, 0.5);
+  background-color: #16060c;
+}
+html.theme-crimson-hacker #top-security-bar {
+  background-color: #0a0204;
+  border-bottom-color: rgba(244, 63, 94, 0.3);
+}
+html.theme-crimson-hacker input:focus {
+  border-color: #f43f5e !important;
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.3) !important;
+}
+html.theme-crimson-hacker #site-hero-banner {
+  border-color: rgba(244, 63, 94, 0.4);
+  background: linear-gradient(to bottom, #19050d, #110308, #0d0406);
+}
+
+/* 3. Midnight Blue (Deep Ocean Cyber Intelligence) */
+html.theme-midnight-blue,
+html.theme-midnight-blue body {
+  background-color: #020817;
+  color: #e0f2fe;
+}
+html.theme-midnight-blue #site-main-header {
+  border-bottom-color: rgba(6, 182, 212, 0.5);
+  background-color: #061126;
+}
+html.theme-midnight-blue #top-security-bar {
+  background-color: #020817;
+  border-bottom-color: rgba(6, 182, 212, 0.3);
+}
+html.theme-midnight-blue input:focus {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3) !important;
+}
+html.theme-midnight-blue #site-hero-banner {
+  border-color: rgba(6, 182, 212, 0.4);
+  background: linear-gradient(to bottom, #091a38, #061329, #020817);
+}
+
+/* 4. Matrix Green (Phosphor Terminal Hacker) */
+html.theme-matrix-green,
+html.theme-matrix-green body {
+  background-color: #020d06;
+  color: #d1fae5;
+}
+html.theme-matrix-green #site-main-header {
+  border-bottom-color: rgba(34, 197, 94, 0.5);
+  background-color: #051a0d;
+}
+html.theme-matrix-green #top-security-bar {
+  background-color: #020d06;
+  border-bottom-color: rgba(34, 197, 94, 0.3);
+}
+html.theme-matrix-green input:focus {
+  border-color: #22c55e !important;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3) !important;
+}
+html.theme-matrix-green #site-hero-banner {
+  border-color: rgba(34, 197, 94, 0.4);
+  background: linear-gradient(to bottom, #072813, #051a0d, #020d06);
+}
+
+/* 5. Terminal Amber (Retro CRT Cyberpunk) */
+html.theme-terminal-amber,
+html.theme-terminal-amber body {
+  background-color: #0f0902;
+  color: #fef3c7;
+}
+html.theme-terminal-amber #site-main-header {
+  border-bottom-color: rgba(245, 158, 11, 0.5);
+  background-color: #1a1004;
+}
+html.theme-terminal-amber #top-security-bar {
+  background-color: #0f0902;
+  border-bottom-color: rgba(245, 158, 11, 0.3);
+}
+html.theme-terminal-amber input:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3) !important;
+}
+html.theme-terminal-amber #site-hero-banner {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: linear-gradient(to bottom, #2b1a07, #1a1004, #0f0902);
+}
+
+/* 6. Light Ops (Daylight Security Operations Center) */
+html.theme-light,
+html.theme-light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+html.theme-light #site-main-header {
+  border-bottom-color: #cbd5e1;
+  background-color: #ffffff;
+}
+html.theme-light #top-security-bar {
+  background-color: #f1f5f9;
+  border-bottom-color: #e2e8f0;
+  color: #334155;
+}
+html.theme-light #site-hero-banner {
+  border-color: #cbd5e1;
+  background: linear-gradient(to bottom, #f1f5f9, #e2e8f0, #cbd5e1);
+  color: #0f172a;
+}
+html.theme-light #site-hero-banner h1,
+html.theme-light #site-hero-banner strong {
+  color: #0f172a !important;
+}
+html.theme-light #site-hero-banner p {
+  color: #334155 !important;
+}
+html.theme-light article {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html.theme-light article h3 a,
+html.theme-light article h4 {
+  color: #0f172a !important;
+}
+html.theme-light article p {
+  color: #475569 !important;
+}
+html.theme-light aside div[id^="widget-"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html.theme-light aside div[id^="widget-"] p,
+html.theme-light aside div[id^="widget-"] h3 {
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   PRINT MEDIA STYLES Clean, Reader-Friendly Article & Document Output
+   ========================================================================== */
+@media print {
+  /* Hide interactive, non-essential UI chrome and widgets */
+  #site-main-header,
+  #site-footer,
+  #hacker-sidebar,
+  #terminal-drawer,
+  #terminal-trigger-btn,
+  #hacker-cookie-consent,
+  #bookmarks-drawer,
+  #rss-subscription-modal,
+  #shortcuts-modal,
+  .no-print,
+  button,
+  nav,
+  aside,
+  [data-ad-placement],
+  [id^="ad-banner-"],
+  [id^="widget-"],
+  .ad-slot-container {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Reset document canvas to crisp high-contrast reader paper format */
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Main container full-width print layout */
+  #main-content-layout,
+  main,
+  article,
+  #article-reader-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure text colors are high-contrast black on white */
+  h1, h2, h3, h4, h5, h6 {
+    color: #0f172a !important;
+    page-break-after: avoid;
+    break-after: avoid;
+    font-weight: 700 !important;
+  }
+
+  h1 {
+    font-size: 24pt !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8pt !important;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+    margin-top: 18pt !important;
+    margin-bottom: 6pt !important;
+    border-bottom: 1pt solid #e2e8f0;
+    padding-bottom: 4pt;
+  }
+
+  h3 {
+    font-size: 13pt !important;
+    margin-top: 12pt !important;
+    margin-bottom: 4pt !important;
+  }
+
+  p, li, blockquote {
+    color: #334155 !important;
+    font-size: 11pt !important;
+  }
+
+  /* Code snippet formatting for paper */
+  pre, code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1pt solid #cbd5e1 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  pre {
+    padding: 8pt 10pt !important;
+    border-radius: 4pt !important;
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    margin: 8pt 0 !important;
+  }
+
+  /* Blockquotes & Callouts */
+  blockquote {
+    border-left: 3pt solid #10b981 !important;
+    background: #f0fdf4 !important;
+    padding: 6pt 10pt !important;
+    margin: 8pt 0 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 10pt 0 !important;
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    border: 1pt solid #cbd5e1 !important;
+    padding: 6pt 8pt !important;
+    color: #1e293b !important;
+    text-align: left !important;
+  }
+
+  th {
+    background: #f1f5f9 !important;
+    font-weight: bold !important;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+    filter: none !important;
+  }
+
+  /* Print header attribution stamp */
+  .print-header-stamp {
+    display: block !important;
+    border-bottom: 2pt solid #0f172a;
+    padding-bottom: 6pt;
+    margin-bottom: 14pt;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+    break-before: always;
+  }
+}
+
+/* ==========================================================================
+   SEO Crawler Fallback & Initial Layout Utilities (Merged from HTML code)
+   ========================================================================== */
+.seo-fallback {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #94a3b8;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+.seo-fallback h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+.seo-fallback h2 {
+  font-size: 1.35rem;
+  color: #34d399;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.seo-fallback h3 {
+  font-size: 1.1rem;
+  color: #38bdf8;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.seo-fallback p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE CSS MEDIA QUERIES (Mobile, Tablet, Desktop, Touch, Reduced Motion)
+   ========================================================================== */
+
+/* Mobile Phones (Viewport width <= 640px) */
+@media screen and (max-width: 640px) {
+  .container-responsive {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  .text-responsive-h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .text-responsive-body {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Compact controls on mobile */
+  .mobile-stack {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .mobile-hide {
+    display: none !important;
+  }
+
+  .mobile-full-width {
+    width: 100% !important;
+  }
+}
+
+/* Tablets & Medium Screens (641px - 1024px) */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .tablet-hide {
+    display: none !important;
+  }
+
+  .tablet-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .container-responsive {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* Desktop & Widescreen Displays (Viewport width >= 1025px) */
+@media screen and (min-width: 1025px) {
+  .desktop-only {
+    display: block !important;
+  }
+  
+  .desktop-flex {
+    display: flex !important;
+  }
+}
+
+/* Ultra-Wide Screens (Viewport width >= 1536px) */
+@media screen and (min-width: 1536px) {
+  .ultrawide-padded {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Touch Device Optimization */
+@media (hover: none) and (pointer: coarse) {
+  button, a, input, select {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+}
+
+h2[id], h3[id], section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Accessibility: User Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Accessibility: User Prefers High Contrast */
+@media (prefers-contrast: more) {
+  body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  a, button {
+    border-color: #ffffff !important;
+  }
+}
+
+/* Extra Small Mobile Devices (<= 480px) */
+@media screen and (max-width: 480px) {
+  .xs-stack {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  .xs-full-width {
+    width: 100% !important;
+  }
+  .xs-text-xs {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Mobile Landscape Orientation Mode */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  #site-main-header {
+    position: relative !important;
+  }
+}
+

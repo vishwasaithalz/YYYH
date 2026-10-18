@@ -1,0 +1,263 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ards-project/ard-spec/main/schemas/ai-catalog-v1.json",
+  "specVersion": "1.0",
+  "catalog": {
+    "title": "YinYangYoHackers Cybersecurity & Autonomous Systems Catalog",
+    "description": "Agentic Resource Discovery (ARD) manifest declaring browser-native zero-telemetry cybersecurity tools, cryptanalysis utilities, network diagnostics, and sovereign autonomous computing blueprints.",
+    "version": "1.0.0",
+    "license": "Apache-2.0",
+    "publisher": {
+      "displayName": "YinYangYoHackers",
+      "identifier": "https://yinyangyohackers.ai.studio/#organization",
+      "url": "https://yinyangyohackers.ai.studio"
+    }
+  },
+  "host": {
+    "displayName": "YinYangYoHackers Security Research Laboratory",
+    "identifier": "https://yinyangyohackers.ai.studio",
+    "documentation": "https://yinyangyohackers.ai.studio/tools"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:cidr-calculator",
+      "displayName": "CIDR & Subnet Calculator",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools/cidr-calculator",
+      "description": "Browser-native IPv4 and IPv6 Classless Inter-Domain Routing (CIDR) subnet calculator. Calculates network ranges, usable addresses, netmasks, broadcast addresses, and wildcard masks without external API calls.",
+      "representativeQueries": [
+        "calculate IPv4 subnet mask for CIDR /24",
+        "find usable host addresses in 10.0.0.0/16 prefix",
+        "convert CIDR notation to dotted decimal subnet mask",
+        "calculate network address and broadcast address for IP"
+      ],
+      "tags": [
+        "networking",
+        "cidr",
+        "subnetting",
+        "ipv4",
+        "ipv6",
+        "sysadmin",
+        "zero-telemetry"
+      ],
+      "skills": [
+        "network-address-calculation",
+        "subnet-masking",
+        "host-range-analysis"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:hash-analyzer",
+      "displayName": "Cryptographic Hash Analyzer & Checksum Validator",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools/hash-analyzer",
+      "description": "Client-side cryptographic hash calculator, identifier, and integrity verifier. Computes SHA-256, SHA-512, SHA-384, SHA-1, and MD5 hashes using Web Crypto API.",
+      "representativeQueries": [
+        "generate SHA-256 checksum for verification string",
+        "identify cryptographic hash algorithm from signature length",
+        "verify file or payload integrity against known hash",
+        "compute SHA-512 cryptographic digest"
+      ],
+      "tags": [
+        "cryptography",
+        "hash-generator",
+        "sha256",
+        "sha512",
+        "md5",
+        "checksum",
+        "integrity"
+      ],
+      "skills": [
+        "cryptographic-hashing",
+        "checksum-verification",
+        "hash-identification"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:password-entropy",
+      "displayName": "Password Entropy & Brute-Force Crack Time Calculator",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools/password-entropy",
+      "description": "Calculates Shannon password entropy in bits, total keyspace search complexity, and estimated brute-force crack time against modern GPU clusters and supercomputers according to NIST SP 800-63B guidelines.",
+      "representativeQueries": [
+        "calculate Shannon entropy in bits for password",
+        "estimate brute-force crack time on RTX 4090 cluster",
+        "verify NIST SP 800-63B password strength compliance",
+        "check password keyspace and character pool complexity"
+      ],
+      "tags": [
+        "authentication",
+        "password-security",
+        "entropy",
+        "nist-guidelines",
+        "brute-force",
+        "credentials"
+      ],
+      "skills": [
+        "entropy-calculation",
+        "crack-time-estimation",
+        "nist-compliance-audit"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:http-security-headers",
+      "displayName": "HTTP Security Headers Inspector & Generator",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools/http-security-headers",
+      "description": "Interactive generator and analyzer for hardened HTTP response headers (Content-Security-Policy, Strict-Transport-Security, X-Frame-Options, Permissions-Policy) across Nginx, Apache, Caddy, Cloudflare, and Express.",
+      "representativeQueries": [
+        "generate hardened Content-Security-Policy header",
+        "configure Strict-Transport-Security HSTS preload rule",
+        "generate Nginx security headers configuration block",
+        "audit X-Frame-Options and MIME sniffing mitigations"
+      ],
+      "tags": [
+        "devsecops",
+        "http-headers",
+        "csp",
+        "hsts",
+        "web-security",
+        "hardening",
+        "nginx",
+        "apache"
+      ],
+      "skills": [
+        "header-hardening",
+        "csp-policy-generation",
+        "hsts-preloading"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:ssl-checker",
+      "displayName": "SSL/TLS Certificate & Cipher Suite Inspector",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools/ssl-checker",
+      "description": "Audits SSL/TLS certificate chains, protocol version support (TLS 1.3 / TLS 1.2), forward secrecy cipher suites, certificate validity dates, and outputs reproducible OpenSSL CLI diagnostic commands.",
+      "representativeQueries": [
+        "inspect SSL certificate expiration date and issuer",
+        "verify TLS 1.3 forward secrecy cipher suites",
+        "generate OpenSSL s_client diagnostic command",
+        "audit HTTPS transport layer certificate validity"
+      ],
+      "tags": [
+        "tls",
+        "ssl",
+        "certificates",
+        "openssl",
+        "cipher-suites",
+        "transport-security",
+        "https"
+      ],
+      "skills": [
+        "certificate-chain-inspection",
+        "cipher-suite-audit",
+        "openssl-diagnostic-generation"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:prompt-injection-sandbox",
+      "displayName": "Prompt Injection & Model Security Sandbox",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools",
+      "description": "Adversarial prompt injection testing sandbox. Evaluates LLM input sanitization, jailbreak pattern detection, system prompt extraction resistance, and OWASP Top 10 for LLM mitigations.",
+      "representativeQueries": [
+        "test LLM prompt against indirect prompt injection",
+        "simulate adversarial jailbreak heuristics on system prompt",
+        "audit input sanitization filters for autonomous agent workflows",
+        "verify model prompt leakage resilience"
+      ],
+      "tags": [
+        "model-security",
+        "prompt-injection",
+        "jailbreak-testing",
+        "owasp-llm",
+        "adversarial-testing",
+        "safety"
+      ],
+      "skills": [
+        "prompt-injection-defense",
+        "jailbreak-detection",
+        "system-prompt-sanitization"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:cyber-encoder",
+      "displayName": "Multi-Layer Cyber Payload Encoder & Decoder",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools",
+      "description": "Browser-native CyberChef-style payload transformer. Encodes and decodes multi-layer payloads across Base64, Hexadecimal, URL encoding, Binary, HTML entities, and ROT13.",
+      "representativeQueries": [
+        "decode multi-layer Base64 and Hex string",
+        "convert binary bitstream to ASCII text",
+        "URL encode payload for web exploitation simulation",
+        "transform payload with ROT13 and HTML entity encoding"
+      ],
+      "tags": [
+        "cryptography",
+        "encoding",
+        "base64",
+        "hex",
+        "url-encoding",
+        "cyberchef",
+        "payloads"
+      ],
+      "skills": [
+        "payload-encoding",
+        "payload-decoding",
+        "binary-conversion"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:tool:ip-lookup",
+      "displayName": "IP Geolocation & Autonomous System (ASN) Lookup",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/tools",
+      "description": "Zero-telemetry IP reconnaissance tool. Queries Autonomous System Numbers (ASN), ISP network operators, CIDR allocation blocks, and geographic telemetry with interactive coordinates.",
+      "representativeQueries": [
+        "lookup Autonomous System Number ASN for IP address",
+        "find ISP and network routing organization for host",
+        "verify CIDR prefix allocation and geographic origin of IP",
+        "inspect IP address routing telemetry"
+      ],
+      "tags": [
+        "reconnaissance",
+        "asn",
+        "ip-lookup",
+        "geolocation",
+        "bgp",
+        "network-telemetry"
+      ],
+      "skills": [
+        "asn-lookup",
+        "ip-geolocation",
+        "bgp-routing-identification"
+      ]
+    },
+    {
+      "identifier": "urn:ai:yinyangyohackers:blueprint:sovereign-ai-hub",
+      "displayName": "Sovereign Autonomous Systems Blueprint Matrix",
+      "type": "text/html",
+      "url": "https://yinyangyohackers.ai.studio/sovereign-hub",
+      "description": "Technical blueprints for enterprise self-hosted model execution: Ollama systemd sandboxing, vLLM distributed cluster hardening, air-gapped optical data diodes, and PyTorch SafeTensors verification.",
+      "representativeQueries": [
+        "deploy private Ollama daemon with mTLS and systemd isolation",
+        "configure air-gapped language models with optical data diodes",
+        "mitigate PyTorch pickle deserialization remote code execution",
+        "harden local vLLM cluster against KV-cache DoS"
+      ],
+      "tags": [
+        "autonomous-systems",
+        "sovereign-ai",
+        "ollama",
+        "vllm",
+        "air-gapped",
+        "zero-trust",
+        "blueprints"
+      ],
+      "skills": [
+        "air-gapped-deployment",
+        "model-weight-verification",
+        "systemd-daemon-sandboxing"
+      ]
+    }
+  ]
+}

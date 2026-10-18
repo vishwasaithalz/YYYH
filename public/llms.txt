@@ -1,0 +1,45 @@
+# YinYangYoHackers
+> Sovereign AI, Offensive Penetration Testing, Zero-Trust Hardening & Developer Security Blueprints.
+> Founded in 2013 by Vishwas Aithal.
+
+YinYangYoHackers is an independent, authoritative cybersecurity publication and technical laboratory dedicated to offensive penetration testing, defensive zero-trust infrastructure, local sovereign AI deployment, and interactive ethical hacking tools.
+
+## Core Pillars & Portals
+- [Cybersecurity & Threat Defense](https://yinyangyohackers.ai.studio/cybersecurity): Red teaming, active directory attacks, malware analysis, network packet forensics.
+- [Ethical Hacking Field Guides](https://yinyangyohackers.ai.studio/ethical-hacking): Practical, defensive ethical hacking manuals, responsible disclosure, and vulnerability assessment.
+- [Penetration Testing Audits](https://yinyangyohackers.ai.studio/penetration-testing): Web application assessments, OWASP Top 10, API security testing, and infrastructure penetration tests.
+- [Sovereign AI Knowledge Hub](https://yinyangyohackers.ai.studio/sovereign-hub): Complete knowledge hub of 9 architecture blueprints for private local compute.
+- [Sovereign AI Infrastructure](https://yinyangyohackers.ai.studio/sovereign-ai): Local LLM hosting blueprints (DeepSeek-R1, Llama 3, Mistral) via Ollama, vLLM, and private GPU clusters.
+- [Private Local AI](https://yinyangyohackers.ai.studio/private-local-ai): Foundation models running 100% locally with zero external network egress.
+- [Air-Gapped AI Systems](https://yinyangyohackers.ai.studio/air-gapped-ai): Physical isolation, optical data diodes, and SCIF-grade AI setups.
+- [Secure Ollama Deployment](https://yinyangyohackers.ai.studio/ollama-security): Hardened daemon configurations, mTLS, and systemd sandboxing.
+- [Private vLLM Infrastructure](https://yinyangyohackers.ai.studio/vllm-security): High-throughput clusters, tensor parallelism, and PagedAttention defense.
+- [Local LLM Security](https://yinyangyohackers.ai.studio/local-llm-security): Safetensors custody, PyTorch deserialization defense, and agent tool execution sandboxes.
+- [Sovereign AI Architecture](https://yinyangyohackers.ai.studio/sovereign-ai-infrastructure): Multi-GPU PCIe 5 lane topologies, NVLink, and local NVMe vector stores.
+- [AI Data Privacy](https://yinyangyohackers.ai.studio/ai-data-privacy): Pre-inference PII scrubbing, zero retention, and GDPR/HIPAA compliance.
+- [AI Security & Defense](https://yinyangyohackers.ai.studio/ai-security): Prompt injection defenses, RAG pipeline protection, LLM jailbreak mitigations, and model weight security.
+- [Technology Architecture](https://yinyangyohackers.ai.studio/technology): Enterprise homelab blueprints, Proxmox VE hypervisors, WireGuard mesh VPNs, ZFS sovereign storage.
+- [Defensive Blueprints](https://yinyangyohackers.ai.studio/blueprint): Production Linux kernel hardening, SSH bastion key setups, UFW firewalls, Docker microsegmentation.
+- [Interactive Cheatsheets](https://yinyangyohackers.ai.studio/cheatsheets): Fast operational reference for Nmap, Linux sysctl hardening, Wireshark packet display filters, and Active Directory Kerberos syntax.
+- [Live Cybersecurity Tools Suite](https://yinyangyohackers.ai.studio/tools): Browser-native cryptographic hashing, CIDR subnet calculators, CVE CVSS scoring, and port lookup utilities.
+- [Free CIDR & Subnet Calculator](https://yinyangyohackers.ai.studio/tools/cidr-calculator): Calculate IPv4 and IPv6 network ranges, usable addresses, subnet masks, and CIDR notation.
+- [Free Cryptographic Hash Analyzer](https://yinyangyohackers.ai.studio/tools/hash-analyzer): Generate and verify SHA-256, SHA-512, MD5, and bcrypt hashes.
+- [Free Password Entropy Calculator](https://yinyangyohackers.ai.studio/tools/password-entropy): Calculate Shannon entropy in bits, brute-force cracking time, and NIST SP 800-63B compliance.
+- [Free HTTP Security Headers Generator](https://yinyangyohackers.ai.studio/tools/http-security-headers): Analyze and generate hardened HSTS, CSP, and X-Frame-Options headers.
+- [Free SSL / TLS Certificate Inspector](https://yinyangyohackers.ai.studio/tools/ssl-checker): Audit TLS 1.3 cipher suites, certificate chains, and expiration.
+- [CTF Arena](https://yinyangyohackers.ai.studio/ctf): Capture The Flag challenges for security researchers and penetration testers.
+
+## Flagship Research & Deep-Dive Publications
+- [Ethical Hacking: The Complete Beginner's Guide](https://yinyangyohackers.ai.studio/ethical-hacking-the-complete-beginners-guide): Comprehensive foundational roadmap covering red team methodology, legal boundaries, and essential security toolchains.
+- [Cybersecurity Fundamentals: The Complete Beginner's Guide](https://yinyangyohackers.ai.studio/cybersecurity-fundamentals-the-complete-beginners-guide): Complete guide to modern enterprise defense, CIA triad, cryptography, and defense-in-depth principles.
+- [AI Security: Practical Guide to Securing AI Systems](https://yinyangyohackers.ai.studio/ai-security-a-practical-guide-to-securing-ai-systems): Industry-standard framework for securing AI agents, LLM inference endpoints, and automated reasoning pipelines.
+- [Hosting DeepSeek-R1 Locally on Homelab Hardware](https://yinyangyohackers.ai.studio/deepseek-r1-local-deployment-guide): Hardware sizing, quantization (GGUF, AWQ), Ollama integration, and zero-telemetry private AI setups.
+- [Enterprise Linux Kernel Hardening Blueprint](https://yinyangyohackers.ai.studio/linux-kernel-hardening-sysctl-security-blueprint): Production sysctl.conf tuning, SYN flood defense, ASLR, and memory isolation.
+- [Active Directory Kerberoasting & Lateral Movement Defense](https://yinyangyohackers.ai.studio/active-directory-kerberoasting-detection-and-mitigation): Detecting Rubeus, Impacket, and Mimikatz attack chains using Windows Event Logs and Sysmon.
+
+## Technical Feeds & Manifests
+- XML Sitemap: https://yinyangyohackers.ai.studio/sitemap.xml
+- RSS 2.0 Feed: https://yinyangyohackers.ai.studio/rss.xml
+- Atom Syndication Feed: https://yinyangyohackers.ai.studio/feed.xml
+- Full LLM Knowledge Base: https://yinyangyohackers.ai.studio/llms-full.txt
+- Security RFC 9116 Policy: https://yinyangyohackers.ai.studio/.well-known/security.txt

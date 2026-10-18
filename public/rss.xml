@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YinYangYoHackers - Cybersecurity &amp; Sovereign AI Research</title>
+    <link>https://yinyangyohackers.ai.studio/</link>
+    <description>Practical ethical hacking guides, zero-trust infrastructure blueprints, and sovereign local artificial intelligence systems by Vishwas Aithal.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Sep 2026 15:46:13 GMT</lastBuildDate>
+    <atom:link href="https://yinyangyohackers.ai.studio/rss.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>vishwasaithal@proton.me (Vishwas Aithal)</managingEditor>
+    <webMaster>vishwasaithal@proton.me (Vishwas Aithal)</webMaster>
+    <copyright>© 2013–2026 YinYangYoHackers. Founded by Vishwas Aithal.</copyright>
+    <image>
+      <url>https://yinyangyohackers.ai.studio/favicon.ico</url>
+      <title>YinYangYoHackers</title>
+      <link>https://yinyangyohackers.ai.studio/</link>
+    </image>
+
+    <item>
+      <title>Top Open Source AI Research Assistants: 2026</title>
+      <link>https://yinyangyohackers.ai.studio/top-open-source-ai-research-assistants</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/top-open-source-ai-research-assistants</guid>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Discover the top open-source AI research assistants in 2026. Self-host Perplexica and SearXNG with local LLMs for grounded web research.</description>
+      <category>Trending AI &amp; Productivity</category>
+    </item>
+    <item>
+      <title>Wireshark Packet Analysis Guide for Beginners</title>
+      <link>https://yinyangyohackers.ai.studio/wireshark-packet-analysis-guide-for-beginners</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/wireshark-packet-analysis-guide-for-beginners</guid>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Learn Wireshark packet analysis from scratch. Master capture filters, display filters, TCP stream reconstruction, and network forensics.</description>
+      <category>Tools &amp; Apps</category>
+    </item>
+    <item>
+      <title>Phishing Awareness &amp; Social Engineering Defense</title>
+      <link>https://yinyangyohackers.ai.studio/phishing-awareness-and-social-engineering-defense</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/phishing-awareness-and-social-engineering-defense</guid>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Defend your organization against advanced phishing and social engineering. Understand AiTM reverse proxies, email security protocols, and FIDO2 WebAuthn.</description>
+      <category>Cybersecurity</category>
+    </item>
+    <item>
+      <title>Troubleshoot Network Connectivity on Linux CLI</title>
+      <link>https://yinyangyohackers.ai.studio/troubleshoot-network-connectivity-on-linux-cli</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/troubleshoot-network-connectivity-on-linux-cli</guid>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Master Linux network troubleshooting. Diagnose DNS failures, latency spikes, and firewall drops using ip, ss, dig, mtr, and tcpdump.</description>
+      <category>Blueprint</category>
+    </item>
+    <item>
+      <title>AI Security: A Practical Guide to Securing AI Systems</title>
+      <link>https://yinyangyohackers.ai.studio/ai-security-a-practical-guide-to-securing-ai-systems</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/ai-security-a-practical-guide-to-securing-ai-systems</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Discover how to secure AI systems and LLM pipelines. Learn practical defenses against prompt injection, data poisoning, RAG exfiltration, and model supply chain attacks.</description>
+      <category>Trending AI &amp; Productivity</category>
+    </item>
+    <item>
+      <title>Best Free Developer Tools for API &amp; Code Auditing</title>
+      <link>https://yinyangyohackers.ai.studio/best-free-developer-tools-for-api-and-code-auditing</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/best-free-developer-tools-for-api-and-code-auditing</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Discover the top free open-source developer security tools in 2026. Explore Bruno (Postman alternative), Semgrep SAST, and Caido web proxy.</description>
+      <category>Tools &amp; Apps</category>
+    </item>
+    <item>
+      <title>Privacy-First AI Note-Taking with Obsidian</title>
+      <link>https://yinyangyohackers.ai.studio/privacy-first-ai-note-taking-obsidian</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/privacy-first-ai-note-taking-obsidian</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Supercharge Obsidian with local AI. Connect Ollama and Smart Connections plugin to query your entire Markdown vault with 100% privacy.</description>
+      <category>Trending AI &amp; Productivity</category>
+    </item>
+    <item>
+      <title>Web Reconnaissance: Subdomains &amp; Port Mapping</title>
+      <link>https://yinyangyohackers.ai.studio/web-reconnaissance-subdomains-port-mapping</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/web-reconnaissance-subdomains-port-mapping</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Master web reconnaissance and subdomain enumeration. Learn passive OSINT, DNS resolution with MassDNS, and live HTTP probing with httpx.</description>
+      <category>Cybersecurity</category>
+    </item>
+    <item>
+      <title>Essential Browser Extensions for Privacy: 2026</title>
+      <link>https://yinyangyohackers.ai.studio/essential-browser-extensions-for-privacy</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/essential-browser-extensions-for-privacy</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Protect your browser with the best open-source privacy extensions in 2026: uBlock Origin, ClearURLs, Decentraleyes, and Multi-Account Containers.</description>
+      <category>Tools &amp; Apps</category>
+    </item>
+    <item>
+      <title>How to Secure Docker Containers in Production</title>
+      <link>https://yinyangyohackers.ai.studio/how-to-secure-docker-containers-in-production</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/how-to-secure-docker-containers-in-production</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Production Docker container security guide. Harden Docker Compose, drop Linux kernel capabilities, enforce read-only filesystems, and scan with Trivy.</description>
+      <category>Blueprint</category>
+    </item>
+    <item>
+      <title>Cybersecurity Fundamentals: The Complete Beginner&apos;s Guide</title>
+      <link>https://yinyangyohackers.ai.studio/cybersecurity-fundamentals-the-complete-beginners-guide</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/cybersecurity-fundamentals-the-complete-beginners-guide</guid>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Learn cybersecurity fundamentals from scratch. Master the CIA triad, defense-in-depth, threat modeling, zero-trust networks, and hands-on baseline security commands.</description>
+      <category>Cybersecurity</category>
+    </item>
+    <item>
+      <title>Autonomous AI Agents for Cyber Threat Hunting</title>
+      <link>https://yinyangyohackers.ai.studio/autonomous-ai-agents-cyber-threat-hunting</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/autonomous-ai-agents-cyber-threat-hunting</guid>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Deploy autonomous AI agents for cybersecurity threat hunting. Build multi-agent SOC workflows with LangGraph, Wazuh SIEM, and local LLMs.</description>
+      <category>Trending AI &amp; Productivity</category>
+    </item>
+    <item>
+      <title>Linux Security Hardening: Essential Commands</title>
+      <link>https://yinyangyohackers.ai.studio/linux-security-hardening-essential-commands</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/linux-security-hardening-essential-commands</guid>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Step-by-step production Linux security hardening checklist. Harden SSH, configure kernel sysctl parameters, deploy UFW, and enable auditd.</description>
+      <category>Cybersecurity</category>
+    </item>
+    <item>
+      <title>Top Linux Security Tools for Sysadmins: 2026</title>
+      <link>https://yinyangyohackers.ai.studio/top-linux-security-tools-for-sysadmins</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/top-linux-security-tools-for-sysadmins</guid>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Discover the top Linux security tools for sysadmins. Master Lynis auditing, Falco eBPF behavioral detection, Auditd logging, and rootkit scanners.</description>
+      <category>Tools &amp; Apps</category>
+    </item>
+    <item>
+      <title>Automate Encrypted Backups with Borg &amp; Rclone</title>
+      <link>https://yinyangyohackers.ai.studio/automate-encrypted-backups-with-borg-and-rclone</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/automate-encrypted-backups-with-borg-and-rclone</guid>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Automate encrypted, deduplicated backups with BorgBackup and Rclone. Implement a 3-2-1 backup strategy with automated systemd timers.</description>
+      <category>Blueprint</category>
+    </item>
+    <item>
+      <title>Open Source AI Productivity Tools: 2026 List</title>
+      <link>https://yinyangyohackers.ai.studio/open-source-ai-productivity-tools-2026</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/open-source-ai-productivity-tools-2026</guid>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Discover the best open-source AI productivity tools in 2026. Explore Faster-Whisper, n8n, Open WebUI, and local workflow automation.</description>
+      <category>Trending AI &amp; Productivity</category>
+    </item>
+    <item>
+      <title>How to Build a Legal Hacking Lab at Home</title>
+      <link>https://yinyangyohackers.ai.studio/how-to-build-a-legal-hacking-lab</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/how-to-build-a-legal-hacking-lab</guid>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Build an isolated ethical hacking homelab. Step-by-step guide with pfSense network routing, Kali Linux, vulnerable VMs, and Active Directory.</description>
+      <category>Cybersecurity</category>
+    </item>
+    <item>
+      <title>How to Configure Firefox for Maximum Privacy</title>
+      <link>https://yinyangyohackers.ai.studio/how-to-configure-firefox-for-maximum-privacy</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/how-to-configure-firefox-for-maximum-privacy</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Harden Mozilla Firefox for maximum privacy. Master about:config settings, resist canvas fingerprinting, stop WebRTC IP leaks, and deploy Arkenfox user.js.</description>
+      <category>Blueprint</category>
+    </item>
+    <item>
+      <title>Build a Private Local RAG Knowledge Base</title>
+      <link>https://yinyangyohackers.ai.studio/build-a-private-local-rag-knowledge-base</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/build-a-private-local-rag-knowledge-base</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Step-by-step guide to building an offline local RAG system. Index confidential PDFs and documents with ChromaDB, Ollama, and LangChain.</description>
+      <category>Trending AI &amp; Productivity</category>
+    </item>
+    <item>
+      <title>Top Self-Hosted Productivity Apps: 2026 Guide</title>
+      <link>https://yinyangyohackers.ai.studio/top-self-hosted-productivity-apps</link>
+      <guid isPermaLink="true">https://yinyangyohackers.ai.studio/top-self-hosted-productivity-apps</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Discover the best self-hosted productivity apps in 2026. Replace cloud SaaS with Nextcloud, AppFlowy, Vikunja, and Mattermost on your own hardware.</description>
+      <category>Tools &amp; Apps</category>
+    </item>
+  </channel>
+</rss>
