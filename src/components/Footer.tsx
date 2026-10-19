@@ -205,7 +205,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-emerald-300 transition-colors text-left flex items-center gap-2 py-1.5 min-h-[44px] cursor-pointer"
                 >
                   <Compass className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span>30-Article Content Roadmap</span>
+                  <span>Editorial Content Roadmap &amp; Blueprint Matrix</span>
                 </a>
               </li>
               <li>

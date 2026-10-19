@@ -158,12 +158,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://yinyangyohackers.ai.studio/gear</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://yinyangyohackers.ai.studio/clusters</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
