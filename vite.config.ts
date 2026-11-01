@@ -72,7 +72,7 @@ export default defineConfig(() => {
       },
     },
     server: {
-      allowedHosts: true as const,
+      // Keep Vite's default localhost-only allowlist to reduce DNS-rebinding exposure.
       headers: {
         'X-Robots-Tag': 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
       },
