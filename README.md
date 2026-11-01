@@ -1,26 +1,21 @@
+<p align="center"><img src="assets/portfolio-hero.svg" alt="Yin Yang Yo Hackers project artwork" width="100%" /></p>
+
+<p align="center">
+  <a href="https://github.com/vishwasaithalz/YYYH/actions/workflows/ci.yml"><img src="https://github.com/vishwasaithalz/YYYH/actions/workflows/ci.yml/badge.svg" alt="YYYH CI" /></a>
+  <img src="https://img.shields.io/badge/Founded-2013-111827?style=flat-square&labelColor=111827&color=8b5cf6" alt="Founded 2013" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=111827" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
+</p>
+
+<p align="center"><strong>Independent security learning, practical engineering, and open computing.</strong></p>
+
+<p align="center">[Live project](https://yyyh-phi.vercel.app) · [The idea](#the-idea) · [Technology](#technology) · [Run locally](#run-locally) · [Security](#security)</p>
+
 <!--
   YinYangYoHackers
   A clean, maintainable home for the project's code, research and legacy archive.
 -->
-
-<div align="center">
-
-# YIN · YANG · YO
-
-### Security research. Practical tools. Open computing.
-
-**An independent project exploring defensive security, responsible adversarial testing, and useful open-source technology.**
-
-[![Repository](https://img.shields.io/badge/status-active%20development-8b5cf6?style=flat-square)](https://github.com/vishwasaithalz/YYYH)
-[![Built with TypeScript](https://img.shields.io/badge/TypeScript-project-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Frontend](https://img.shields.io/badge/UI-React-61DAFB?style=flat-square&logo=react&logoColor=111827)](https://react.dev/)
-[![Build](https://img.shields.io/badge/build-Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
-
-**[Live project](https://yyyh-phi.vercel.app) · [Source](https://github.com/vishwasaithalz/YYYH) · [Maintainer](https://github.com/vishwasaithalz)**
-
-</div>
-
----
 
 ## The idea
 
