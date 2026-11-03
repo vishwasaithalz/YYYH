@@ -28,6 +28,7 @@ import {
   ChevronDown,
   Compass
 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 // Code-split secondary modals and views to reduce initial critical JS download size and request chains
 const ArticleModal = React.lazy(() => import('./components/ArticleModal').then(m => ({ default: m.ArticleModal })));
@@ -1370,6 +1371,9 @@ export default function App() {
 
       {/* 9. Direct Founder Inquiries & Research Dispatch Desk */}
       <DirectContactDesk />
+
+      {/* 10. Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
