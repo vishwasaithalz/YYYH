@@ -240,7 +240,7 @@ export const SeoLandingView: React.FC<SeoLandingViewProps> = ({
             onClick={(e) => { e.preventDefault(); onNavigate('contact', '/contact'); }}
             className="min-h-[48px] px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-bold text-sm transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] flex items-center gap-2"
           >
-            <span>Request Security Consultation</span>
+            <span>Explore Learning Resources</span>
             <ArrowRight className="w-4 h-4" />
           </a>
 
@@ -253,6 +253,11 @@ export const SeoLandingView: React.FC<SeoLandingViewProps> = ({
           </a>
         </div>
       </header>
+
+      <aside className="rounded-xl border border-amber-700/50 bg-amber-950/20 p-4 text-sm text-amber-100" role="note" aria-label="Educational scope notice">
+        <strong className="block mb-1">Educational project notice</strong>
+        YinYangYoHackers is an independent learning and publishing project. Material on this page is educational guidance and illustrative examples, not a claim of client engagements, completed security audits, professional certifications, or a security consulting service. Test only systems you own or are explicitly authorised to assess. Verify commands and configuration changes in a disposable lab before use.
+      </aside>
 
       {/* Comprehensive Architectural Overview */}
       <section className="space-y-4">
@@ -275,7 +280,7 @@ export const SeoLandingView: React.FC<SeoLandingViewProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <h2 className="text-xl sm:text-2xl font-bold text-white font-mono flex items-center gap-2">
             <Boxes className="w-6 h-6 text-cyan-400" />
-            <span>Audited Engineering Deliverables</span>
+            <span>Learning Topics & Practical Resources</span>
           </h2>
           <span className="text-xs font-mono text-slate-400">
             Engineered for {pageData.primaryKeyword}
