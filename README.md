@@ -10,7 +10,7 @@
 
 <p align="center"><strong>Independent security learning, practical engineering, and open computing.</strong></p>
 
-<p align="center">[Live project](https://yyyh-phi.vercel.app) · [The idea](#the-idea) · [Technology](#technology) · [Run locally](#run-locally) · [Security](#security)</p>
+<p align="center"><a href="https://yyyh-phi.vercel.app">Live project</a> · <a href="#the-idea">The idea</a> · <a href="#technology">Technology</a> · <a href="#run-locally">Run locally</a> · <a href="#security">Security</a></p>
 
 <!--
   YinYangYoHackers
