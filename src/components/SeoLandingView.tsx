@@ -237,7 +237,7 @@ export const SeoLandingView: React.FC<SeoLandingViewProps> = ({
         <div className="pt-2 flex flex-wrap items-center gap-3">
           <a
             href="/contact"
-            onClick={(e) => { e.preventDefault(); onNavigate('contact', '/contact'); }}
+            onClick={(e) => { e.preventDefault(); onNavigate('blog', '/'); }}
             className="min-h-[48px] px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-bold text-sm transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] flex items-center gap-2"
           >
             <span>Explore Learning Resources</span>
