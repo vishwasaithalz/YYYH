@@ -33,11 +33,11 @@ The goal is not noise or security theatre. It is practical work, documented clea
 
 ## What lives here
 
-- **Web application** — the current TypeScript and React application.
-- **Research and learning** — security and technology articles, notes, and explainers.
-- **Legacy content archive** — a structured record of material from the project's earlier publishing history.
-- **Engineering notes** — implementation logs, content inventory, and SEO planning.
-- **Experiments** — small tools and integrations developed as the project evolves.
+- **Web application**  -  the current TypeScript and React application.
+- **Research and learning**  -  security and technology articles, notes, and explainers.
+- **Legacy content archive**  -  a structured record of material from the project's earlier publishing history.
+- **Engineering notes**  -  implementation logs, content inventory, and SEO planning.
+- **Experiments**  -  small tools and integrations developed as the project evolves.
 
 > This repository is a work in progress. A listed topic or planned capability should not be interpreted as a claim that a production-ready tool or formal security audit already exists.
 
@@ -145,3 +145,16 @@ Small, focused, well-explained contributions are welcome. Start with [CONTRIBUTI
 *Independent project. Evolving in public, one verifiable improvement at a time.*
 
 </div>
+
+
+<!-- KARMA VISUAL IDENTITY: START -->
+<div align="center">
+
+**ARCHIVE / SECURITY / KNOWLEDGE**
+
+<img src="https://img.shields.io/badge/KARMA-SYSTEMS-0f172a?style=for-the-badge" alt="KARMA Systems" /> <img src="https://img.shields.io/badge/BUILD-VERIFY-0f766e?style=for-the-badge" alt="Build and verify" />
+
+<sub>Designed for clarity. Built for evidence. No invented status metrics.</sub>
+
+</div>
+<!-- KARMA VISUAL IDENTITY: END -->
