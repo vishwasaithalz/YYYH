@@ -32,7 +32,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
         <div className="flex flex-wrap items-center gap-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium">
             <span>☯</span>
-            <span>FOUNDED IN 2013 &bull; INDEPENDENT CYBERSECURITY LAB</span>
+            <span>PROJECT ROOTS IN 2013 &bull; INDEPENDENT LEARNING PROJECT</span>
           </div>
           <span className="text-xs font-mono text-slate-300 hidden sm:inline">&bull; Open-Source &bull; Autonomous Research</span>
         </div>
@@ -43,7 +43,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           itemProp="headline" 
           className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug font-mono"
         >
-          YinYangYoHackers &mdash; Technical Cybersecurity &amp; Adversarial Research Laboratory
+          YinYangYoHackers &mdash; Cybersecurity Learning &amp; Open Computing
         </h1>
         
         {/* Core Value Proposition */}
@@ -51,7 +51,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           itemProp="description" 
           className="text-base sm:text-lg text-slate-200 font-sans leading-relaxed max-w-4xl"
         >
-          Founded in 2013 by <strong className="text-white font-semibold" itemProp="author">Vishwas Aithal</strong>, YinYangYoHackers provides battle-tested penetration testing guides, zero-trust infrastructure hardening blueprints, cryptographic defense protocols, and open-source security toolchains for engineers and security practitioners worldwide.
+          YinYangYoHackers is an independent technology project with roots in 2013. It shares educational cybersecurity explainers, authorized lab exercises, defensive checklists, development notes, and open-source learning tools. Content is published as learning material, not as a claim of professional security services or client engagements.
         </p>
 
         {/* YMYL Compliance & Ethical Research Disclosure */}
@@ -127,17 +127,17 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm font-mono text-slate-300">
             <span className="text-slate-100 font-semibold flex items-center gap-1">
               <Shield className="w-3.5 h-3.5 text-emerald-400" />
-              Specializations:
+              Learning topics:
             </span>
-            <span>Zero-Trust Infrastructure</span>
+            <span>Security Fundamentals</span>
             <span>&bull;</span>
-            <span>Active Directory Auditing</span>
+            <span>Web Application Security</span>
             <span>&bull;</span>
-            <span>Adversarial Red Teaming</span>
+            <span>Authorized Lab Practice</span>
             <span>&bull;</span>
-            <span>Linux Kernel Hardening</span>
+            <span>Linux & Networking</span>
             <span>&bull;</span>
-            <span>Cryptographic Toolchains</span>
+            <span>Privacy & Cryptography</span>
           </div>
         </div>
       </div>
