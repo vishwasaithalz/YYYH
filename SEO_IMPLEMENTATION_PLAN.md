@@ -1,4 +1,4 @@
-# YinYangYoHackers — Technical SEO & Architecture Implementation Plan
+# YinYangYoHackers  -  Technical SEO & Architecture Implementation Plan
 
 ## Executive Overview
 **Project URL:** https://yinyangyohackers.ai.studio/  
