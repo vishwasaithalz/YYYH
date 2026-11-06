@@ -1,3 +1,7 @@
+<!-- KARMA PROJECT IDENTITY / original art -->
+<p align="center"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/projects/yyyh-v2.svg" alt="🌗 YinYangYoHackers: Cybersecurity learning and publishing" width="100%" /></p>
+<p align="center"><strong>🌗 YinYangYoHackers</strong> · Cybersecurity learning and publishing</p>
+
 <p align="center"><img src="assets/portfolio-hero.svg" alt="Yin Yang Yo Hackers project artwork" width="100%" /></p>
 
 <p align="center">
