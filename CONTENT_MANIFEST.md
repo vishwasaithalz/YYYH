@@ -1,10 +1,10 @@
-# YinYangYoHackers — Content & Routes Manifest
+# YinYangYoHackers  -  Content & Routes Manifest
 
 ## 1. Primary Landing Hubs & Tool Routes
 
 | Route | View Key | Title | Primary Keyword | Search Intent | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `/` | `blog` | YinYangYoHackers — Cybersecurity Research & Zero-Trust Hardening | cybersecurity research | Informational | Active |
+| `/` | `blog` | YinYangYoHackers  -  Cybersecurity Research & Zero-Trust Hardening | cybersecurity research | Informational | Active |
 | `/cybersecurity` | `cybersecurity` | Cybersecurity & Zero-Trust Architecture | zero trust architecture | Informational | Active |
 | `/ethical-hacking` | `ethical-hacking` | Ethical Hacking & Red Team Methodology | ethical hacking guide | Informational | Active |
 | `/penetration-testing` | `penetration-testing` | Penetration Testing Audit Hub | penetration testing methodology | Task-Oriented | Active |
