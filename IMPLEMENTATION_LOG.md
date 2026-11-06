@@ -1,4 +1,4 @@
-# YinYangYoHackers — Technical Implementation Log
+# YinYangYoHackers  -  Technical Implementation Log
 
 ## Changes Completed
 
