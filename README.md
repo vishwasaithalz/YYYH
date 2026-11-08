@@ -9,8 +9,7 @@
 
 <p align="center"><a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/tiles/yyyh.svg" width="68%" alt="Open 🌗 YinYangYoHackers project" /></a></p>
 <p align="center"><strong>🌗 YinYangYoHackers</strong> · Cybersecurity learning and publishing</p>
-<details>
-<summary>Build and technology badges</summary>
+
 
 <p align="center">
 <a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/yyyh.svg" width="46%" alt="Visit public YinYangYoHackers" /></a>
@@ -22,6 +21,9 @@
 </details>
 
 </details>
+
+<details>
+<summary>Build and technology badges</summary>
 
 <p align="center">
   <a href="https://github.com/vishwasaithalz/YYYH/actions/workflows/ci.yml"><img src="https://github.com/vishwasaithalz/YYYH/actions/workflows/ci.yml/badge.svg" alt="YYYH CI" /></a>
