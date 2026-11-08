@@ -1,16 +1,20 @@
 <!-- VISHWAS.EXE UNIFIED THEME START -->
-<p align="center"><a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/brand/vishwas-exe-yyyh.svg" width="100%" alt="YinYangYoHackers. Original editorial illustration by Vishwas Aithal." /></a></p>
-
-<p align="center"><a href="https://vishwasaithalz.github.io/vishwasaithalz/">Personal index</a> &nbsp;·&nbsp; <a href="https://github.com/vishwasaithalz?tab=repositories">All projects</a> &nbsp;·&nbsp; <a href="https://vishwasaithal.ai.studio/">Portfolio</a></p>
+<p align="center"><a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/brand/vishwas-exe-yyyh.svg" width="100%" alt="VISHWAS.EXE uniform retro GitHub interface for YinYangYoHackers, created by Vishwas Aithal" /></a></p>
+<p align="center"><strong>VISHWAS.EXE / YinYangYoHackers</strong><br/>The blogging and security-learning archive<br/><sub>Designed and built by <strong>Vishwas Aithal</strong> · Same computer universe, its own personality</sub></p>
+<p align="center">
+  <a href="https://vishwasaithalz.github.io/vishwasaithalz/"><strong>💾 BOOT MANAGER</strong></a> &nbsp;·&nbsp;
+  <a href="https://vishwasaithalz.github.io/vishwasaithalz/overload/"><strong>🖥️ OVERLOAD OS</strong></a> &nbsp;·&nbsp;
+  <a href="https://vishwasaithalz.github.io/vishwasaithalz/arcade/"><strong>🎮 ARCADE</strong></a> &nbsp;·&nbsp;
+  <a href="https://github.com/vishwasaithalz?tab=repositories"><strong>📁 ALL PROJECTS</strong></a> &nbsp;·&nbsp;
+  <a href="https://vishwasaithal.ai.studio/"><strong>🌐 PORTFOLIO</strong></a>
+</p>
 <!-- VISHWAS.EXE UNIFIED THEME END -->
 
 <details>
-<summary>Earlier artwork and navigation</summary>
+<summary><strong>🎞 Open legacy project visuals and original navigation</strong></summary>
 
 <p align="center"><a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/tiles/yyyh.svg" width="68%" alt="Open 🌗 YinYangYoHackers project" /></a></p>
 <p align="center"><strong>🌗 YinYangYoHackers</strong> · Cybersecurity learning and publishing</p>
-
-
 <p align="center">
 <a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/yyyh.svg" width="46%" alt="Visit public YinYangYoHackers" /></a>
 <a href="https://vishwasaithalz.github.io/vishwasaithalz/arcade/#chat"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/chat.svg" width="46%" alt="Ask the scripted 2013 origin story" /></a>
@@ -22,9 +26,6 @@
 
 </details>
 
-<details>
-<summary>Build and technology badges</summary>
-
 <p align="center">
   <a href="https://github.com/vishwasaithalz/YYYH/actions/workflows/ci.yml"><img src="https://github.com/vishwasaithalz/YYYH/actions/workflows/ci.yml/badge.svg" alt="YYYH CI" /></a>
   <img src="https://img.shields.io/badge/Founded-2013-111827?style=flat-square&labelColor=111827&color=8b5cf6" alt="Founded 2013" />
@@ -32,7 +33,6 @@
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
 </p>
-</details>
 
 <p align="center"><strong>Independent security learning, practical engineering, and open computing.</strong></p>
 
