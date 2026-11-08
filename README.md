@@ -1,4 +1,18 @@
-<!-- KARMA PROJECT IDENTITY / compact visual navigation -->
+<!-- VISHWAS.EXE UNIFIED THEME START -->
+<p align="center"><a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/brand/vishwas-exe-yyyh.svg" width="100%" alt="VISHWAS.EXE uniform retro GitHub interface for YinYangYoHackers, created by Vishwas Aithal" /></a></p>
+<p align="center"><strong>VISHWAS.EXE / YinYangYoHackers</strong><br/>The blogging and security-learning archive<br/><sub>Designed and built by <strong>Vishwas Aithal</strong> · Same computer universe, its own personality</sub></p>
+<p align="center">
+  <a href="https://vishwasaithalz.github.io/vishwasaithalz/"><strong>💾 BOOT MANAGER</strong></a> &nbsp;·&nbsp;
+  <a href="https://vishwasaithalz.github.io/vishwasaithalz/overload/"><strong>🖥️ OVERLOAD OS</strong></a> &nbsp;·&nbsp;
+  <a href="https://vishwasaithalz.github.io/vishwasaithalz/arcade/"><strong>🎮 ARCADE</strong></a> &nbsp;·&nbsp;
+  <a href="https://github.com/vishwasaithalz?tab=repositories"><strong>📁 ALL PROJECTS</strong></a> &nbsp;·&nbsp;
+  <a href="https://vishwasaithal.ai.studio/"><strong>🌐 PORTFOLIO</strong></a>
+</p>
+<!-- VISHWAS.EXE UNIFIED THEME END -->
+
+<details>
+<summary><strong>🎞 Open legacy project visuals and original navigation</strong></summary>
+
 <p align="center"><a href="https://yyyh-phi.vercel.app"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/tiles/yyyh.svg" width="68%" alt="Open 🌗 YinYangYoHackers project" /></a></p>
 <p align="center"><strong>🌗 YinYangYoHackers</strong> · Cybersecurity learning and publishing</p>
 <p align="center">
@@ -8,6 +22,8 @@
 
 <details><summary>🎨 Open original full-size project artwork</summary>
 <p align="center"><img src="assets/portfolio-hero.svg" alt="Yin Yang Yo Hackers project artwork" width="90%" /></p>
+</details>
+
 </details>
 
 <p align="center">
