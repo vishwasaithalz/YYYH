@@ -504,3 +504,29 @@ h2[id], h3[id], section[id] {
   }
 }
 
+
+
+/* Consistent arrow geometry across cards, header, article CTAs and breadcrumbs.
+   Keep the icon inside the text line box and reserve its exact space. */
+:where(a,button) > :is(svg.lucide-arrow-right,svg.lucide-arrow-left,svg.lucide-chevron-right,svg.lucide-chevron-left){
+  width:0.875rem;
+  height:0.875rem;
+  min-width:0.875rem;
+  flex:0 0 0.875rem;
+  display:inline-block;
+  vertical-align:middle;
+  align-self:center;
+  stroke-width:2;
+}
+:where(a,button):has(> svg.lucide-arrow-right),
+:where(a,button):has(> svg.lucide-chevron-right){
+  align-items:center;
+}
+:where(a,button) > svg.lucide-arrow-right{
+  transform:translateY(0);
+}
+@media(max-width:480px){
+  :where(a,button) > :is(svg.lucide-arrow-right,svg.lucide-arrow-left,svg.lucide-chevron-right,svg.lucide-chevron-left){
+    width:.8125rem;height:.8125rem;min-width:.8125rem;flex-basis:.8125rem;
+  }
+}
