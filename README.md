@@ -59,11 +59,11 @@ The goal is not noise or security theatre. It is practical work, documented clea
 
 ## What lives here
 
-- **Web application**  -  the current TypeScript and React application.
-- **Research and learning**  -  security and technology articles, notes, and explainers.
-- **Legacy content archive**  -  a structured record of material from the project's earlier publishing history.
-- **Engineering notes**  -  implementation logs, content inventory, and SEO planning.
-- **Experiments**  -  small tools and integrations developed as the project evolves.
+- **Web application**: the current TypeScript and React application.
+- **Research and learning**: security and technology articles, notes, and explainers.
+- **Legacy content archive**: a structured record of material from the project's earlier publishing history.
+- **Engineering notes**: implementation logs, content inventory, and SEO planning.
+- **Experiments**: small tools and integrations developed as the project evolves.
 
 > This repository is a work in progress. A listed topic or planned capability should not be interpreted as a claim that a production-ready tool or formal security audit already exists.
 
