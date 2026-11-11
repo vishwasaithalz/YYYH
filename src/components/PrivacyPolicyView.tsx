@@ -101,7 +101,7 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({ onBackToAr
             <span>2. Cookie &amp; Storage Policy</span>
           </h2>
           <p>
-            YinYangYoHackers does not use cross-site tracking cookies or third-party behavioral profiling. We use essential local storage to remember your reading preferences (dark theme, saved articles) and session security settings. If you explicitly choose Accept All in our cookie preferences, Vercel Speed Insights may receive page and browser performance measurements. This optional measurement remains off for visitors with no new analytics choice, or who select Essential Only. You may change your choice using the privacy preferences control or clear your browser storage.
+            YinYangYoHackers does not use cross-site tracking cookies or third-party behavioral profiling. We use essential local storage to remember your reading preferences (dark theme, saved articles) and session security settings. If you explicitly choose Accept All in our cookie preferences, Vercel Speed Insights and Web Analytics may receive page visit and browser performance measurements. This optional measurement remains off for visitors with no new analytics choice, or who select Essential Only. You may change your choice using the privacy preferences control or clear your browser storage.
           </p>
         </section>
 
