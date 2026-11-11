@@ -67,7 +67,7 @@ export const HackerCookieConsent: React.FC = () => {
         </div>
 
         <p className="text-xs text-slate-200 leading-relaxed mb-3">
-          Essential storage keeps bookmarks and theme preferences on this device. Choosing Accept All also enables optional Vercel Speed Insights and Web Analytics page/performance measurement. Essential Only disables optional performance measurement. No advertising pixels or behavioral profiling are added.
+          Essential storage keeps bookmarks and theme preferences on this device. Choosing Accept All also enables optional Vercel Speed Insights and Web Analytics page/performance measurement. Essential Only disables both optional measurement services. No advertising pixels or behavioral profiling are added.
         </p>
 
         <div className="flex items-center gap-3 pt-1">
