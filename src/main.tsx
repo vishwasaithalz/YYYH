@@ -40,15 +40,29 @@ if (typeof window !== 'undefined') {
   }
 }
 
-// Performance telemetry is opt-in. Existing legacy cookie consent is not
-// interpreted as permission to transmit usage metrics.
+// Consent is checked on every outgoing event, not only on component mount.
+// The provider SDK may leave an injected script running after React unmounts.
+function hasUsageAnalyticsConsent(): boolean {
+  try {
+    return typeof window !== 'undefined' && window.localStorage.getItem('yyyh_usage_analytics_v1') === 'enabled';
+  } catch {
+    return false;
+  }
+}
+
+function filterMetricsByConsent<T>(event: T): T | null {
+  return hasUsageAnalyticsConsent() ? event : null;
+}
+
+// Neither SDK mounts until consent, and previously mounted SDKs are
+// prevented from sending subsequent events when consent is withdrawn.
 function PrivacyGatedSpeedInsights() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     const update = () => {
       try {
-        setEnabled(localStorage.getItem('yyyh_usage_analytics_v1') === 'enabled');
+        setEnabled(hasUsageAnalyticsConsent());
       } catch {
         setEnabled(false);
       }
@@ -62,7 +76,7 @@ function PrivacyGatedSpeedInsights() {
     };
   }, []);
 
-  return enabled ? <><SpeedInsights /><Analytics /></> : null;
+  return enabled ? <><SpeedInsights beforeSend={filterMetricsByConsent} /><Analytics beforeSend={filterMetricsByConsent} /></> : null;
 }
 
 createRoot(document.getElementById('root')!).render(
