@@ -24,8 +24,10 @@ export const HackerCookieConsent: React.FC = () => {
       localStorage.setItem('yyyh_privacy_consent_v1', JSON.stringify({
         type,
         timestamp: new Date().toISOString(),
-        zeroTracking: true
+        zeroTracking: type === 'essential'
       }));
+      localStorage.setItem('yyyh_usage_analytics_v1', type === 'all' ? 'enabled' : 'disabled');
+      window.dispatchEvent(new Event('yyyh-privacy-updated'));
     } catch {
       // Storage unavailable in strict private modes
     }
@@ -50,7 +52,7 @@ export const HackerCookieConsent: React.FC = () => {
               <h3 className="font-mono font-bold text-white text-xs sm:text-sm">
                 Cookie &amp; Storage Permissions
               </h3>
-              <span className="text-[11px] font-mono text-emerald-400">Zero Surveillance • Local Storage</span>
+              <span className="text-[11px] font-mono text-emerald-400">Local preferences + optional site metrics</span>
             </div>
           </div>
           <button
@@ -65,7 +67,7 @@ export const HackerCookieConsent: React.FC = () => {
         </div>
 
         <p className="text-xs text-slate-200 leading-relaxed mb-3">
-          We use essential local storage strictly to remember your bookmarked guides, theme preferences, and research sessions. No advertising pixels or third-party tracking.
+          Essential storage keeps bookmarks and theme preferences on this device. Choosing Accept All also enables optional Vercel Speed Insights performance measurement. Essential Only disables optional performance measurement. No advertising pixels or behavioral profiling are added.
         </p>
 
         <div className="flex items-center gap-3 pt-1">

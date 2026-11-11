@@ -1,4 +1,4 @@
-import {StrictMode} from 'react';
+import {StrictMode, useEffect, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {SpeedInsights} from '@vercel/speed-insights/react';
 import App from './App.tsx';
@@ -39,9 +39,34 @@ if (typeof window !== 'undefined') {
   }
 }
 
+// Performance telemetry is opt-in. Existing legacy cookie consent is not
+// interpreted as permission to transmit usage metrics.
+function PrivacyGatedSpeedInsights() {
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    const update = () => {
+      try {
+        setEnabled(localStorage.getItem('yyyh_usage_analytics_v1') === 'enabled');
+      } catch {
+        setEnabled(false);
+      }
+    };
+    update();
+    window.addEventListener('yyyh-privacy-updated', update);
+    window.addEventListener('storage', update);
+    return () => {
+      window.removeEventListener('yyyh-privacy-updated', update);
+      window.removeEventListener('storage', update);
+    };
+  }, []);
+
+  return enabled ? <SpeedInsights /> : null;
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
-    <SpeedInsights />
+    <PrivacyGatedSpeedInsights />
   </StrictMode>,
 );
