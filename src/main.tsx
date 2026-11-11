@@ -1,6 +1,7 @@
 import {StrictMode, useEffect, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {SpeedInsights} from '@vercel/speed-insights/react';
+import {Analytics} from '@vercel/analytics/react';
 import App from './App.tsx';
 import './index.css';
 
@@ -61,7 +62,7 @@ function PrivacyGatedSpeedInsights() {
     };
   }, []);
 
-  return enabled ? <SpeedInsights /> : null;
+  return enabled ? <><SpeedInsights /><Analytics /></> : null;
 }
 
 createRoot(document.getElementById('root')!).render(
