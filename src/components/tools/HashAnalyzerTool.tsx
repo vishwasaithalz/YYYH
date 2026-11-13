@@ -12,6 +12,7 @@ import {
   Cpu,
   FileCode
 } from 'lucide-react';
+import { computeMD5 } from '../../utils/md5';
 
 export const HashAnalyzerTool: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'generator' | 'identifier' | 'comparator'>('generator');
@@ -57,19 +58,15 @@ export const HashAnalyzerTool: React.FC = () => {
         const buf1 = await crypto.subtle.digest('SHA-1', data);
         const sha1 = Array.from(new Uint8Array(buf1)).map(b => b.toString(16).padStart(2, '0')).join('');
 
-        // Fast RFC 1321 MD5 simulation
-        let md5Sim = '';
-        for (let i = 0; i < 16; i++) {
-          const val = (data[i % data.length] || 0) ^ (sha256.charCodeAt(i) || 0);
-          md5Sim += ((val * 9 + 17) % 256).toString(16).padStart(2, '0');
-        }
+        // Standard RFC 1321 MD5 (Offline pure JavaScript)
+        const md5Val = computeMD5(inputText);
 
         setHashes({
           'SHA-256': sha256,
           'SHA-512': sha512,
           'SHA-384': sha384,
           'SHA-1': sha1,
-          'MD5': md5Sim
+          'MD5': md5Val
         });
       } catch (err) {
         console.error('Hash calculation error:', err);

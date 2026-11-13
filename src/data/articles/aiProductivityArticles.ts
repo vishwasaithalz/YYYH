@@ -25,14 +25,14 @@ export const aiProductivityArticles: Article[] = [
     "views": 31200,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
     },
     "summary": "Master local LLM deployment with Ollama: GPU acceleration, model quantizations (Q4_K_M vs Q8), custom Modelfiles, and Open WebUI setup.",
     "coverImage": {
-      "src": "/images/ollama_local_ai.jpg",
+      "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
       "alt": "Local Compute inference with Ollama, neural network weights offloading to GPU VRAM and terminal interface",
       "width": 1200,
       "height": 675
@@ -239,7 +239,7 @@ export const aiProductivityArticles: Article[] = [
     "views": 28400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -387,7 +387,7 @@ export const aiProductivityArticles: Article[] = [
     "faqs": [
       {
         "question": "How does code completion latency with local models compare to GitHub Copilot?",
-        "answer": "When utilizing dedicated hardware accelerators (such as an NVIDIA RTX 3060/4070 or Apple M-series chips) with optimized 3B parameter models (like StarCoder2 or DeepSeek 1.3B), local autocomplete latency averages 40–80 milliseconds, which feels as instantaneous as cloud Copilot."
+        "answer": "When utilizing dedicated hardware accelerators (such as an NVIDIA RTX 3060/4070 or Apple M-series chips) with optimized 3B parameter models (like StarCoder2 or DeepSeek 1.3B), local autocomplete latency averages 40 to 80 milliseconds, which feels as instantaneous as cloud Copilot."
       },
       {
         "question": "What are the most critical security precautions when implementing Best Open Source Automated Coding Tools for 2026?",
@@ -432,7 +432,7 @@ export const aiProductivityArticles: Article[] = [
     "views": 24600,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -477,7 +477,7 @@ export const aiProductivityArticles: Article[] = [
         "body": [
           "A robust local RAG architecture operates across two distinct pipelines: Ingestion and Query Execution.",
           "During Ingestion: (1) Documents (PDFs, Markdown, DOCX) are parsed and split into overlapping text chunks (e.g., 500 characters with 50-character overlap), (2) Each chunk is transformed into a dense 768-dimensional vector vector using a local embedding model (nomic-embed-text), and (3) Vectors along with metadata are persisted inside ChromaDB.",
-          "During Query Execution: (1) The user question is embedded using the exact same model, (2) ChromaDB executes a cosine-similarity search to retrieve the top 3–5 nearest document chunks, and (3) A prompt template combining the question and retrieved chunks is dispatched to Ollama for synthesis."
+          "During Query Execution: (1) The user question is embedded using the exact same model, (2) ChromaDB executes a cosine-similarity search to retrieve the top 3 to 5 nearest document chunks, and (3) A prompt template combining the question and retrieved chunks is dispatched to Ollama for synthesis."
         ]
       },
       {
@@ -572,7 +572,7 @@ export const aiProductivityArticles: Article[] = [
     "views": 21900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -723,7 +723,7 @@ export const aiProductivityArticles: Article[] = [
     "views": 18700,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -757,7 +757,7 @@ export const aiProductivityArticles: Article[] = [
     },
     "intro": [
       "Security Operations Centers (SOCs) are overwhelmed by alert fatigue. Modern enterprise SIEM platforms generate tens of thousands of security alerts daily, forcing Tier-1 security analysts to spend their days triaging false positives, copying IP addresses into threat intelligence lookups, and drafting repetitive incident tickets.",
-      "Autonomous threat-hunting agent architectures—powered by frameworks like LangGraph and AutoGen paired with local open-weights LLMs—are transforming threat hunting. Unlike static scripts, autonomous agents can decompose complex analytical goals, execute forensic terminal commands, query threat intelligence databases, and synthesize human-readable incident briefs.",
+      "Autonomous threat-hunting agent architectures, powered by frameworks like LangGraph and AutoGen paired with local open-weights LLMs, are transforming threat hunting. Unlike static scripts, autonomous agents can decompose complex analytical goals, execute forensic terminal commands, query threat intelligence databases, and synthesize human-readable incident briefs.",
       "In this engineering guide, we examine the architecture, safety sandboxing, and practical Python implementation of an autonomous SOC threat-hunting agent."
     ],
     "sections": [
@@ -876,7 +876,7 @@ export const aiProductivityArticles: Article[] = [
     "views": 19400,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1014,7 +1014,7 @@ export const aiProductivityArticles: Article[] = [
     "views": 17800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1049,7 +1049,7 @@ export const aiProductivityArticles: Article[] = [
     "intro": [
       "autonomous search engines like autonomous research engines have changed how researchers, engineers, and analysts discover information on the web. By searching live web sources, reading multiple web pages, and synthesizing a coherent answer with clickable citations, neural search engines eliminate manual link clicking.",
       "However, proprietary search engines log every query, link search history to user profiles, and restrict underlying model customization. For technical investigations and confidential market research, organizations require a self-hosted automated research assistant.",
-      "In this guide, we review and deploy the premier open-source automated research engines—specifically Perplexica and SearXNG—paired with local Ollama models."
+      "In this guide, we review and deploy the premier open-source automated research engines, specifically Perplexica and SearXNG, paired with local Ollama models."
     ],
     "sections": [
       {
@@ -1158,7 +1158,7 @@ export const aiProductivityArticles: Article[] = [
     "views": 29300,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."

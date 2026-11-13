@@ -140,7 +140,7 @@ export const SeoInspectorModal: React.FC<SeoInspectorModalProps> = ({
       verifiedFactors: [
         'All external links include rel="noopener noreferrer" for security and equity defense',
         'No manipulative keyword stuffing or hidden text violations',
-        'Solid brand signals: verified 2013 founder attribution (Vishwas Aithal)',
+        'Solid brand signals: verified 2013 founder attribution (YinYangYoHackers Research Staff)',
         'Distinctive technical niche authority in Autonomous Systems & Zero-Trust hardening',
         'Consistent social profile cross-linking (Telegram, Facebook, Instagram)'
       ]
@@ -195,7 +195,7 @@ export const SeoInspectorModal: React.FC<SeoInspectorModalProps> = ({
       summary: '100% mobile-friendly responsive layout with viewport-fit=cover and tap targets >= 48px.',
       verifiedFactors: [
         'Viewport configured: width=device-width, initial-scale=1.0, minimum-scale=1.0',
-        'Zero horizontal scrolling or text clipping on mobile screen widths (320px - 430px)',
+        'Zero horizontal scrolling or text clipping on mobile screen widths (320px to 430px)',
         'All interactive touch targets and navigation buttons measure >= 48x48px',
         'Base typography scaled to >= 16px to prevent iOS auto-zoom behavior',
         'Adaptive mobile slide-out drawer with keyboard shortcuts support'
@@ -226,7 +226,7 @@ export const SeoInspectorModal: React.FC<SeoInspectorModalProps> = ({
       category: 'Open Source Repositories',
       targetUrl: pageUrl,
       submissionUrl: 'https://github.com/topics/cybersecurity',
-      recommendedAnchor: 'YinYangYoHackers - Autonomous Systems & Defensive Security Blueprints',
+      recommendedAnchor: 'YinYangYoHackers: Autonomous Systems & Defensive Security Blueprints',
       description: 'Submit technical guides and open-source tools to curated GitHub lists with high domain authority.',
       status: 'Ready to Submit'
     },
@@ -237,7 +237,7 @@ export const SeoInspectorModal: React.FC<SeoInspectorModalProps> = ({
       category: 'Tech & Security News',
       targetUrl: pageUrl,
       submissionUrl: `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(pageUrl)}&t=${encodeURIComponent(pageTitle)}`,
-      recommendedAnchor: 'Show HN: YinYangYoHackers - Autonomous Systems & Defensive Blueprints',
+      recommendedAnchor: 'Show HN: YinYangYoHackers: Autonomous Systems & Defensive Blueprints',
       description: 'Submit flagship deep-dive articles to Hacker News to drive viral developer and security engineer traffic.',
       status: 'Ready to Submit'
     },

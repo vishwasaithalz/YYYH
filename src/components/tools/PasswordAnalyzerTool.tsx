@@ -300,7 +300,7 @@ export const PasswordAnalyzerTool: React.FC = () => {
             <div>
               <div className="flex justify-between text-xs font-mono text-slate-300 mb-2">
                 <span>Password Length: <strong className="text-emerald-400">{passLength} characters</strong></span>
-                <span className="text-slate-500">Range: 8 – 64</span>
+                <span className="text-slate-500">Range: 8 to 64</span>
               </div>
               <input
                 type="range"

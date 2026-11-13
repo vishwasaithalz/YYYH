@@ -25,7 +25,7 @@ export const toolsAppsArticles: Article[] = [
     "views": 33500,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -212,7 +212,7 @@ export const toolsAppsArticles: Article[] = [
     "views": 29400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -246,7 +246,7 @@ export const toolsAppsArticles: Article[] = [
     },
     "intro": [
       "Self-hosting your password manager grants total control over your encrypted credentials, eliminating third-party subscription fees and cloud dependency. However, administrators face a crucial choice between two open-source server implementations: the official Bitwarden Server and the community-developed Vaultwarden.",
-      "The official Bitwarden server is written in C# (.NET) and backed by Microsoft SQL Server. It is designed for massive enterprise deployments with thousands of concurrent seats, requiring multiple Docker containers and 3GB–4GB of dedicated RAM.",
+      "The official Bitwarden server is written in C# (.NET) and backed by Microsoft SQL Server. It is designed for massive enterprise deployments with thousands of concurrent seats, requiring multiple Docker containers and 3GB to 4GB of dedicated RAM.",
       "Vaultwarden is an alternative lightweight backend written in Rust. It implements the complete Bitwarden API specification while consuming less than 30MB of RAM and utilizing a lightweight SQLite/PostgreSQL database. In this guide, we compare their features, performance, and security."
     ],
     "sections": [
@@ -255,7 +255,7 @@ export const toolsAppsArticles: Article[] = [
         "id": "resource-footprint-benchmarks",
         "level": 2,
         "body": [
-          "For homelab enthusiasts, Raspberry Pi owners, and small teams running on modest cloud VPS instances ($4–$6/month), Vaultwarden is orders of magnitude more resource-efficient than the official Bitwarden stack."
+          "For homelab enthusiasts, Raspberry Pi owners, and small teams running on modest cloud VPS instances ($4 to $6/month), Vaultwarden is orders of magnitude more resource-efficient than the official Bitwarden stack."
         ],
         "table": {
           "caption": "Table 2: Bitwarden Official vs Vaultwarden Technical Comparison",
@@ -274,8 +274,8 @@ export const toolsAppsArticles: Article[] = [
             ],
             [
               "RAM Consumption",
-              "3,000 MB – 4,000 MB",
-              "25 MB – 50 MB",
+              "3,000 MB  to  4,000 MB",
+              "25 MB  to  50 MB",
               "Vaultwarden uses 98% less memory"
             ],
             [
@@ -403,7 +403,7 @@ export const toolsAppsArticles: Article[] = [
     "views": 26100,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -548,7 +548,7 @@ export const toolsAppsArticles: Article[] = [
     "views": 21300,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -582,7 +582,7 @@ export const toolsAppsArticles: Article[] = [
     },
     "intro": [
       "Managing production Linux infrastructure requires proactive monitoring, automated compliance auditing, and real-time behavioral runtime threat detection. Waiting for an external notification of a security breach is a recipe for catastrophe.",
-      "Linux provides rich kernel instrumentation frameworks—including eBPF and the Linux Auditing System (auditd)—that allow administrators to inspect every system call, process execution, socket connection, and file modification.",
+      "Linux provides rich kernel instrumentation frameworks, including eBPF and the Linux Auditing System (auditd), that allow administrators to inspect every system call, process execution, socket connection, and file modification.",
       "In this guide, we review the top security tools every Linux sysadmin must deploy to maintain hardened, audited production servers."
     ],
     "sections": [
@@ -640,7 +640,7 @@ export const toolsAppsArticles: Article[] = [
     "faqs": [
       {
         "question": "Does running Falco eBPF introduce significant CPU overhead?",
-        "answer": "No. eBPF executes safely within the kernel space with just-in-time compilation, resulting in less than 1–2% CPU overhead even under heavy production web traffic."
+        "answer": "No. eBPF executes safely within the kernel space with just-in-time compilation, resulting in less than 1 to 2% CPU overhead even under heavy production web traffic."
       },
       {
         "question": "What are the most critical security precautions when implementing Top Linux Security Tools for Sysadmins: 2026?",
@@ -684,7 +684,7 @@ export const toolsAppsArticles: Article[] = [
     "views": 28900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -778,7 +778,7 @@ export const toolsAppsArticles: Article[] = [
     "faqs": [
       {
         "question": "Does installing too many privacy extensions hurt privacy?",
-        "answer": "Yes! Installing dozens of obscure extensions increases your browser fingerprint uniqueness. Stick to the 3–4 audited extensions recommended in this guide."
+        "answer": "Yes! Installing dozens of obscure extensions increases your browser fingerprint uniqueness. Stick to the 3 to 4 audited extensions recommended in this guide."
       },
       {
         "question": "What are the most critical security precautions when implementing Essential Browser Extensions for Privacy: 2026?",
@@ -823,7 +823,7 @@ export const toolsAppsArticles: Article[] = [
     "views": 22400,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -858,7 +858,7 @@ export const toolsAppsArticles: Article[] = [
     "intro": [
       "Software developers and DevSecOps engineers require powerful utilities to test REST/GraphQL endpoints, inspect HTTP traffic payloads, and scan code repositories for security flaws before pushing to production.",
       "However, industry-standard tools like Postman have introduced mandatory cloud account synchronization and paywalls, exposing internal staging endpoints and API secrets to third-party servers.",
-      "In this guide, we review the top offline, open-source developer security tools—including Bruno, Semgrep, and Caido—that prioritize local files, Git synchronization, and high performance."
+      "In this guide, we review the top offline, open-source developer security tools, including Bruno, Semgrep, and Caido, that prioritize local files, Git synchronization, and high performance."
     ],
     "sections": [
       {
@@ -972,7 +972,7 @@ export const toolsAppsArticles: Article[] = [
     "views": 31800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."

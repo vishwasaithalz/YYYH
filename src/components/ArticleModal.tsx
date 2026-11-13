@@ -39,17 +39,20 @@ import {
   Globe,
   Tag,
   Link2,
-  Sparkles
+  Sparkles,
+  FileCode
 } from 'lucide-react';
 import { Article, Comment, TableOfContentsItem } from '../types';
 import { allArticles, getRelatedArticles } from '../data/articlesData';
 import { usePageViewCount } from '../hooks/usePageViewCount';
 import { getRelatedToolsForArticle, getKeyTakeawaysForArticle } from '../utils/articlePageHelpers';
-import { HackerBannerAd } from './HackerBannerAd';
 import { calculateReadingTime } from '../utils/readingTime';
 import { getArticleCoverImage, HACKER_COVERS } from '../utils/hackerImages';
 import { getOptimizedImageUrl, getOptimizedSquareImageUrl, getResponsiveSrcSet, MODAL_HERO_SIZES } from '../utils/responsiveImages';
 import { CommentsSection } from './CommentsSection';
+import { SemanticArticleText } from './SemanticArticleText';
+import { ContextualSemanticMesh } from './ContextualSemanticMesh';
+import { processArticleContent } from '../utils/contentProcessor';
 
 interface ArticleModalProps {
   article: Article;
@@ -75,15 +78,21 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
   onSelectCategory
 }) => {
   // Hydrate lightweight index article with full body sections and FAQs from allArticles
-  const article = useMemo(() => {
+  const baseArticle = useMemo(() => {
     if (rawArticle.sections && rawArticle.sections.length > 0) return rawArticle;
     const full = allArticles.find(a => a.id === rawArticle.id || a.slug === rawArticle.slug);
     return full ? { ...full, views: rawArticle.views, comments: rawArticle.comments } : rawArticle;
   }, [rawArticle]);
 
+  // Automatically scan for key cybersecurity keywords and inject internal hyperlinks before rendering
+  const article = useMemo(() => {
+    return processArticleContent(baseArticle, allArticles);
+  }, [baseArticle]);
+
   const [copiedCodeKey, setCopiedCodeKey] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedCurl, setCopiedCurl] = useState(false);
+  const [copiedCitation, setCopiedCitation] = useState<'markdown' | 'bibtex' | null>(null);
   const [fontSize, setFontSize] = useState<'normal' | 'large'>('normal');
   const [openFaqIndices, setOpenFaqIndices] = useState<number[]>([0]);
   const [isShareDrawerOpen, setIsShareDrawerOpen] = useState(false);
@@ -122,6 +131,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
   const relatedTools = useMemo(() => getRelatedToolsForArticle(article, 3), [article]);
   const keyTakeaways = useMemo(() => getKeyTakeawaysForArticle(article), [article]);
   const relatedArticlesList = useMemo(() => getRelatedArticles(article, 3), [article]);
+  const alreadyLinkedSlugs = useMemo(() => new Set<string>(), [article.id]);
 
   // Resolve internal cross-reference links for SEO topic clusters and deep linking
   const internalCrossReferences = useMemo(() => {
@@ -309,29 +319,68 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
     ? `${window.location.origin}/articles/${article.slug}` 
     : `https://yinyangyohackers.com/articles/${article.slug}`;
 
-  // Structured Data (Schema.org JSON-LD)
+  const handleCopyMarkdownCitation = () => {
+    const pubYear = article.date.split('-')[0] || '2025';
+    const citation = `${article.author?.name || 'YinYangYoHackers Research Staff'}. "${article.title}". *YinYangYoHackers Autonomous Research*, ${pubYear}. [Online]. Available: ${articleUrl}`;
+    navigator.clipboard.writeText(citation);
+    setCopiedCitation('markdown');
+    setTimeout(() => setCopiedCitation(null), 2500);
+  };
+
+  const handleCopyBibtexCitation = () => {
+    const citeKey = `yyh_${article.slug.replace(/[^a-zA-Z0-9]/g, '_')}`;
+    const pubYear = article.date.split('-')[0] || '2025';
+    const bibtex = `@article{${citeKey},
+  author    = {${article.author?.name || 'YinYangYoHackers Research Staff'}},
+  title     = {${article.title}},
+  journal   = {YinYangYoHackers Cybersecurity Research},
+  year      = {${pubYear}},
+  url       = {${articleUrl}},
+  note      = {Accessed: ${new Date().toISOString().split('T')[0]}}
+}`;
+    navigator.clipboard.writeText(bibtex);
+    setCopiedCitation('bibtex');
+    setTimeout(() => setCopiedCitation(null), 2500);
+  };
+
+  // Structured Data (Schema.org JSON-LD with Rich Result FAQ & TechArticle Graph)
   const schemaJsonLd = {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": article.title,
-    "alternativeHeadline": article.h1,
-    "description": article.seo?.metaDescription || article.summary,
-    "image": article.coverImage?.src,
-    "author": {
-      "@type": "Person",
-      "name": article.author.name,
-      "jobTitle": article.author.role
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "YinYangYoHackers",
-      "url": "https://yinyangyohackers.com"
-    },
-    "datePublished": article.date,
-    "dateModified": article.updatedDate || article.date,
-    "wordCount": readingStats.wordCount,
-    "timeRequired": `PT${readingStats.minutes}M`,
-    "keywords": article.tags.join(", ")
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": article.title,
+        "alternativeHeadline": article.h1,
+        "description": article.seo?.metaDescription || article.summary,
+        "image": article.coverImage?.src,
+        "author": {
+          "@type": "Person",
+          "name": article.author.name,
+          "jobTitle": article.author.role
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "YinYangYoHackers",
+          "url": "https://yinyangyohackers.com"
+        },
+        "datePublished": article.date,
+        "dateModified": article.updatedDate || article.date,
+        "wordCount": readingStats.wordCount,
+        "timeRequired": `PT${readingStats.minutes}M`,
+        "keywords": article.tags.join(", ")
+      },
+      ...(article.faqs && article.faqs.length > 0 ? [{
+        "@type": "FAQPage",
+        "mainEntity": article.faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }] : [])
+    ]
   };
 
   return (
@@ -580,7 +629,7 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
                   }`}
                 >
                   <span className="text-[10px] text-slate-500 font-mono">
-                    {item.level === 2 ? `${idx + 1}.` : '—'}
+                    {item.level === 2 ? `${idx + 1}.` : ': '}
                   </span>
                   <span className="truncate">{item.title}</span>
                 </button>
@@ -760,45 +809,27 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
             </div>
           </aside>
 
-          {/* 6. HERO IMAGE (Modern AVIF/WebP formats, 16:9 Aspect Ratio with Responsive Viewport SrcSet) */}
-          {(() => {
-            const cover = getArticleCoverImage(article);
-            const isCdn = cover.src.includes('images.unsplash.com');
-            const avifSrcSet = isCdn ? getResponsiveSrcSet(cover.src, [480, 800, 960, 1280], 'avif') : '';
-            const webpSrcSet = isCdn ? getResponsiveSrcSet(cover.src, [480, 800, 960, 1280], 'webp') : '';
-            const defaultOptimizedSrc = getOptimizedImageUrl(cover.src, 1280, 80, 'webp', 720);
-
-            return (
-              <figure className="relative z-10 rounded-2xl overflow-hidden border border-slate-800 bg-[#040711] aspect-[16/9]">
-                <picture className="w-full h-full block">
-                  {isCdn && avifSrcSet && (
-                    <source type="image/avif" srcSet={avifSrcSet} sizes={MODAL_HERO_SIZES} />
-                  )}
-                  {isCdn && webpSrcSet && (
-                    <source type="image/webp" srcSet={webpSrcSet} sizes={MODAL_HERO_SIZES} />
-                  )}
-                  <img 
-                    src={defaultOptimizedSrc} 
-                    srcSet={webpSrcSet || undefined}
-                    sizes={MODAL_HERO_SIZES}
-                    alt={cover.alt}
-                    itemProp="image"
-                    width={1280}
-                    height={720}
-                    fetchPriority="high"
-                    decoding="async"
-                    referrerPolicy="no-referrer"
-                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = HACKER_COVERS[0]; }}
-                    className="w-full h-full object-cover aspect-[16/9]"
-                  />
-                </picture>
-                <figcaption className="p-2.5 bg-[#070b16] border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400 absolute bottom-0 inset-x-0">
-                  <span className="truncate">{cover.alt}</span>
-                  <span className="text-emerald-400 font-semibold shrink-0 ml-2">Security Research Asset</span>
-                </figcaption>
-              </figure>
-            );
-          })()}
+          {/* 6. HERO COVER IMAGE */}
+          {article.coverImage?.src && (
+            <figure className="relative z-10 rounded-2xl overflow-hidden border border-slate-800 bg-[#040711] shadow-2xl">
+              <img
+                src={article.coverImage.src}
+                alt={article.coverImage.alt || article.title}
+                width={article.coverImage.width || 1200}
+                height={article.coverImage.height || 675}
+                loading="eager"
+                className="w-full h-auto aspect-video object-cover"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80';
+                }}
+              />
+              <figcaption className="p-2.5 bg-[#070b16] border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span className="truncate">{article.coverImage.alt || article.title}</span>
+                <span className="text-emerald-400 font-semibold shrink-0 ml-2">Verified Security Blueprint</span>
+              </figcaption>
+            </figure>
+          )}
 
           {/* ======================================================================= */}
           {/* 7. ARTICLE CONTENT (Lead Intro + Table of Contents + H2/H3 Sections)   */}
@@ -809,7 +840,14 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
             <div className="space-y-4 text-slate-200 font-sans">
               {article.intro.map((para, idx) => (
                 <p key={idx} className="first-of-type:text-xl sm:first-of-type:text-2xl first-of-type:font-medium first-of-type:text-slate-100 leading-relaxed">
-                  {para}
+                  <SemanticArticleText
+                    text={para}
+                    currentArticleId={article.id}
+                    currentArticleSlug={article.slug}
+                    alreadyLinkedSlugs={alreadyLinkedSlugs}
+                    maxLinks={1}
+                    onSelectArticle={onSelectRelatedArticle}
+                  />
                 </p>
               ))}
             </div>
@@ -840,7 +878,7 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
                     {tableOfContents.map((item, idx) => (
                       <li key={`${item.id}-${idx}`} className={`flex items-start gap-2 ${item.level === 3 ? 'pl-4 border-l border-slate-800' : ''}`}>
                         <span className="text-emerald-400 font-mono text-xs font-bold shrink-0 mt-0.5">
-                          {item.level === 2 ? `${idx + 1}.` : '—'}
+                          {item.level === 2 ? `${idx + 1}.` : ': '}
                         </span>
                         <button
                           onClick={() => scrollToHeading(item.id)}
@@ -868,7 +906,16 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
                   {/* Section Paragraphs */}
                   <div className={`space-y-4 text-slate-200 leading-relaxed font-sans ${fontSize === 'large' ? 'text-lg sm:text-xl' : 'text-base sm:text-[18px]'}`}>
                     {section.body.map((p, pIdx) => (
-                      <p key={pIdx}>{p}</p>
+                      <p key={pIdx}>
+                        <SemanticArticleText
+                          text={p}
+                          currentArticleId={article.id}
+                          currentArticleSlug={article.slug}
+                          alreadyLinkedSlugs={alreadyLinkedSlugs}
+                          maxLinks={1}
+                          onSelectArticle={onSelectRelatedArticle}
+                        />
+                      </p>
                     ))}
                   </div>
 
@@ -882,7 +929,16 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
                       </h3>
                       <div className={`space-y-3 text-slate-200 leading-relaxed font-sans ${fontSize === 'large' ? 'text-base sm:text-lg' : 'text-base sm:text-[17px]'}`}>
                         {sub.body.map((subP, subIdx) => (
-                          <p key={subIdx}>{subP}</p>
+                          <p key={subIdx}>
+                            <SemanticArticleText
+                              text={subP}
+                              currentArticleId={article.id}
+                              currentArticleSlug={article.slug}
+                              alreadyLinkedSlugs={alreadyLinkedSlugs}
+                              maxLinks={1}
+                              onSelectArticle={onSelectRelatedArticle}
+                            />
+                          </p>
                         ))}
                       </div>
                     </div>
@@ -1064,6 +1120,93 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
             </section>
 
             {/* =================================================================== */}
+            {/* 8.5 CITE & SYNDICATE TECHNICAL RESEARCH (Organic Growth Engine)     */}
+            {/* =================================================================== */}
+            <section className="p-5 sm:p-6 rounded-2xl bg-[#050b16] border border-slate-800 space-y-4 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-3">
+                <div className="flex items-center gap-2">
+                  <FileCode className="w-4 h-4 text-emerald-400" />
+                  <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                    Cite &amp; Syndicate Research
+                  </span>
+                </div>
+                <span className="text-[11px] font-mono text-slate-500">
+                  Open Attribution &bull; Canonical DOI Reference
+                </span>
+              </div>
+
+              <p className="text-xs text-slate-300 font-sans leading-relaxed">
+                Referencing this technical blueprint in an academic paper, threat advisory, or engineering documentation? 
+                Use the verified citation templates below to provide canonical attribution.
+              </p>
+
+              {/* Citations Copy Row */}
+              <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                <button
+                  type="button"
+                  onClick={handleCopyMarkdownCitation}
+                  className="px-3.5 py-2 min-h-[38px] rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 hover:text-emerald-200 border border-emerald-800/60 font-mono text-xs font-bold transition-all flex items-center gap-2 cursor-pointer shadow-sm"
+                >
+                  {copiedCitation === 'markdown' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copiedCitation === 'markdown' ? 'Markdown Citation Copied' : 'Copy Markdown Citation'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleCopyBibtexCitation}
+                  className="px-3.5 py-2 min-h-[38px] rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 hover:text-cyan-200 border border-cyan-800/60 font-mono text-xs font-bold transition-all flex items-center gap-2 cursor-pointer shadow-sm"
+                >
+                  {copiedCitation === 'bibtex' ? <Check className="w-3.5 h-3.5 text-cyan-400" /> : <Terminal className="w-3.5 h-3.5" />}
+                  <span>{copiedCitation === 'bibtex' ? 'BibTeX Entry Copied' : 'Copy BibTeX Entry'}</span>
+                </button>
+              </div>
+
+              {/* Technical Community Syndication */}
+              <div className="pt-3 border-t border-slate-800/60 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                <span className="text-slate-400">Syndicate to Security Communities:</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href={`https://news.ycombinator.com/submitlink?u=${encodeURIComponent(articleUrl)}&t=${encodeURIComponent(article.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-[#ff6600]/15 hover:bg-[#ff6600]/25 text-[#ff6600] border border-[#ff6600]/40 font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <span>Hacker News</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+
+                  <a
+                    href={`https://www.reddit.com/r/netsec/submit?url=${encodeURIComponent(articleUrl)}&title=${encodeURIComponent(article.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-[#ff4500]/15 hover:bg-[#ff4500]/25 text-[#ff4500] border border-[#ff4500]/40 font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <span>/r/netsec</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(articleUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-[#1da1f2]/15 hover:bg-[#1da1f2]/25 text-[#1da1f2] border border-[#1da1f2]/40 font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <Twitter className="w-3 h-3" />
+                    <span>X</span>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* =================================================================== */}
+            {/* 8.8 AUTOMATED SEMANTIC TOPIC GRAPH (Crawl & Cluster Acceleration)   */}
+            {/* =================================================================== */}
+            <ContextualSemanticMesh
+              article={article}
+              onSelectArticle={onSelectRelatedArticle}
+            />
+
+            {/* =================================================================== */}
             {/* 9. RELATED ARTICLES & INTERNAL LINKS (Strict Order)                 */}
             {/* =================================================================== */}
             <section id="related-articles" className="space-y-5 pt-6 border-t border-slate-800 scroll-mt-24">
@@ -1138,7 +1281,7 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
                           <span>{relReadingStats.text}</span>
                         </span>
                         <span className="flex items-center gap-1 font-bold">
-                          Read: {rel.title.length > 20 ? rel.title.slice(0, 18) + '…' : rel.title} &rarr;
+                          Read Guide &rarr;
                         </span>
                       </div>
                     </a>
@@ -1179,13 +1322,6 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
                 </div>
               )}
             </section>
-
-            {/* Strategic Bottom Article Sponsor Placement */}
-            <HackerBannerAd 
-              placement="article-bottom" 
-              sponsorKey="ctf-pass" 
-              className="my-6"
-            />
 
             {/* Author Extended Profile Box */}
             <div className="bg-[#050811] border border-slate-800 rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-4">
@@ -1360,7 +1496,7 @@ ${article.sections.map(s => `## ${s.heading}\n\n${s.body.join('\n\n')}${s.codeBl
                   } ${item.level === 3 ? 'pl-5 text-[11px]' : ''}`}
                 >
                   <span className="text-[10px] text-slate-500 font-mono shrink-0">
-                    {item.level === 2 ? `${idx + 1}.` : '—'}
+                    {item.level === 2 ? `${idx + 1}.` : ': '}
                   </span>
                   <span className="truncate">{item.title}</span>
                 </button>

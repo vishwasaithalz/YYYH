@@ -49,7 +49,7 @@ export const MaintenanceView: React.FC<MaintenanceViewProps> = ({
     if (passphrase.trim().toLowerCase() === 'yyyh-preview' || passphrase.trim().toLowerCase() === 'psychkarma' || passphrase.trim().toLowerCase() === 'admin') {
       onBypass();
     } else {
-      setErrorMsg('Invalid authorization key. Contact lab at vishwasaithal@proton.me');
+      setErrorMsg('Invalid authorization key. Contact lab at contact@yinyangyohackers.ai.studio');
       setTimeout(() => setErrorMsg(''), 3500);
     }
   };
@@ -217,7 +217,7 @@ export const MaintenanceView: React.FC<MaintenanceViewProps> = ({
 
         {/* Footer info */}
         <div className="pt-2 text-center text-xs font-mono text-slate-500">
-          Founded in 2013 by Vishwas Aithal &bull; <a href="mailto:vishwasaithal@proton.me" className="text-slate-400 hover:text-emerald-400">vishwasaithal@proton.me</a>
+          Founded in 2013 by YinYangYoHackers Research Staff &bull; <a href="mailto:contact@yinyangyohackers.ai.studio" className="text-slate-400 hover:text-emerald-400">contact@yinyangyohackers.ai.studio</a>
         </div>
       </div>
     </div>

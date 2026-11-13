@@ -57,7 +57,7 @@ export const TermsView: React.FC<TermsViewProps> = ({ onBackToArticles }) => {
             <span>1. Acceptance of Terms</span>
           </h2>
           <p>
-            By accessing or browsing YinYangYoHackers (founded in 2013 by Vishwas Aithal), you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our Privacy Policy. If you do not agree to these terms, do not use this website or its code samples.
+            By accessing or browsing YinYangYoHackers (founded in 2013 by YinYangYoHackers Research Staff), you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our Privacy Policy. If you do not agree to these terms, do not use this website or its code samples.
           </p>
         </section>
 
@@ -91,7 +91,7 @@ export const TermsView: React.FC<TermsViewProps> = ({ onBackToArticles }) => {
             <span>3. Intellectual Property &amp; Open-Source Code</span>
           </h2>
           <p>
-            Original editorial articles, diagrams, and written analysis are the intellectual property of Vishwas Aithal and YinYangYoHackers. You may quote excerpts with clear attribution and a canonical backlink to the original article.
+            Original editorial articles, diagrams, and written analysis are the intellectual property of YinYangYoHackers Research Staff and YinYangYoHackers. You may quote excerpts with clear attribution and a canonical backlink to the original article.
           </p>
           <p>
             Defensive code snippets and scripts published on this site are distributed under open-source permissive guidelines (such as MIT or Apache 2.0 where indicated) for community research and non-malicious defensive implementations.
@@ -118,8 +118,8 @@ export const TermsView: React.FC<TermsViewProps> = ({ onBackToArticles }) => {
             For legal notices, DMCA takedown requests, or inquiries regarding these terms, contact our editorial office:
           </p>
           <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs space-y-1">
-            <div><strong className="text-white">Founder &amp; Publisher:</strong> Vishwas Aithal</div>
-            <div><strong className="text-white">Email:</strong> vishwasaithal@proton.me</div>
+            <div><strong className="text-white">Founder &amp; Publisher:</strong> YinYangYoHackers Research Staff</div>
+            <div><strong className="text-white">Email:</strong> contact@yinyangyohackers.ai.studio</div>
             <div><strong className="text-white">Website:</strong> yinyangyohackers.com</div>
           </div>
         </section>

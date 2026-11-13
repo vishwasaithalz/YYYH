@@ -33,7 +33,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, Record<string, string>> 
     shareArticle: 'Share Article',
     downloadMarkdown: 'Download Markdown',
     saveArticle: 'Save to Bookmarks',
-    footerCopyright: '© 2013–2026 YinYangYoHackers • Founded by Vishwas Aithal. Educational & Authorized Defensive Use Only.'
+    footerCopyright: '© 2013 to 2026 YinYangYoHackers • Founded by YinYangYoHackers Research Staff. Educational & Authorized Defensive Use Only.'
   },
   es: {
     liveAdvisory: 'AVISO EN VIVO',
@@ -51,7 +51,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, Record<string, string>> 
     shareArticle: 'Compartir Artículo',
     downloadMarkdown: 'Descargar Markdown',
     saveArticle: 'Guardar en Marcadores',
-    footerCopyright: '© 2013–2026 YinYangYoHackers • Fundado por Vishwas Aithal. Solo para Uso Defensivo Autorizado.'
+    footerCopyright: '© 2013 to 2026 YinYangYoHackers • Fundado por YinYangYoHackers Research Staff. Solo para Uso Defensivo Autorizado.'
   },
   de: {
     liveAdvisory: 'LIVE-WARNUNG',
@@ -69,7 +69,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, Record<string, string>> 
     shareArticle: 'Artikel teilen',
     downloadMarkdown: 'Markdown herunterladen',
     saveArticle: 'Lesezeichen setzen',
-    footerCopyright: '© 2013–2026 YinYangYoHackers • Gegründet von Vishwas Aithal. Nur zur autorisierten defensiven Nutzung.'
+    footerCopyright: '© 2013 to 2026 YinYangYoHackers • Gegründet von YinYangYoHackers Research Staff. Nur zur autorisierten defensiven Nutzung.'
   },
   fr: {
     liveAdvisory: 'ALERTE EN DIRECT',
@@ -87,7 +87,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, Record<string, string>> 
     shareArticle: 'Partager l\'article',
     downloadMarkdown: 'Télécharger en Markdown',
     saveArticle: 'Ajouter aux favoris',
-    footerCopyright: '© 2013–2026 YinYangYoHackers • Fondé par Vishwas Aithal. Usage défensif autorisé uniquement.'
+    footerCopyright: '© 2013 to 2026 YinYangYoHackers • Fondé par YinYangYoHackers Research Staff. Usage défensif autorisé uniquement.'
   },
   ja: {
     liveAdvisory: 'ライブ警告',
@@ -105,7 +105,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, Record<string, string>> 
     shareArticle: '記事を共有',
     downloadMarkdown: 'Markdownをダウンロード',
     saveArticle: 'ブックマークに保存',
-    footerCopyright: '© 2013–2026 YinYangYoHackers • Vishwas Aithalにより設立。教育および認可された防御目的のみ。'
+    footerCopyright: '© 2013 to 2026 YinYangYoHackers • YinYangYoHackers Research Staffにより設立。教育および認可された防御目的のみ。'
   },
   hi: {
     liveAdvisory: 'लाइव सुरक्षा चेतावनी',
@@ -123,6 +123,6 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, Record<string, string>> 
     shareArticle: 'लेख साझा करें',
     downloadMarkdown: 'मार्कडाउन डाउनलोड करें',
     saveArticle: 'बुकमार्क में सहेजें',
-    footerCopyright: '© 2013–2026 YinYangYoHackers • Vishwas Aithal द्वारा स्थापित। केवल अधिकृत रक्षात्मक उपयोग हेतु।'
+    footerCopyright: '© 2013 to 2026 YinYangYoHackers • YinYangYoHackers Research Staff द्वारा स्थापित। केवल अधिकृत रक्षात्मक उपयोग हेतु।'
   }
 };

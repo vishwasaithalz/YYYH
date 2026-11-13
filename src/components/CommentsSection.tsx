@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   MessageSquare, 
   ThumbsUp, 
@@ -15,7 +15,10 @@ import {
   Edit3, 
   Sparkles,
   UserCheck,
-  AlertCircle
+  AlertCircle,
+  Save,
+  Clock,
+  RotateCcw
 } from 'lucide-react';
 import { Comment } from '../types';
 
@@ -50,7 +53,7 @@ export const CommentsSection: React.FC<CommentsSectionProps> = ({
   const [role, setRole] = useState(ROLES[0]);
   const [content, setContent] = useState('');
   const [activeTab, setActiveTab] = useState<'write' | 'preview'>('write');
-  const [sortBy, setSortBy] = useState<'top' | 'newest'>('top');
+  const [sortBy, setSortBy] = useState<'newest' | 'most-liked'>('newest');
   const [replyingToId, setReplyingToId] = useState<string | null>(null);
   const [replyContent, setReplyContent] = useState('');
   const [replyAuthor, setReplyAuthor] = useState('');
@@ -58,6 +61,74 @@ export const CommentsSection: React.FC<CommentsSectionProps> = ({
   const [humanAnswer, setHumanAnswer] = useState('');
   const [securityError, setSecurityError] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  // Auto-save storage keys & state
+  const draftKey = `yyyh_comment_draft_${articleId}`;
+  const [autoSaveStatus, setAutoSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'restored'>('idle');
+  const [lastAutoSaveTime, setLastAutoSaveTime] = useState<string | null>(null);
+
+  // Restore draft from localStorage on initial load
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(draftKey);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed.content === 'string' && parsed.content.trim()) {
+          setContent(parsed.content);
+          if (parsed.author) setAuthor(parsed.author);
+          if (parsed.role && ROLES.includes(parsed.role)) setRole(parsed.role);
+          setAutoSaveStatus('restored');
+          if (parsed.timestamp) {
+            const timeStr = new Date(parsed.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            setLastAutoSaveTime(timeStr);
+          }
+        }
+      }
+    } catch {
+      // Storage access blocked or unavailable
+    }
+  }, [draftKey]);
+
+  // Periodic auto-save effect (debounced 1.2s on typing, plus 5s periodic check)
+  useEffect(() => {
+    const trimmed = content.trim();
+    if (!trimmed && !author.trim()) {
+      try {
+        localStorage.removeItem(draftKey);
+      } catch {}
+      setAutoSaveStatus('idle');
+      return;
+    }
+
+    setAutoSaveStatus('saving');
+    const timer = setTimeout(() => {
+      try {
+        const now = Date.now();
+        localStorage.setItem(draftKey, JSON.stringify({
+          content,
+          author,
+          role,
+          timestamp: now
+        }));
+        const timeStr = new Date(now).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        setLastAutoSaveTime(timeStr);
+        setAutoSaveStatus('saved');
+      } catch {
+        // Storage quota exceeded or disabled
+      }
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, [content, author, role, draftKey]);
+
+  const handleDiscardDraft = () => {
+    try {
+      localStorage.removeItem(draftKey);
+    } catch {}
+    setContent('');
+    setAutoSaveStatus('idle');
+    setLastAutoSaveTime(null);
+  };
 
   // Simple dynamic verification challenge
   const [challenge] = useState(() => {
@@ -76,9 +147,15 @@ export const CommentsSection: React.FC<CommentsSectionProps> = ({
 
   const sortedComments = useMemo(() => {
     const list = [...comments];
-    if (sortBy === 'top') {
-      return list.sort((a, b) => b.likes - a.likes);
+    if (sortBy === 'most-liked') {
+      return list.sort((a, b) => {
+        if (b.likes !== a.likes) {
+          return b.likes - a.likes;
+        }
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
     }
+    // Newest first
     return list.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [comments, sortBy]);
 
@@ -116,7 +193,13 @@ export const CommentsSection: React.FC<CommentsSectionProps> = ({
       likes: 0
     });
 
+    try {
+      localStorage.removeItem(draftKey);
+    } catch {}
+
     setContent('');
+    setAutoSaveStatus('idle');
+    setLastAutoSaveTime(null);
     setHumanAnswer('');
     setSubmitSuccess(true);
     setTimeout(() => setSubmitSuccess(false), 3000);
@@ -245,21 +328,28 @@ export const CommentsSection: React.FC<CommentsSectionProps> = ({
         {/* Sorting Controls */}
         <div className="flex items-center gap-1.5 self-start sm:self-center bg-[#050811] p-1 rounded-xl border border-slate-800 text-xs font-mono">
           <button
-            onClick={() => setSortBy('top')}
-            className={`px-3 py-1 rounded-lg transition-colors flex items-center gap-1.5 ${
-              sortBy === 'top' ? 'bg-cyan-950 text-cyan-300 border border-cyan-700/60 font-bold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            <Sparkles className="w-3 h-3" />
-            <span>Top Upvoted</span>
-          </button>
-          <button
+            type="button"
             onClick={() => setSortBy('newest')}
-            className={`px-3 py-1 rounded-lg transition-colors flex items-center gap-1.5 ${
+            aria-pressed={sortBy === 'newest'}
+            className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${
               sortBy === 'newest' ? 'bg-cyan-950 text-cyan-300 border border-cyan-700/60 font-bold' : 'text-slate-400 hover:text-slate-200'
             }`}
+            title="Sort comments by newest"
           >
+            <Clock className="w-3 h-3 text-cyan-400" />
             <span>Newest</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setSortBy('most-liked')}
+            aria-pressed={sortBy === 'most-liked'}
+            className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${
+              sortBy === 'most-liked' ? 'bg-cyan-950 text-cyan-300 border border-cyan-700/60 font-bold' : 'text-slate-400 hover:text-slate-200'
+            }`}
+            title="Sort comments by most liked"
+          >
+            <ThumbsUp className="w-3 h-3 text-cyan-400" />
+            <span>Most Liked</span>
           </button>
         </div>
       </div>
@@ -369,6 +459,31 @@ export const CommentsSection: React.FC<CommentsSectionProps> = ({
               <span className="text-[10px] font-mono text-slate-600 ml-auto">
                 Markdown &amp; Shell snippets supported
               </span>
+            </div>
+          )}
+
+          {/* Auto-save Status & Discard Draft Bar */}
+          {autoSaveStatus !== 'idle' && (
+            <div className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-[#02050c] border border-slate-800/80 text-[11px] font-mono">
+              <div className="flex items-center gap-1.5 text-emerald-400">
+                <Save className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                <span>
+                  {autoSaveStatus === 'restored'
+                    ? `Restored draft from local storage ${lastAutoSaveTime ? `(${lastAutoSaveTime})` : ''}`
+                    : autoSaveStatus === 'saving'
+                    ? 'Saving draft to local storage...'
+                    : `Draft auto saved to local storage ${lastAutoSaveTime ? `(${lastAutoSaveTime})` : ''}`}
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={handleDiscardDraft}
+                className="text-slate-400 hover:text-rose-400 flex items-center gap-1 text-[10px] transition-colors cursor-pointer"
+                title="Discard saved draft"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>Discard Draft</span>
+              </button>
             </div>
           )}
 

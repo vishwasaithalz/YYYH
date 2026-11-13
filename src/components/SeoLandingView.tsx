@@ -602,11 +602,11 @@ export const SeoLandingView: React.FC<SeoLandingViewProps> = ({
           </a>
 
           <a
-            href="mailto:vishwasaithal@proton.me"
+            href="mailto:contact@yinyangyohackers.ai.studio"
             className="min-h-[48px] px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 font-mono text-sm transition-all flex items-center gap-2"
             title="Encrypted PGP dispatch via Proton Mail"
           >
-            <span>Encrypted Email (vishwasaithal@proton.me)</span>
+            <span>Encrypted Email (contact@yinyangyohackers.ai.studio)</span>
             <ExternalLink className="w-4 h-4 text-cyan-400" />
           </a>
         </div>

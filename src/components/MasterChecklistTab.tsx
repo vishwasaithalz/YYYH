@@ -98,7 +98,7 @@ export const MASTER_CHECKLIST_DATA: ChecklistItem[] = [
     category: 'Strategy & Planning',
     status: 'Completed & Verified',
     score: 100,
-    currentAssessment: 'Founded in 2013 by Vishwas Aithal; ongoing 2026 live releases published with ISO 8601 timestamps.',
+    currentAssessment: 'Founded in 2013 by YinYangYoHackers Research Staff; ongoing 2026 live releases published with ISO 8601 timestamps.',
     whatNeedsChanging: 'Automate dateModified updates in Schema.org JSON-LD whenever article content is patched.',
     implementationDetail: 'Dynamic useDynamicMeta hook injects precise datePublished and dateModified attributes.'
   },
@@ -232,7 +232,7 @@ export const MASTER_CHECKLIST_DATA: ChecklistItem[] = [
     status: 'Completed & Verified',
     score: 99,
     currentAssessment: 'Strict H1 -> H2 -> H3 heading hierarchy, primary keyword in title and first 100 words.',
-    whatNeedsChanging: 'Maintain keyword density between 1.2% - 2.5% without keyword stuffing.',
+    whatNeedsChanging: 'Maintain keyword density between 1.2% to 2.5% without keyword stuffing.',
     implementationDetail: 'useDynamicMeta hook synchronizes meta tags, OpenGraph, and JSON-LD on route changes.'
   },
   {
@@ -261,7 +261,7 @@ export const MASTER_CHECKLIST_DATA: ChecklistItem[] = [
     category: 'Security & Compliance',
     status: 'Completed & Verified',
     score: 100,
-    currentAssessment: 'Copyright 2013–2026 YinYangYoHackers explicitly declared in Footer, legal terms, and index.html.',
+    currentAssessment: 'Copyright 2013 to 2026 YinYangYoHackers explicitly declared in Footer, legal terms, and index.html.',
     whatNeedsChanging: 'Use dynamic Date().getFullYear() or current year constant across all policies.',
     implementationDetail: 'Updated in Footer.tsx, index.html, PrivacyPolicyView.tsx, and TermsView.tsx.'
   },
@@ -313,7 +313,7 @@ export const MASTER_CHECKLIST_DATA: ChecklistItem[] = [
     status: 'Completed & Verified',
     score: 98,
     currentAssessment: 'Peer review and feedback mechanism enabled via community discussion thread on each article.',
-    whatNeedsChanging: 'Facilitate direct peer feedback to founder Vishwas Aithal.',
+    whatNeedsChanging: 'Facilitate direct peer feedback to founder YinYangYoHackers Research Staff.',
     implementationDetail: 'Integrated comment section with rating stars, plus direct Live Dispatch desk.'
   },
   {
@@ -352,7 +352,7 @@ export const MASTER_CHECKLIST_DATA: ChecklistItem[] = [
     category: 'Strategy & Planning',
     status: 'Completed & Verified',
     score: 100,
-    currentAssessment: 'Email: vishwasaithal@proton.me, Telegram: @psychkarma, PGP Key: 0x4A8F9C2B.',
+    currentAssessment: 'Email: contact@yinyangyohackers.ai.studio, Telegram: @psychkarma, PGP Key: 0x4A8F9C2B.',
     whatNeedsChanging: 'Ensure contact details are consistent across Contact view, About view, Footer, and security.txt.',
     implementationDetail: 'Updated across ContactView.tsx, Footer.tsx, and public/.well-known/security.txt.'
   },
@@ -588,7 +588,7 @@ export const MasterChecklistTab: React.FC<MasterChecklistTabProps> = ({
   const handleExportFullReport = () => {
     const markdown = `# YinYangYoHackers 50-Point Master Launch & Audit Report
 Generated: ${new Date().toISOString()}
-Founder: Vishwas Aithal (vishwasaithal@proton.me)
+Founder: YinYangYoHackers Research Staff (contact@yinyangyohackers.ai.studio)
 Overall Score: ${averageScore}% (A+ Grade)
 Total Audited Items: 50 / 50 Verified
 

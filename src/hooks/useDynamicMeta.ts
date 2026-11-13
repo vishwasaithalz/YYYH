@@ -254,6 +254,16 @@ const VIEW_SEO_PROFILES: Record<string, {
     ogImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80',
     breadcrumbName: 'Company Expertise'
   },
+  'services': {
+    title: 'Technical Advisory & Scope | YinYangYo',
+    description: clampDescription('Technical advisory scope, prerequisites, and explicit limitations for zero-trust hardening, sovereign AI enclaves, and infrastructure reviews.'),
+    keywords: 'security advisory, technical advisory scope, zero trust review, sovereign AI audit, infrastructure hardening',
+    primaryKeyword: 'security advisory scope',
+    searchIntent: 'Advisory Scope & Requirements',
+    path: '/services',
+    ogImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80',
+    breadcrumbName: 'Technical Advisory'
+  },
   'contact': {
     title: 'Consultation | YinYangYo',
     description: clampDescription('Request a cybersecurity consultation, security assessment, or submit encrypted vulnerability disclosures via secure PGP dispatch channels.'),
@@ -348,6 +358,26 @@ const VIEW_SEO_PROFILES: Record<string, {
     keywords: 'ethical hacking disclaimer, responsible disclosure, cyber law compliance, white hat policy, terms of security research',
     path: '/disclaimer',
     breadcrumbName: 'Legal Disclaimer'
+  },
+  'ports': {
+    title: 'Port Directory & Recon Rules | YinYangYo',
+    description: clampDescription('Authoritative cybersecurity port encyclopedia: TCP and UDP port lookup, service protocols, CVE vulnerabilities, Nmap recon commands, and UFW firewall rules.'),
+    keywords: 'port directory, TCP ports, UDP ports, nmap port scan, common ports, ufw firewall rules, wireshark capture filter, well known ports',
+    primaryKeyword: 'cybersecurity port directory',
+    searchIntent: 'Technical Reference / Port Analysis',
+    path: '/ports',
+    ogImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80',
+    breadcrumbName: 'Port Directory'
+  },
+  'glossary': {
+    title: 'Cybersecurity Glossary | YinYangYo',
+    description: clampDescription('Definitive cybersecurity and Sovereign AI glossary: authoritative definitions covering Zero-Trust, ASLR, eBPF, Air-Gap, Prompt Injection, and Kerberoasting.'),
+    keywords: 'cybersecurity glossary, ethical hacking terms, zero trust definition, aslr, ebpf, prompt injection, sovereign ai terms, cyber dictionary',
+    primaryKeyword: 'cybersecurity glossary',
+    searchIntent: 'Educational / Terminology Reference',
+    path: '/glossary',
+    ogImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80',
+    breadcrumbName: 'Glossary'
   }
 };
 
@@ -364,7 +394,7 @@ export const useDynamicMeta = (
 ) => {
   const {
     siteTitle = 'Autonomous Cybersecurity & Ethical Hacking | YinYangYoHackers',
-    defaultDescription = 'Autonomous Cybersecurity & Ethical Hacking platform founded by Vishwas Aithal. Autonomous red teaming, zero-trust infrastructure & autonomous systems tools.',
+    defaultDescription = 'Autonomous Cybersecurity & Ethical Hacking platform founded by YinYangYoHackers Research Staff. Autonomous red teaming, zero-trust infrastructure & autonomous systems tools.',
     defaultOgImage = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80'
   } = options;
 
@@ -505,7 +535,7 @@ export const useDynamicMeta = (
 
       setMetaTag('name', 'keywords', keywords);
       setMetaTag('name', 'primary-keyword', primaryKey);
-      setMetaTag('name', 'author', article.author?.name || 'Vishwas Aithal');
+      setMetaTag('name', 'author', article.author?.name || 'YinYangYoHackers Research Staff');
       setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
       setMetaTag('http-equiv', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
       setMetaTag('name', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
@@ -521,7 +551,7 @@ export const useDynamicMeta = (
       setMetaTag('property', 'og:image', articleImage);
       setMetaTag('property', 'og:site_name', 'YinYangYoHackers');
       setMetaTag('property', 'article:published_time', article.date);
-      setMetaTag('property', 'article:author', article.author?.name || 'Vishwas Aithal');
+      setMetaTag('property', 'article:author', article.author?.name || 'YinYangYoHackers Research Staff');
       setMetaTag('property', 'article:section', article.category);
       if (article.tags && article.tags.length > 0) {
         setMetaTag('property', 'article:tag', article.tags.join(', '));
@@ -532,7 +562,7 @@ export const useDynamicMeta = (
       setMetaTag('name', 'twitter:title', pageTitle);
       setMetaTag('name', 'twitter:description', metaDesc);
       setMetaTag('name', 'twitter:image', articleImage);
-      setMetaTag('name', 'twitter:creator', '@vishwas_aithal');
+      setMetaTag('name', 'twitter:creator', '@research_analyst');
 
       const canonicalUrl = articleUrl;
       setLinkTag('canonical', canonicalUrl);
@@ -555,15 +585,10 @@ export const useDynamicMeta = (
             },
             'founder': {
               '@type': 'Person',
-              'name': 'Vishwas Aithal',
+              'name': 'YinYangYoHackers Research Staff',
               'jobTitle': 'Founder & Lead Cybersecurity Researcher'
             },
-            'foundingDate': '2013',
-            'sameAs': [
-              'https://github.com/vishwasaithal',
-              'https://www.instagram.com/peace_believer/',
-              'https://t.me/vishwasaithal'
-            ]
+            'foundingDate': '2013'
           },
           {
             '@type': 'WebSite',
@@ -607,14 +632,8 @@ export const useDynamicMeta = (
             'dateModified': article.updatedDate || article.date,
             'author': {
               '@type': 'Person',
-              'name': article.author?.name || 'Vishwas Aithal',
-              'jobTitle': 'Cybersecurity Instructor & Researcher',
-              'email': 'vishwasaithal@proton.me',
-              'sameAs': [
-                'https://github.com/vishwasaithal',
-                'https://www.instagram.com/peace_believer/',
-                'https://t.me/vishwasaithal'
-              ]
+              'name': article.author?.name || 'YinYangYoHackers Research Staff',
+              'jobTitle': 'Cybersecurity Instructor & Researcher'
             },
             'publisher': { '@type': 'Organization', '@id': `${CANONICAL_DOMAIN}/#organization` },
             'mainEntityOfPage': {
@@ -623,7 +642,19 @@ export const useDynamicMeta = (
             },
             'articleSection': article.category,
             'keywords': keywords
-          }
+          },
+          ...(article.faqs && article.faqs.length > 0 ? [{
+            '@type': 'FAQPage',
+            '@id': `${canonicalUrl}#faq`,
+            'mainEntity': article.faqs.map(faq => ({
+              '@type': 'Question',
+              'name': faq.question,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': faq.answer
+              }
+            }))
+          }] : [])
         ]
       });
 
@@ -640,7 +671,7 @@ export const useDynamicMeta = (
       const keywords = [tool.primaryKeyword, ...tool.secondaryKeywords, 'security tool', 'calculator', 'cybersecurity'].join(', ');
       setMetaTag('name', 'keywords', keywords);
       setMetaTag('name', 'primary-keyword', tool.primaryKeyword);
-      setMetaTag('name', 'author', 'Vishwas Aithal');
+      setMetaTag('name', 'author', 'YinYangYoHackers Research Staff');
       setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large');
       setMetaTag('http-equiv', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
       setMetaTag('name', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
@@ -677,7 +708,7 @@ export const useDynamicMeta = (
             },
             'founder': {
               '@type': 'Person',
-              'name': 'Vishwas Aithal',
+              'name': 'YinYangYoHackers Research Staff',
               'jobTitle': 'Founder & Lead Cybersecurity Researcher'
             }
           },
@@ -752,7 +783,7 @@ export const useDynamicMeta = (
       setMetaTag('name', 'description', viewMeta.description);
       setMetaTag('name', 'keywords', viewMeta.keywords);
       setMetaTag('name', 'primary-keyword', viewMeta.primaryKeyword);
-      setMetaTag('name', 'author', 'Vishwas Aithal');
+      setMetaTag('name', 'author', 'YinYangYoHackers Research Staff');
       if (activeView === '404') {
         setMetaTag('name', 'robots', 'noindex, nofollow');
         setMetaTag('http-equiv', 'X-Robots-Tag', 'noindex, nofollow');
@@ -797,15 +828,10 @@ export const useDynamicMeta = (
           },
           'founder': {
             '@type': 'Person',
-            'name': 'Vishwas Aithal',
+            'name': 'YinYangYoHackers Research Staff',
             'jobTitle': 'Founder & Lead Cybersecurity Researcher'
           },
-          'foundingDate': '2013',
-          'sameAs': [
-            'https://github.com/vishwasaithal',
-            'https://www.instagram.com/peace_believer/',
-            'https://t.me/vishwasaithal'
-          ]
+          'foundingDate': '2013'
         },
         {
           '@type': 'WebSite',
@@ -887,7 +913,7 @@ export const useDynamicMeta = (
           'description': viewMeta.description,
           'author': {
             '@type': 'Person',
-            'name': 'Vishwas Aithal'
+            'name': 'YinYangYoHackers Research Staff'
           }
         });
       }
@@ -939,7 +965,7 @@ export const useDynamicMeta = (
       setMetaTag('name', 'keywords', catMeta.keywords);
       const catPrimaryKey = currentCategory === 'Cyber Security' ? 'cybersecurity' : currentCategory === 'Autonomous Systems Hub' ? 'autonomous systems' : 'security tools';
       setMetaTag('name', 'primary-keyword', catPrimaryKey);
-      setMetaTag('name', 'author', 'Vishwas Aithal');
+      setMetaTag('name', 'author', 'YinYangYoHackers Research Staff');
       setMetaTag('name', 'robots', 'index, follow');
       setMetaTag('http-equiv', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
       setMetaTag('name', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
@@ -1009,9 +1035,9 @@ export const useDynamicMeta = (
     document.title = homeTitle;
     const clampedDefaultDesc = clampDescription(defaultDescription, 145);
     setMetaTag('name', 'description', clampedDefaultDesc);
-    setMetaTag('name', 'keywords', 'Autonomous Cybersecurity, ethical hacking, autonomous systems, cybersecurity research, penetration testing, zero trust hardening, local compute, deepseek r1, Vishwas Aithal');
+    setMetaTag('name', 'keywords', 'Autonomous Cybersecurity, ethical hacking, autonomous systems, cybersecurity research, penetration testing, zero trust hardening, local compute, deepseek r1, YinYangYoHackers Research Staff');
     setMetaTag('name', 'primary-keyword', 'Cybersecurity, Ethical Hacking');
-    setMetaTag('name', 'author', 'Vishwas Aithal');
+    setMetaTag('name', 'author', 'YinYangYoHackers Research Staff');
     setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large');
     setMetaTag('http-equiv', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
     setMetaTag('name', 'X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
@@ -1050,22 +1076,11 @@ export const useDynamicMeta = (
           },
           'founder': {
             '@type': 'Person',
-            'name': 'Vishwas Aithal',
-            'jobTitle': 'Founder & Lead Cybersecurity Researcher',
-            'email': 'vishwasaithal@proton.me',
-            'sameAs': [
-              'https://github.com/vishwasaithal',
-              'https://www.instagram.com/peace_believer/',
-              'https://t.me/vishwasaithal'
-            ]
+            'name': 'YinYangYoHackers Research Staff',
+            'jobTitle': 'Founder & Lead Cybersecurity Researcher'
           },
           'foundingDate': '2013',
-          'description': 'Cybersecurity research, sovereign private infrastructure, and audited ethical hacking tools founded by Vishwas Aithal.',
-          'sameAs': [
-            'https://github.com/vishwasaithal',
-            'https://www.instagram.com/peace_believer/',
-            'https://t.me/vishwasaithal'
-          ]
+          'description': 'Cybersecurity research, sovereign private infrastructure, and audited ethical hacking tools founded by YinYangYoHackers Research Staff.'
         },
         {
           '@type': 'WebSite',

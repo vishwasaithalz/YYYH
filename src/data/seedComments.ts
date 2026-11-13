@@ -1,7 +1,7 @@
 import { Comment } from '../types';
 
 /**
- * Empty mapping - no artificial or synthetic seed comments.
+ * Empty mapping: no artificial or synthetic seed comments.
  */
 export const articleSeedComments: Record<string, Comment[]> = {};
 

@@ -6,6 +6,7 @@ import redTeamImg from '../assets/images/red_team_recon_1788361402720.webp';
 import cryptoImg from '../assets/images/crypto_forensics_1788361418455.webp';
 import ollamaImg from '../assets/images/ollama_local_ai_1788693773323.webp';
 import { Article, PrimaryCategory } from '../types';
+import { getArticleCyberVisual } from './cyberArtworks';
 
 export const HACKER_COVERS = [
   cyberImg,
@@ -29,17 +30,9 @@ export const HACKER_CATEGORY_COVERS: Record<PrimaryCategory, string[]> = {
 
 /**
  * Returns a high-resolution, unique hacker-themed cover image URL for an article.
- * If the article already specifies a valid coverImage, it is used. Otherwise,
- * it returns a category-matched custom cyber asset.
+ * Generates an instant, distinct vector cyber graphic for zero-latency loading.
  */
 export function getArticleCoverImage(article: Article): { src: string; alt: string } {
-  if (article?.slug === 'how-to-run-ai-locally-with-ollama' || article?.id === 'ai-1') {
-    return {
-      src: ollamaImg,
-      alt: 'Local Compute inference with Ollama, neural network weights offloading to GPU VRAM and terminal interface'
-    };
-  }
-
   if (article?.coverImage?.src && article.coverImage.src.trim() !== '') {
     return {
       src: article.coverImage.src,
@@ -47,40 +40,25 @@ export function getArticleCoverImage(article: Article): { src: string; alt: stri
     };
   }
 
-  const category = article?.category || 'Cybersecurity';
-  const categoryPool = HACKER_CATEGORY_COVERS[category] || HACKER_COVERS;
-  
-  // Consistent deterministic selection based on article id/title
-  const hashKey = (article?.id || article?.title || 'yyyh').split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const selectedSrc = categoryPool[hashKey % categoryPool.length] || cyberImg;
-
   return {
-    src: selectedSrc,
-    alt: `${article?.title || 'Security Research'} Cover`
+    src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80',
+    alt: article?.title || 'Security Research'
   };
 }
 
 /**
- * Returns a fast-loading local 640x360 WebP cover image (~24-34 KB) for feed cards
- * to eliminate external third-party CDN latency and reduce image download time.
+ * Returns the photographic cover image for feed cards with clean fallback.
  */
 export function getArticleCardCoverImage(article: Article): { src: string; alt: string } {
-  if (article?.slug === 'how-to-run-ai-locally-with-ollama' || article?.id === 'ai-1') {
+  if (article?.coverImage?.src && article.coverImage.src.trim() !== '') {
     return {
-      src: ollamaImg,
-      alt: 'Local Compute inference with Ollama, neural network weights offloading to GPU VRAM and terminal interface'
+      src: article.coverImage.src,
+      alt: article.coverImage.alt || `${article.title} Cover`
     };
   }
 
-  const category = article?.category || 'Cybersecurity';
-  const categoryPool = HACKER_CATEGORY_COVERS[category] || HACKER_COVERS;
-  const hashKey = (article?.id || article?.slug || article?.title || 'yyyh')
-    .split('')
-    .reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const selectedSrc = categoryPool[hashKey % categoryPool.length] || cyberImg;
-
   return {
-    src: selectedSrc,
+    src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80',
     alt: article?.coverImage?.alt || `${article?.title || 'Security Research'} Cover`
   };
 }

@@ -151,7 +151,7 @@ export const TerminalWindow: React.FC<TerminalWindowProps> = ({
       case 'dir':
         newLogs.push(`[+] Total Indexed Articles: ${articles.length}`);
         articles.slice(0, 8).forEach(a => {
-          newLogs.push(`  -rw-r--r-- 1 vishwas_aithal yyyh [${a.id}] ${a.title.slice(0, 48)}... (${a.category})`);
+          newLogs.push(`  -rw-r--r-- 1 research_analyst yyyh [${a.id}] ${a.title.slice(0, 48)}... (${a.category})`);
         });
         if (articles.length > 8) {
           newLogs.push(`  ... and ${articles.length - 8} more articles. Use "search <term>" to query.`);
@@ -213,7 +213,7 @@ export const TerminalWindow: React.FC<TerminalWindowProps> = ({
       case 'sysinfo':
       case 'uname':
         newLogs.push(
-          '   ██╗   ██╗██╗   ██╗██╗   ██╗██╗  ██╗   vishwas_aithal@yyyh-lab',
+          '   ██╗   ██╗██╗   ██╗██╗   ██╗██╗  ██╗   research_analyst@yyyh-lab',
           '   ╚██╗ ██╔╝╚██╗ ██╔╝╚██╗ ██╔╝██║  ██║   ────────────────',
           '    ╚████╔╝  ╚████╔╝  ╚████╔╝ ███████║   OS: YYYH Hardened Linux v6.8',
           '     ╚██╔╝    ╚██╔╝    ╚██╔╝  ██╔══██║   Kernel: 6.8.0-yyyh-hardened-amd64',

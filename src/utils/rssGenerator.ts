@@ -70,7 +70,7 @@ function buildArticleContentHtml(article: Article, originUrl: string): string {
     });
   }
 
-  html += `<hr />\n<p>Originally published on <a href="${originUrl}/#${article.slug}">YinYangYoHackers</a> by ${escapeXml(article.author?.name || 'Vishwas Aithal')}.</p>`;
+  html += `<hr />\n<p>Originally published on <a href="${originUrl}/#${article.slug}">YinYangYoHackers</a> by ${escapeXml(article.author?.name || 'YinYangYoHackers Research Staff')}.</p>`;
 
   return html;
 }
@@ -89,7 +89,7 @@ export function generateRssXml(
     .map(article => {
       const articleUrl = `${siteUrl}/#${article.slug}`;
       const pubDate = formatRfc822Date(article.date);
-      const authorEmail = 'vishwasaithal@proton.me (Vishwas Aithal)';
+      const authorEmail = 'contact@yinyangyohackers.ai.studio (YinYangYoHackers Research Staff)';
       const description = article.seo?.metaDescription || article.summary || article.subtitle || '';
       const contentHtml = buildArticleContentHtml(article, siteUrl);
 
@@ -125,11 +125,11 @@ ${categoriesXml}
   <channel>
     <title>YinYangYoHackers: Cybersecurity Research, Autonomous Systems &amp; OpenSource Tools</title>
     <link>${siteUrl}</link>
-    <description>Founded in 2013 by Vishwas Aithal, YinYangYoHackers fuses three core computational pillars: Yin (defensive zero trust hardening), Yang (adversarial red teaming and penetration testing), and Yo (autonomous systems tech and open source computing freedom). We deliver battle tested Cybersecurity Research, private on-premise compute pipelines, and audited OpenSource Tools.</description>
+    <description>Founded in 2013 by YinYangYoHackers Research Staff, YinYangYoHackers fuses three core computational pillars: Yin (defensive zero trust hardening), Yang (adversarial red teaming and penetration testing), and Yo (autonomous systems tech and open source computing freedom). We deliver battle tested Cybersecurity Research, private on-premise compute pipelines, and audited OpenSource Tools.</description>
     <language>en-us</language>
-    <copyright>© 2013–${currentYear} YinYangYoHackers. Founded by Vishwas Aithal.</copyright>
-    <managingEditor>vishwasaithal@proton.me (Vishwas Aithal)</managingEditor>
-    <webMaster>vishwasaithal@proton.me (Vishwas Aithal)</webMaster>
+    <copyright>© 2013 to ${currentYear} YinYangYoHackers. Founded by YinYangYoHackers Research Staff.</copyright>
+    <managingEditor>contact@yinyangyohackers.ai.studio (YinYangYoHackers Security Lab)</managingEditor>
+    <webMaster>contact@yinyangyohackers.ai.studio (YinYangYoHackers Web Operations)</webMaster>
     <lastBuildDate>${buildDate}</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>YinYangYoHackers Custom RSS Engine</generator>

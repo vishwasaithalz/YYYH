@@ -11,7 +11,7 @@
   -----------------------------------------------
   Blogger Template Style
   Name:     YinYangYoHackers Sovereign Cyber Theme
-  Author:   Vishwas Aithal (Founded 2013)
+  Author:   YinYangYoHackers Research Staff (Founded 2013)
   License:  Defensive Authorized Research
   Website:  https://yinyangyohackers.com
   -----------------------------------------------
@@ -660,7 +660,7 @@
               </div>
 
               <div class='yyyh-card-footer'>
-                <span class='yyyh-author-text'>Author: Vishwas Aithal</span>
+                <span class='yyyh-author-text'>Author: YinYangYoHackers Research Staff</span>
                 <a class='yyyh-readmore-btn' expr:href='data:post.url'>Read Blueprint &#8594;</a>
               </div>
 
@@ -717,7 +717,7 @@
         <div class='yyyh-author-profile'>
           <div class='yyyh-author-avatar-badge'>☯</div>
           <div>
-            <div class='yyyh-author-name'>Vishwas Aithal</div>
+            <div class='yyyh-author-name'>YinYangYoHackers Research Staff</div>
             <div class='yyyh-author-role'>Cybersecurity Researcher</div>
             <div class='yyyh-author-sub'>Founder &amp; Technical Author</div>
           </div>
@@ -765,7 +765,7 @@
   <footer class='yyyh-footer'>
     <div class='yyyh-footer-inner'>
       <div>
-        &#169; 2013&#8211;2026 YinYangYoHackers &#8226; Founded by Vishwas Aithal. Educational &amp; Authorized Defensive Use Only.
+        &#169; 2013 to 2026 YinYangYoHackers &#8226; Founded by YinYangYoHackers Research Staff. Educational &amp; Authorized Defensive Use Only.
       </div>
       <div class='yyyh-footer-links'>
         <a expr:href='data:blog.homepageUrl'>All Articles</a>

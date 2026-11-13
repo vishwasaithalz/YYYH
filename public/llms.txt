@@ -1,6 +1,6 @@
 # YinYangYoHackers
 > Sovereign AI, Offensive Penetration Testing, Zero-Trust Hardening & Developer Security Blueprints.
-> Founded in 2013 by Vishwas Aithal.
+> Founded in 2013 as an Independent Cybersecurity Research Laboratory.
 
 YinYangYoHackers is an independent, authoritative cybersecurity publication and technical laboratory dedicated to offensive penetration testing, defensive zero-trust infrastructure, local sovereign AI deployment, and interactive ethical hacking tools.
 

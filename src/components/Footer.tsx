@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({
             </a>
             
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-              Founded in 2013 by <span className="text-white font-semibold">Vishwas Aithal</span>. Dedicated to independent cybersecurity research, ethical hacking education, zero-trust infrastructure, and sovereign autonomous computing systems.
+              Founded in 2013. Dedicated to independent cybersecurity research, ethical hacking education, zero trust infrastructure, and sovereign autonomous computing systems.
             </p>
 
             {/* Verified Channels */}
@@ -68,33 +68,54 @@ export const Footer: React.FC<FooterProps> = ({
               <span className="text-xs font-mono text-slate-300 block mb-2.5 font-semibold">VERIFIED CHANNELS</span>
               <div className="flex items-center flex-wrap gap-3">
                 <a
-                  href="https://t.me/vishwasaithal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-700 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-slate-200 hover:text-emerald-300 transition-colors flex items-center justify-center"
-                  title="Telegram: @vishwas_aithal"
-                  aria-label="Telegram"
-                >
-                  <Send className="w-4 h-4 text-emerald-400" />
-                </a>
-                <a
-                  href="https://www.instagram.com/peace_believer/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-700 hover:border-pink-500/60 hover:bg-pink-950/40 text-slate-200 hover:text-pink-300 transition-colors flex items-center justify-center"
-                  title="Instagram: @peace_believer"
-                  aria-label="Instagram"
-                >
-                  <Globe className="w-4 h-4 text-pink-400" />
-                </a>
-                <a
-                  href="mailto:vishwasaithal@proton.me"
-                  className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-700 hover:border-cyan-500/60 hover:bg-cyan-950/40 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-center"
-                  title="Email: vishwasaithal@proton.me"
-                  aria-label="Email"
+                  href="/contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectView('contact', '/contact');
+                  }}
+                  className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-700 hover:border-cyan-500/60 hover:bg-cyan-950/40 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-center cursor-pointer"
+                  title="Secure Lab Dispatch"
+                  aria-label="Secure Lab Dispatch"
                 >
                   <Mail className="w-4 h-4 text-cyan-400" />
                 </a>
+                <a
+                  href="/disclaimer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectView('disclaimer', '/disclaimer');
+                  }}
+                  className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-700 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-slate-200 hover:text-emerald-300 transition-colors flex items-center justify-center cursor-pointer"
+                  title="PGP Key &amp; Responsible Disclosure"
+                  aria-label="PGP Key and Disclosure"
+                >
+                  <Lock className="w-4 h-4 text-emerald-400" />
+                </a>
+                <a
+                  href="/rss.xml"
+                  onClick={(e) => {
+                    if (onOpenRss) {
+                      e.preventDefault();
+                      onOpenRss();
+                    }
+                  }}
+                  className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-700 hover:border-amber-500/60 hover:bg-amber-950/40 text-slate-200 hover:text-amber-300 transition-colors flex items-center justify-center cursor-pointer"
+                  title="RSS 2.0 Advisory Feed"
+                  aria-label="RSS Feed"
+                >
+                  <Globe className="w-4 h-4 text-amber-400" />
+                </a>
+                {onOpenTerminal && (
+                  <button
+                    type="button"
+                    onClick={onOpenTerminal}
+                    className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-700 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-slate-200 hover:text-emerald-300 transition-colors flex items-center justify-center cursor-pointer"
+                    title="Interactive Web Terminal"
+                    aria-label="Terminal"
+                  >
+                    <Terminal className="w-4 h-4 text-emerald-400" />
+                  </button>
+                )}
               </div>
 
               <div className="mt-3 pt-2">
@@ -156,7 +177,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-emerald-300 transition-colors text-left flex items-center gap-2 py-1.5 min-h-[44px] cursor-pointer"
                 >
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span>Cybersecurity &amp; Zero-Trust Defense</span>
+                  <span>Cybersecurity &amp; Zero Trust Defense</span>
                 </a>
               </li>
               <li>
@@ -174,15 +195,15 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a 
-                  href="/ai-security"
+                  href="/services"
                   onClick={(e) => {
                     e.preventDefault();
-                    onSelectView('ai-security', '/ai-security');
+                    onSelectView('services', '/services');
                   }}
-                  className="hover:text-purple-300 transition-colors text-left flex items-center gap-2 py-1.5 min-h-[44px] cursor-pointer"
+                  className="hover:text-emerald-300 transition-colors text-left flex items-center gap-2 py-1.5 min-h-[44px] cursor-pointer"
                 >
-                  <Cpu className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                  <span>Model Security &amp; Local Inference</span>
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Technical Advisory &amp; Scope</span>
                 </a>
               </li>
             </ul>
@@ -306,20 +327,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-white transition-colors text-left flex items-center gap-2 py-1.5 min-h-[44px] cursor-pointer"
                 >
                   <Globe className="w-3.5 h-3.5 text-slate-300 shrink-0" />
-                  <span>About Us &amp; Author Dossier</span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onSelectView('contact', '/contact');
-                  }}
-                  className="hover:text-cyan-300 transition-colors text-left flex items-center gap-2 py-1.5 min-h-[44px] cursor-pointer"
-                >
-                  <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                  <span>Contact Lab (vishwasaithal@proton.me)</span>
+                  <span>About Us &amp; Research Mission</span>
                 </a>
               </li>
             </ul>
@@ -327,7 +335,7 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-300">
-          <p>© 2013–2026 YinYangYoHackers &bull; Founded by Vishwas Aithal. Educational &amp; Authorized Defensive Use Only.</p>
+          <p>© 2013 to 2026 YinYangYoHackers. Independent Cybersecurity Research Laboratory. Educational and Authorized Defensive Use Only.</p>
 
           <div className="flex items-center flex-wrap gap-3">
             <a

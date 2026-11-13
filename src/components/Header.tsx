@@ -42,8 +42,8 @@ const SOVEREIGN_EMOJI_MAP: Record<string, { emoji: string; badge: string; color:
   '/vllm-security': { emoji: '⚡', badge: 'vLLM Cluster', color: 'text-purple-300', gradient: 'from-purple-950 via-slate-900 to-pink-900/40 border-purple-500/40' },
   '/local-llm-security': { emoji: '🛡️', badge: 'Sandbox & RCE', color: 'text-rose-300', gradient: 'from-rose-950 via-slate-900 to-red-950 border-rose-500/40' },
   '/sovereign-ai-infrastructure': { emoji: '🖲️', badge: 'GPU Topology', color: 'text-teal-300', gradient: 'from-teal-950 via-slate-900 to-cyan-950 border-teal-500/40' },
-  '/ai-data-privacy': { emoji: '👁️‍🗨️', badge: 'Zero-Telemetry', color: 'text-sky-300', gradient: 'from-sky-950 via-slate-900 to-blue-950 border-sky-500/40' },
-  '/ai-security': { emoji: '🎯', badge: 'Red-Teaming', color: 'text-red-300', gradient: 'from-red-950 via-slate-900 to-rose-950 border-red-500/40' }
+  '/ai-data-privacy': { emoji: '👁️‍🗨️', badge: 'Zero Telemetry', color: 'text-sky-300', gradient: 'from-sky-950 via-slate-900 to-blue-950 border-sky-500/40' },
+  '/ai-security': { emoji: '🎯', badge: 'Red Teaming', color: 'text-red-300', gradient: 'from-red-950 via-slate-900 to-rose-950 border-red-500/40' }
 };
 
 const CURATED_SECURITY_TOOLS = [
@@ -51,7 +51,7 @@ const CURATED_SECURITY_TOOLS = [
     path: '/tools/cidr-calculator',
     slug: 'cidr-calculator',
     title: 'CIDR Subnet Calculator',
-    desc: 'IPv4 & IPv6 network ranges, usable addresses, mask bits & subnetting.',
+    desc: 'IPv4 & IPv6 Subnetting',
     emoji: '🌐',
     badge: 'Networking',
     gradient: 'from-blue-950 via-slate-900 to-indigo-950 border-blue-500/40'
@@ -60,7 +60,7 @@ const CURATED_SECURITY_TOOLS = [
     path: '/tools/hash-analyzer',
     slug: 'hash-analyzer',
     title: 'Cryptographic Hash Analyzer',
-    desc: 'Instant SHA-256, SHA-512, MD5 checksum calculation & identification.',
+    desc: 'SHA-256 & Digest Audit',
     emoji: '🧬',
     badge: 'Cryptography',
     gradient: 'from-emerald-950 via-slate-900 to-teal-950 border-emerald-500/40'
@@ -69,25 +69,25 @@ const CURATED_SECURITY_TOOLS = [
     path: '/tools/password-entropy',
     slug: 'password-entropy',
     title: 'Password Entropy Calculator',
-    desc: 'Shannon entropy bit rating & brute-force cluster crack time estimation.',
+    desc: 'Entropy & Crack Time',
     emoji: '🔐',
-    badge: 'Authentication',
+    badge: 'Auth',
     gradient: 'from-amber-950 via-slate-900 to-orange-950 border-amber-500/40'
   },
   {
     path: '/tools/http-security-headers',
     slug: 'http-security-headers',
-    title: 'HTTP Security Headers Inspector',
-    desc: 'Audit & generate hardened HSTS, CSP, X-Frame-Options & CORS rules.',
+    title: 'HTTP Security Headers',
+    desc: 'HSTS & CSP Headers',
     emoji: '🛡️',
-    badge: 'Web Hardening',
+    badge: 'Web Armor',
     gradient: 'from-purple-950 via-slate-900 to-indigo-950 border-purple-500/40'
   },
   {
     path: '/tools/ssl-checker',
     slug: 'ssl-checker',
     title: 'SSL/TLS Certificate Inspector',
-    desc: 'Inspect TLS 1.3 protocol, cipher suites, cert expiry & OpenSSL CLI.',
+    desc: 'TLS 1.3 Ciphers',
     emoji: '🔒',
     badge: 'SSL / TLS',
     gradient: 'from-cyan-950 via-slate-900 to-blue-950 border-cyan-500/40'
@@ -95,8 +95,8 @@ const CURATED_SECURITY_TOOLS = [
   {
     path: '/tools',
     slug: 'cyber-encoder',
-    title: 'CyberChef Payload Encoder',
-    desc: 'Base64, Hex, URL, Binary, ROT13 & multi-stage payload analysis.',
+    title: 'Payload Encoder',
+    desc: 'Base64 & Hex Multi-Stage',
     emoji: '⚡',
     badge: 'Encoding',
     gradient: 'from-yellow-950 via-slate-900 to-amber-950 border-yellow-500/40'
@@ -105,7 +105,7 @@ const CURATED_SECURITY_TOOLS = [
     path: '/tools',
     slug: 'ai-jailbreak-sandbox',
     title: 'Prompt Injection Sandbox',
-    desc: 'Adversarial jailbreak testing, LLM defense & input filter audits.',
+    desc: 'Adversarial Defense',
     emoji: '🤖',
     badge: 'Model Sec',
     gradient: 'from-rose-950 via-slate-900 to-pink-950 border-rose-500/40'
@@ -114,10 +114,37 @@ const CURATED_SECURITY_TOOLS = [
     path: '/tools',
     slug: 'ip-lookup',
     title: 'IP Geolocation & ASN Map',
-    desc: 'Autonomous System Number (ASN), ISP telemetry & geolocation map.',
+    desc: 'ASN & Network Recon',
     emoji: '🌍',
-    badge: 'Reconnaissance',
+    badge: 'Recon',
     gradient: 'from-emerald-950 via-slate-900 to-cyan-950 border-emerald-500/40'
+  },
+  {
+    path: '/tools/packet-tracer',
+    slug: 'packet-tracer',
+    title: 'Interactive Packet Tracer',
+    desc: 'TCP, TLS 1.3 & DNSSEC',
+    emoji: '📡',
+    badge: 'Protocols',
+    gradient: 'from-indigo-950 via-slate-900 to-cyan-950 border-indigo-500/40'
+  },
+  {
+    path: '/tools/sysctl-hardening',
+    slug: 'sysctl-hardening',
+    title: 'Linux Kernel Switchboard',
+    desc: 'Sysctl ASLR & SYN Defense',
+    emoji: '⚙️',
+    badge: 'Linux Ops',
+    gradient: 'from-slate-950 via-zinc-900 to-emerald-950 border-emerald-500/40'
+  },
+  {
+    path: '/tools/csp-builder',
+    slug: 'csp-builder',
+    title: 'CSP Builder & Auditor',
+    desc: 'W3C L3 XSS Shield Generator',
+    emoji: '🛡️',
+    badge: 'Web Defense',
+    gradient: 'from-teal-950 via-slate-900 to-sky-950 border-teal-500/40'
   }
 ];
 
@@ -699,10 +726,73 @@ export const Header: React.FC<HeaderProps> = ({
                   ? 'bg-emerald-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(16,185,129,0.4)]'
                   : 'text-slate-200 hover:text-emerald-300 hover:bg-slate-800/70'
               }`}
-              title="Interactive Ethical Hacking & Sysadmin Cheat Sheets"
+              title="Interactive Ethical Hacking &amp; Sysadmin Cheat Sheets"
             >
               <FileCode className={`w-4 h-4 ${activeView === 'cheatsheets' ? 'text-slate-950' : 'text-emerald-400'}`} />
-              <span>Interactive Cheat Sheets</span>
+              <span>Cheat Sheets</span>
+            </a>
+
+            {/* 6. Technical Advisory Scope */}
+            <a
+              id="nav-services-advisory"
+              href="/services"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectView('services', '/services');
+                setIsSovereignMenuOpen(false);
+                setIsToolsMenuOpen(false);
+              }}
+              className={`px-3.5 py-2.5 min-h-[44px] rounded-md whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer font-medium select-none ${
+                activeView === 'services'
+                  ? 'bg-emerald-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(16,185,129,0.4)]'
+                  : 'text-slate-200 hover:text-white hover:bg-slate-800/70'
+              }`}
+              title="Technical Advisory Scope, Prerequisites &amp; Limitations"
+            >
+              <ShieldCheck className={`w-4 h-4 ${activeView === 'services' ? 'text-slate-950' : 'text-emerald-400'}`} />
+              <span>Advisory Scope</span>
+            </a>
+
+            {/* 7. Port Directory */}
+            <a
+              id="nav-ports-directory"
+              href="/ports"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectView('ports', '/ports');
+                setIsSovereignMenuOpen(false);
+                setIsToolsMenuOpen(false);
+              }}
+              className={`px-3.5 py-2.5 min-h-[44px] rounded-md whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer font-medium select-none ${
+                activeView === 'ports'
+                  ? 'bg-cyan-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(6,182,212,0.4)]'
+                  : 'text-slate-200 hover:text-cyan-300 hover:bg-slate-800/70'
+              }`}
+              title="Authoritative Port Encyclopedia & Recon Rules"
+            >
+              <Server className={`w-4 h-4 ${activeView === 'ports' ? 'text-slate-950' : 'text-cyan-400'}`} />
+              <span>Ports</span>
+            </a>
+
+            {/* 8. Cybersecurity Glossary */}
+            <a
+              id="nav-glossary"
+              href="/glossary"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectView('glossary', '/glossary');
+                setIsSovereignMenuOpen(false);
+                setIsToolsMenuOpen(false);
+              }}
+              className={`px-3.5 py-2.5 min-h-[44px] rounded-md whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer font-medium select-none ${
+                activeView === 'glossary'
+                  ? 'bg-emerald-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(16,185,129,0.4)]'
+                  : 'text-slate-200 hover:text-emerald-300 hover:bg-slate-800/70'
+              }`}
+              title="Cybersecurity & Sovereign AI Definitions Glossary"
+            >
+              <HelpCircle className={`w-4 h-4 ${activeView === 'glossary' ? 'text-slate-950' : 'text-emerald-400'}`} />
+              <span>Glossary</span>
             </a>
           </div>
         </div>
@@ -775,6 +865,22 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <FileCode className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Interactive Cheat Sheets</span>
+            </a>
+            <a
+              href="/ports"
+              onClick={(e) => { e.preventDefault(); onSelectView('ports', '/ports'); setIsMobileNavOpen(false); }}
+              className="p-3 min-h-[48px] rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500 text-left flex items-center gap-2 text-slate-100 cursor-pointer"
+            >
+              <Server className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span>Port Directory</span>
+            </a>
+            <a
+              href="/glossary"
+              onClick={(e) => { e.preventDefault(); onSelectView('glossary', '/glossary'); setIsMobileNavOpen(false); }}
+              className="p-3 min-h-[48px] rounded-lg bg-slate-900 border border-slate-800 hover:border-emerald-500 text-left flex items-center gap-2 text-slate-100 cursor-pointer"
+            >
+              <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>Cyber Glossary</span>
             </a>
           </div>
 

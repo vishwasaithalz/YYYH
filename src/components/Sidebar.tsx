@@ -11,7 +11,6 @@ import {
   Package
 } from 'lucide-react';
 import { Article, PrimaryCategory, ActiveSiteView } from '../types';
-import { HackerBannerAd } from './HackerBannerAd';
 import { HACKER_COVERS } from '../utils/hackerImages';
 
 interface SidebarProps {
@@ -67,7 +66,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <source type="image/webp" srcSet="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=112&h=112&auto=format&fit=crop&q=80&fm=webp&cs=strip" />
               <img 
                 src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=112&h=112&auto=format&fit=crop&q=80&fm=webp&cs=strip" 
-                alt="Vishwas Aithal" 
+                alt="YinYangYoHackers Research Staff" 
                 itemProp="image"
                 width={56}
                 height={56}
@@ -84,7 +83,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
           <div>
             <h3 className="font-bold text-white text-base sm:text-lg flex items-center gap-1.5 font-sans" itemProp="name">
-              Vishwas Aithal
+              YinYangYoHackers Research Staff
             </h3>
             <p className="text-xs sm:text-sm text-emerald-400 font-mono font-medium" itemProp="hasCredential">Cybersecurity Researcher</p>
             <p className="text-xs text-slate-400 font-sans" itemProp="jobTitle">Founder &amp; Technical Author</p>
@@ -218,13 +217,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
           ))}
         </div>
       </div>
-
-      {/* 3. Optimized High-CTR Sidebar 300x250 Banner Ad Slot */}
-      <HackerBannerAd 
-        placement="sidebar-rectangle" 
-        sponsorKey="hackthebox"
-        className="my-2"
-      />
 
       {/* 4. Trending / Top Articles Widget */}
       <div id="widget-trending-posts" className="bg-[#090d16] border border-slate-800/80 rounded-xl p-4 shadow-lg">

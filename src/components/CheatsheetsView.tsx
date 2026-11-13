@@ -181,7 +181,7 @@ const CHEAT_ITEMS: CheatItem[] = [
     id: 'cidr-1',
     category: 'Subnetting & CIDR',
     title: 'RFC 1918 Private IPv4 Allocation Ranges',
-    command: 'Class A: 10.0.0.0/8 (10.0.0.0 - 10.255.255.255)\nClass B: 172.16.0.0/12 (172.16.0.0 - 172.31.255.255)\nClass C: 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)\nLoopback: 127.0.0.0/8 (127.0.0.1 - 127.255.255.254)',
+    command: 'Class A: 10.0.0.0/8 (10.0.0.0 to 10.255.255.255)\nClass B: 172.16.0.0/12 (172.16.0.0 to 172.31.255.255)\nClass C: 192.168.0.0/16 (192.168.0.0 to 192.168.255.255)\nLoopback: 127.0.0.0/8 (127.0.0.1 to 127.255.255.254)',
     description: 'Non-routable internal IP ranges reserved for private enterprise and homelab network microsegmentation.',
     tags: ['cidr', 'rfc1918', 'ip', 'networking']
   },
@@ -189,8 +189,8 @@ const CHEAT_ITEMS: CheatItem[] = [
     id: 'cidr-2',
     category: 'Subnetting & CIDR',
     title: 'Common CIDR Subnet Masks and Host Densities',
-    command: '/24 = 255.255.255.0  (254 Usable Hosts)\n/25 = 255.255.255.128 (126 Usable Hosts)\n/26 = 255.255.255.192 (62 Usable Hosts)\n/27 = 255.255.255.224 (30 Usable Hosts)\n/28 = 255.255.255.240 (14 Usable Hosts)\n/29 = 255.255.255.248 (6 Usable Hosts)\n/30 = 255.255.255.252 (2 Usable Hosts - Point-to-Point)\n/32 = 255.255.255.255 (Single Host / Host Route)',
-    description: 'Fast calculation reference for subnetting network VLANs and point-to-point WireGuard routing prefixes.',
+    command: '/24 = 255.255.255.0  (254 Usable Hosts)\n/25 = 255.255.255.128 (126 Usable Hosts)\n/26 = 255.255.255.192 (62 Usable Hosts)\n/27 = 255.255.255.224 (30 Usable Hosts)\n/28 = 255.255.255.240 (14 Usable Hosts)\n/29 = 255.255.255.248 (6 Usable Hosts)\n/30 = 255.255.255.252 (2 Usable Hosts: Point to Point)\n/32 = 255.255.255.255 (Single Host / Host Route)',
+    description: 'Fast calculation reference for subnetting network VLANs and point to point WireGuard routing prefixes.',
     tags: ['cidr', 'subnet', 'hosts', 'vlan']
   }
 ];

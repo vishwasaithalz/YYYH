@@ -23,7 +23,7 @@ export const articlesIndex: Article[] = [
     "views": 18450,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -56,7 +56,7 @@ export const articlesIndex: Article[] = [
       "targetWordCount": 1500
     },
     "intro": [
-      "Ethical hacking—often referred to in industry standards as penetration testing or white-hat offensive auditing—is the structured, legally authorized discipline of probing computer systems, local networks, cloud perimeters, and distributed applications to identify latent vulnerabilities before malicious adversaries can exploit them.",
+      "Ethical hacking, often referred to in industry standards as penetration testing or white-hat offensive auditing, is the structured, legally authorized discipline of probing computer systems, local networks, cloud perimeters, and distributed applications to identify latent vulnerabilities before malicious adversaries can exploit them.",
       "In a modern threat landscape characterized by automated zero-day brokers, state-sponsored advanced persistent threats (APTs), and widespread supply chain vulnerabilities, organizations cannot rely solely on passive defensive perimeters. True defensive resilience requires engineers to comprehend the exact mechanics, mindsets, and execution vectors utilized during offensive operations.",
       "Unlike black-hat attackers whose sole objective is unauthorized data exfiltration, extortion, or service disruption, ethical hackers operate under strict, mathematically rigorous Rules of Engagement (RoE). Understanding the technical anatomy of an exploit allows system architects to build immutable configurations, apply defense-in-depth, and eliminate attack surfaces."
     ],
@@ -66,7 +66,7 @@ export const articlesIndex: Article[] = [
         "id": "five-core-phases",
         "level": 2,
         "body": [
-          "Every standardized penetration testing engagement—whether executed under NIST SP 800-115, the Open Source Security Testing Methodology Manual (OSSTMM), or the Penetration Testing Execution Standard (PTES)—proceeds through five distinct, chronological phases. Skipping stages or rushing into active exploitation invariably causes missed vulnerabilities, network instability, and incomplete reporting.",
+          "Every standardized penetration testing engagement, whether executed under NIST SP 800-115, the Open Source Security Testing Methodology Manual (OSSTMM), or the Penetration Testing Execution Standard (PTES), proceeds through five distinct, chronological phases. Skipping stages or rushing into active exploitation invariably causes missed vulnerabilities, network instability, and incomplete reporting.",
           "The first phase, Reconnaissance (or Information Gathering), is divided into passive and active discovery. Passive discovery relies exclusively on publicly indexed OSINT data (DNS records, certificate transparency logs, job postings, archive snapshots) without transmitting a single probe packet to the target IP range. Active reconnaissance involves interacting directly with the target perimeter through port scans, DNS zone transfers, and banner grabbing.",
           "The second phase, Scanning and Enumeration, transforms raw discovery data into an actionable inventory of open TCP/UDP ports, operating system fingerprints, exposed API endpoints, and running service daemon versions. This directly feeds into Phase 3 (Vulnerability Assessment and Exploitation), where vulnerabilities are validated against public CVE registries and targeted exploit payloads.",
           "Phase 4 focuses on Post-Exploitation and Privilege Escalation. Here, an auditor establishes persistence, extracts session credentials from memory or filesystem configuration files, maps internal subnets, and attempts to pivot toward domain controller assets. Finally, Phase 5 concludes with comprehensive Technical Reporting and Remediation Guidance, documenting executive risk ratings, reproducible proof-of-concept steps, and precise configuration patches."
@@ -187,7 +187,7 @@ export const articlesIndex: Article[] = [
       },
       {
         "question": "How long does it typically take to become an entry-level penetration tester?",
-        "answer": "With dedicated, structured daily study (10–15 hours per week) covering networking, Linux administration, web security, and hands-on CTF labs, most learners reach junior security analyst or associate penetration tester readiness within 6 to 12 months."
+        "answer": "With dedicated, structured daily study (10 to 15 hours per week) covering networking, Linux administration, web security, and hands-on CTF labs, most learners reach junior security analyst or associate penetration tester readiness within 6 to 12 months."
       }
     ],
     "relatedArticleSlugs": [
@@ -219,7 +219,7 @@ export const articlesIndex: Article[] = [
     "views": 14210,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -254,7 +254,7 @@ export const articlesIndex: Article[] = [
     "intro": [
       "A penetration test is a goal-oriented, simulated cyberattack against an organization’s digital infrastructure, conducted by authorized security professionals to measure real-world defensive efficacy. While an automated vulnerability scan simply generates a list of potential software flaws, a penetration test actively chains vulnerabilities together to prove whether business-critical systems can be breached.",
       "Professional security assessments are governed by strict methodology frameworks to ensure exhaustive coverage, reproducibility, safety, and measurable value. Adhering to standards like PTES (Penetration Testing Execution Standard) and NIST SP 800-115 guarantees that assessments remain controlled and do not trigger unexpected production outages.",
-      "In this comprehensive field manual, we break down every operational phase of a modern penetration testing lifecycle—from legal contract scoping and non-invasive intelligence gathering, to perimeter breach execution, lateral network pivoting, and executive remediation reporting."
+      "In this comprehensive field manual, we break down every operational phase of a modern penetration testing lifecycle, from legal contract scoping and non-invasive intelligence gathering, to perimeter breach execution, lateral network pivoting, and executive remediation reporting."
     ],
     "sections": [
       {
@@ -414,7 +414,7 @@ export const articlesIndex: Article[] = [
     "views": 22180,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -458,7 +458,7 @@ export const articlesIndex: Article[] = [
         "level": 2,
         "body": [
           "Nmap (Network Mapper) remains the undisputed gold standard for network mapping, port scanning, and OS fingerprinting. Powered by the Lua-based Nmap Scripting Engine (NSE), it allows engineers to perform everything from basic host discovery to advanced vulnerability detection.",
-          "For ultra-high-speed enumeration across massive class-B/class-A subnets, modern auditors pair Nmap with RustScan—a blazing-fast scanner written in Rust that can scan all 65,535 ports in under 3 seconds before automatically piping open ports directly into Nmap for deep service inspection."
+          "For ultra-high-speed enumeration across massive class-B/class-A subnets, modern auditors pair Nmap with RustScan, a blazing-fast scanner written in Rust that can scan all 65,535 ports in under 3 seconds before automatically piping open ports directly into Nmap for deep service inspection."
         ],
         "codeBlock": {
           "language": "bash",
@@ -640,7 +640,7 @@ export const articlesIndex: Article[] = [
     "views": 19800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -849,7 +849,7 @@ export const articlesIndex: Article[] = [
     "views": 25400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1009,7 +1009,7 @@ export const articlesIndex: Article[] = [
     "views": 16900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1042,7 +1042,7 @@ export const articlesIndex: Article[] = [
       "targetWordCount": 1500
     },
     "intro": [
-      "Modern enterprise organizations rarely operate on a single monolithic web server. Growth through acquisitions, rapid cloud migrations, and microservice architectures result in sprawling digital attack surfaces containing hundreds—or thousands—of exposed subdomains, staging portals, Jenkins build servers, and unauthenticated API endpoints.",
+      "Modern enterprise organizations rarely operate on a single monolithic web server. Growth through acquisitions, rapid cloud migrations, and microservice architectures result in sprawling digital attack surfaces containing hundreds, or thousands, of exposed subdomains, staging portals, Jenkins build servers, and unauthenticated API endpoints.",
       "Web reconnaissance is the art and science of mapping this vast digital footprint. In bug bounty hunting and professional penetration testing, the practitioner who performs the most exhaustive reconnaissance almost invariably finds the highest-severity vulnerabilities.",
       "In this technical guide, we break down the four progressive tiers of web reconnaissance: Passive OSINT Scraping, High-Speed DNS Resolution and Permutation Brute-Forcing, Live HTTP Verification, and Technology Stack Fingerprinting."
     ],
@@ -1052,7 +1052,7 @@ export const articlesIndex: Article[] = [
         "id": "passive-subdomain-osint",
         "level": 2,
         "body": [
-          "Passive enumeration harvests subdomain records from public aggregators without transmitting a single probe packet to the target domain’s name servers. Certificate Transparency (CT) logs—mandated by modern web browsers to prevent rogue SSL certificates—record every SSL/TLS certificate ever issued for a domain.",
+          "Passive enumeration harvests subdomain records from public aggregators without transmitting a single probe packet to the target domain’s name servers. Certificate Transparency (CT) logs, mandated by modern web browsers to prevent rogue SSL certificates, record every SSL/TLS certificate ever issued for a domain.",
           "Using tools like OWASP Amass, Subfinder, and Chaos, we can extract thousands of historical and actively deployed subdomains within seconds."
         ],
         "codeBlock": {
@@ -1196,7 +1196,7 @@ export const articlesIndex: Article[] = [
     "views": 15300,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1352,7 +1352,7 @@ export const articlesIndex: Article[] = [
     "views": 24800,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1396,7 +1396,7 @@ export const articlesIndex: Article[] = [
         "id": "cia-triad",
         "level": 2,
         "body": [
-          "Every security standard—from NIST CSF and ISO/IEC 27001 to SOC 2 and the CIS Critical Security Controls—is grounded in the CIA Triad: Confidentiality, Integrity, and Availability.",
+          "Every security standard, from NIST CSF and ISO/IEC 27001 to SOC 2 and the CIS Critical Security Controls, is grounded in the CIA Triad: Confidentiality, Integrity, and Availability.",
           "Confidentiality ensures that sensitive data, credentials, and telemetry are accessible strictly to authenticated and authorized entities. Violations occur through unauthorized database dumps, eavesdropping on unencrypted traffic, or credential stuffing attacks. Mitigation relies on modern symmetric/asymmetric encryption (AES-256-GCM, RSA-4096, Ed25519) and strict Identity and Access Management (IAM).",
           "Integrity guarantees that data and software configurations remain authentic, accurate, and completely unaltered in transit or at rest. Cryptographic hash functions (SHA-256, BLAKE3), digital code signatures, and immutable storage protect against tampering.",
           "Availability ensures that authorized users have continuous, reliable access to applications, compute resources, and data. Mitigating distributed denial-of-service (DDoS) attacks, enforcing redundant failover topologies, and implementing automated disaster recovery are vital to preserving availability."
@@ -1436,7 +1436,7 @@ export const articlesIndex: Article[] = [
         "id": "threat-modeling-stride",
         "level": 2,
         "body": [
-          "Threat modeling is the proactive engineering process of identifying potential security vulnerabilities, threat actors, and attack vectors during the architecture phase—before a single line of production code is deployed.",
+          "Threat modeling is the proactive engineering process of identifying potential security vulnerabilities, threat actors, and attack vectors during the architecture phase, before a single line of production code is deployed.",
           "Developed by Microsoft security engineers, the STRIDE methodology categorizes software and architectural threats into six primary categories:",
           "1. Spoofing: An adversary pretending to be another authorized user, server, or process (e.g., DNS spoofing, session hijacking). Mitigate via mutual TLS, strong authentication, and cryptographic certificates.",
           "2. Tampering: Unauthorized modification of data in transit or memory (e.g., modifying database balances or kernel binaries). Mitigate via digital signatures and integrity hashing.",
@@ -1453,7 +1453,7 @@ export const articlesIndex: Article[] = [
         "body": [
           "For decades, enterprise security relied on perimeter castle-and-moat security: trust everything inside the corporate intranet, distrust everything outside. Modern lateral movement techniques have completely invalidated this model.",
           "Zero-Trust Architecture (ZTA), codified in NIST SP 800-207, operates on three non-negotiable principles:",
-          "1. Verify Explicitly: Always authenticate and authorize based on all available data points—including user identity, device health, geolocation, service role, and behavioral anomalies.",
+          "1. Verify Explicitly: Always authenticate and authorize based on all available data points, including user identity, device health, geolocation, service role, and behavioral anomalies.",
           "2. Use Least-Privilege Access: Limit user and service access with Just-In-Time (JIT) and Just-Enough-Access (JEA) models, adaptive risk policies, and data protection.",
           "3. Assume Breach: Minimize blast radius by segmenting networks, encrypting all internal communications, and verifying security posture continuously rather than once at login."
         ]
@@ -1482,7 +1482,7 @@ export const articlesIndex: Article[] = [
         "level": 2,
         "body": [
           "Securing a career in cybersecurity begins with practical, hands-on labs rather than abstract memorization. Start by setting up an isolated virtual laboratory, practicing network packet captures with Wireshark, auditing open-source code repositories, and understanding standard security frameworks like the MITRE ATT&CK matrix.",
-          "Industry standard certifications—such as CompTIA Security+, CEH, and CISSP—help validate theoretical knowledge, but real-world engineering projects and documented code audits carry the greatest weight with leading security teams."
+          "Industry standard certifications, such as CompTIA Security+, CEH, and CISSP, help validate theoretical knowledge, but real-world engineering projects and documented code audits carry the greatest weight with leading security teams."
         ]
       }
     ],
@@ -1535,14 +1535,14 @@ export const articlesIndex: Article[] = [
     "views": 31200,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
     },
     "summary": "Master local LLM deployment with Ollama: GPU acceleration, model quantizations (Q4_K_M vs Q8), custom Modelfiles, and Open WebUI setup.",
     "coverImage": {
-      "src": "/images/ollama_local_ai.jpg",
+      "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
       "alt": "Local Compute inference with Ollama, neural network weights offloading to GPU VRAM and terminal interface",
       "width": 1200,
       "height": 675
@@ -1749,7 +1749,7 @@ export const articlesIndex: Article[] = [
     "views": 28400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1897,7 +1897,7 @@ export const articlesIndex: Article[] = [
     "faqs": [
       {
         "question": "How does code completion latency with local models compare to GitHub Copilot?",
-        "answer": "When utilizing dedicated hardware accelerators (such as an NVIDIA RTX 3060/4070 or Apple M-series chips) with optimized 3B parameter models (like StarCoder2 or DeepSeek 1.3B), local autocomplete latency averages 40–80 milliseconds, which feels as instantaneous as cloud Copilot."
+        "answer": "When utilizing dedicated hardware accelerators (such as an NVIDIA RTX 3060/4070 or Apple M-series chips) with optimized 3B parameter models (like StarCoder2 or DeepSeek 1.3B), local autocomplete latency averages 40 to 80 milliseconds, which feels as instantaneous as cloud Copilot."
       },
       {
         "question": "What are the most critical security precautions when implementing Best Open Source Automated Coding Tools for 2026?",
@@ -1942,7 +1942,7 @@ export const articlesIndex: Article[] = [
     "views": 24600,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1987,7 +1987,7 @@ export const articlesIndex: Article[] = [
         "body": [
           "A robust local RAG architecture operates across two distinct pipelines: Ingestion and Query Execution.",
           "During Ingestion: (1) Documents (PDFs, Markdown, DOCX) are parsed and split into overlapping text chunks (e.g., 500 characters with 50-character overlap), (2) Each chunk is transformed into a dense 768-dimensional vector vector using a local embedding model (nomic-embed-text), and (3) Vectors along with metadata are persisted inside ChromaDB.",
-          "During Query Execution: (1) The user question is embedded using the exact same model, (2) ChromaDB executes a cosine-similarity search to retrieve the top 3–5 nearest document chunks, and (3) A prompt template combining the question and retrieved chunks is dispatched to Ollama for synthesis."
+          "During Query Execution: (1) The user question is embedded using the exact same model, (2) ChromaDB executes a cosine-similarity search to retrieve the top 3 to 5 nearest document chunks, and (3) A prompt template combining the question and retrieved chunks is dispatched to Ollama for synthesis."
         ]
       },
       {
@@ -2082,7 +2082,7 @@ export const articlesIndex: Article[] = [
     "views": 21900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -2233,7 +2233,7 @@ export const articlesIndex: Article[] = [
     "views": 18700,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -2267,7 +2267,7 @@ export const articlesIndex: Article[] = [
     },
     "intro": [
       "Security Operations Centers (SOCs) are overwhelmed by alert fatigue. Modern enterprise SIEM platforms generate tens of thousands of security alerts daily, forcing Tier-1 security analysts to spend their days triaging false positives, copying IP addresses into threat intelligence lookups, and drafting repetitive incident tickets.",
-      "Autonomous threat-hunting agent architectures—powered by frameworks like LangGraph and AutoGen paired with local open-weights LLMs—are transforming threat hunting. Unlike static scripts, autonomous agents can decompose complex analytical goals, execute forensic terminal commands, query threat intelligence databases, and synthesize human-readable incident briefs.",
+      "Autonomous threat-hunting agent architectures, powered by frameworks like LangGraph and AutoGen paired with local open-weights LLMs, are transforming threat hunting. Unlike static scripts, autonomous agents can decompose complex analytical goals, execute forensic terminal commands, query threat intelligence databases, and synthesize human-readable incident briefs.",
       "In this engineering guide, we examine the architecture, safety sandboxing, and practical Python implementation of an autonomous SOC threat-hunting agent."
     ],
     "sections": [
@@ -2386,7 +2386,7 @@ export const articlesIndex: Article[] = [
     "views": 19400,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -2524,7 +2524,7 @@ export const articlesIndex: Article[] = [
     "views": 17800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -2559,7 +2559,7 @@ export const articlesIndex: Article[] = [
     "intro": [
       "autonomous search engines like autonomous research engines have changed how researchers, engineers, and analysts discover information on the web. By searching live web sources, reading multiple web pages, and synthesizing a coherent answer with clickable citations, neural search engines eliminate manual link clicking.",
       "However, proprietary search engines log every query, link search history to user profiles, and restrict underlying model customization. For technical investigations and confidential market research, organizations require a self-hosted automated research assistant.",
-      "In this guide, we review and deploy the premier open-source automated research engines—specifically Perplexica and SearXNG—paired with local Ollama models."
+      "In this guide, we review and deploy the premier open-source automated research engines, specifically Perplexica and SearXNG, paired with local Ollama models."
     ],
     "sections": [
       {
@@ -2668,7 +2668,7 @@ export const articlesIndex: Article[] = [
     "views": 29300,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -2853,7 +2853,7 @@ export const articlesIndex: Article[] = [
     "views": 29800,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -2935,7 +2935,7 @@ export const articlesIndex: Article[] = [
         "id": "unattended-upgrades-lynis-audit",
         "level": 2,
         "body": [
-          "Enable unattended-upgrades to automatically apply critical security patches daily without human intervention. Finally, run Lynis—an open-source security auditing tool—to benchmark your system against CIS standards."
+          "Enable unattended-upgrades to automatically apply critical security patches daily without human intervention. Finally, run Lynis, an open-source security auditing tool, to benchmark your system against CIS standards."
         ],
         "codeBlock": {
           "language": "bash",
@@ -3022,7 +3022,7 @@ export const articlesIndex: Article[] = [
     "views": 26300,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -3190,7 +3190,7 @@ export const articlesIndex: Article[] = [
     "views": 24100,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -3225,7 +3225,7 @@ export const articlesIndex: Article[] = [
     "intro": [
       "Modern web browsing and smart home IoT ecosystems are saturated with invasive advertising networks, behavioral tracking telemetry, and malicious domains. While browser extensions (like uBlock Origin) protect desktop web browsers, they cannot protect smart TVs, IoT appliances, mobile gaming apps, or connected streaming devices.",
       "Pi-hole operates as a network-wide DNS sinkhole. Whenever any device on your Wi-Fi or LAN attempts to resolve an ad or tracking domain, Pi-hole intercepts the request and responds with a null address (0.0.0.0), blocking the advertisement before it ever downloads.",
-      "When combined with Unbound—a private recursive DNS resolver—you eliminate reliance on third-party upstream DNS providers (like Google 8.8.8.8 or Cloudflare 1.1.1.1), resolving DNS records directly from the authoritative root servers."
+      "When combined with Unbound, a private recursive DNS resolver, you eliminate reliance on third-party upstream DNS providers (like Google 8.8.8.8 or Cloudflare 1.1.1.1), resolving DNS records directly from the authoritative root servers."
     ],
     "sections": [
       {
@@ -3331,7 +3331,7 @@ export const articlesIndex: Article[] = [
     "views": 22800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -3472,7 +3472,7 @@ export const articlesIndex: Article[] = [
     "views": 20400,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -3613,7 +3613,7 @@ export const articlesIndex: Article[] = [
     "views": 23100,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -3755,7 +3755,7 @@ export const articlesIndex: Article[] = [
     "views": 18900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -3898,7 +3898,7 @@ export const articlesIndex: Article[] = [
     "views": 33500,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -4085,7 +4085,7 @@ export const articlesIndex: Article[] = [
     "views": 29400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -4119,7 +4119,7 @@ export const articlesIndex: Article[] = [
     },
     "intro": [
       "Self-hosting your password manager grants total control over your encrypted credentials, eliminating third-party subscription fees and cloud dependency. However, administrators face a crucial choice between two open-source server implementations: the official Bitwarden Server and the community-developed Vaultwarden.",
-      "The official Bitwarden server is written in C# (.NET) and backed by Microsoft SQL Server. It is designed for massive enterprise deployments with thousands of concurrent seats, requiring multiple Docker containers and 3GB–4GB of dedicated RAM.",
+      "The official Bitwarden server is written in C# (.NET) and backed by Microsoft SQL Server. It is designed for massive enterprise deployments with thousands of concurrent seats, requiring multiple Docker containers and 3GB to 4GB of dedicated RAM.",
       "Vaultwarden is an alternative lightweight backend written in Rust. It implements the complete Bitwarden API specification while consuming less than 30MB of RAM and utilizing a lightweight SQLite/PostgreSQL database. In this guide, we compare their features, performance, and security."
     ],
     "sections": [
@@ -4128,7 +4128,7 @@ export const articlesIndex: Article[] = [
         "id": "resource-footprint-benchmarks",
         "level": 2,
         "body": [
-          "For homelab enthusiasts, Raspberry Pi owners, and small teams running on modest cloud VPS instances ($4–$6/month), Vaultwarden is orders of magnitude more resource-efficient than the official Bitwarden stack."
+          "For homelab enthusiasts, Raspberry Pi owners, and small teams running on modest cloud VPS instances ($4 to $6/month), Vaultwarden is orders of magnitude more resource-efficient than the official Bitwarden stack."
         ],
         "table": {
           "caption": "Table 2: Bitwarden Official vs Vaultwarden Technical Comparison",
@@ -4147,8 +4147,8 @@ export const articlesIndex: Article[] = [
             ],
             [
               "RAM Consumption",
-              "3,000 MB – 4,000 MB",
-              "25 MB – 50 MB",
+              "3,000 MB  to  4,000 MB",
+              "25 MB  to  50 MB",
               "Vaultwarden uses 98% less memory"
             ],
             [
@@ -4276,7 +4276,7 @@ export const articlesIndex: Article[] = [
     "views": 26100,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -4421,7 +4421,7 @@ export const articlesIndex: Article[] = [
     "views": 21300,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -4455,7 +4455,7 @@ export const articlesIndex: Article[] = [
     },
     "intro": [
       "Managing production Linux infrastructure requires proactive monitoring, automated compliance auditing, and real-time behavioral runtime threat detection. Waiting for an external notification of a security breach is a recipe for catastrophe.",
-      "Linux provides rich kernel instrumentation frameworks—including eBPF and the Linux Auditing System (auditd)—that allow administrators to inspect every system call, process execution, socket connection, and file modification.",
+      "Linux provides rich kernel instrumentation frameworks, including eBPF and the Linux Auditing System (auditd), that allow administrators to inspect every system call, process execution, socket connection, and file modification.",
       "In this guide, we review the top security tools every Linux sysadmin must deploy to maintain hardened, audited production servers."
     ],
     "sections": [
@@ -4513,7 +4513,7 @@ export const articlesIndex: Article[] = [
     "faqs": [
       {
         "question": "Does running Falco eBPF introduce significant CPU overhead?",
-        "answer": "No. eBPF executes safely within the kernel space with just-in-time compilation, resulting in less than 1–2% CPU overhead even under heavy production web traffic."
+        "answer": "No. eBPF executes safely within the kernel space with just-in-time compilation, resulting in less than 1 to 2% CPU overhead even under heavy production web traffic."
       },
       {
         "question": "What are the most critical security precautions when implementing Top Linux Security Tools for Sysadmins: 2026?",
@@ -4557,7 +4557,7 @@ export const articlesIndex: Article[] = [
     "views": 28900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -4651,7 +4651,7 @@ export const articlesIndex: Article[] = [
     "faqs": [
       {
         "question": "Does installing too many privacy extensions hurt privacy?",
-        "answer": "Yes! Installing dozens of obscure extensions increases your browser fingerprint uniqueness. Stick to the 3–4 audited extensions recommended in this guide."
+        "answer": "Yes! Installing dozens of obscure extensions increases your browser fingerprint uniqueness. Stick to the 3 to 4 audited extensions recommended in this guide."
       },
       {
         "question": "What are the most critical security precautions when implementing Essential Browser Extensions for Privacy: 2026?",
@@ -4696,7 +4696,7 @@ export const articlesIndex: Article[] = [
     "views": 22400,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -4731,7 +4731,7 @@ export const articlesIndex: Article[] = [
     "intro": [
       "Software developers and DevSecOps engineers require powerful utilities to test REST/GraphQL endpoints, inspect HTTP traffic payloads, and scan code repositories for security flaws before pushing to production.",
       "However, industry-standard tools like Postman have introduced mandatory cloud account synchronization and paywalls, exposing internal staging endpoints and API secrets to third-party servers.",
-      "In this guide, we review the top offline, open-source developer security tools—including Bruno, Semgrep, and Caido—that prioritize local files, Git synchronization, and high performance."
+      "In this guide, we review the top offline, open-source developer security tools, including Bruno, Semgrep, and Caido, that prioritize local files, Git synchronization, and high performance."
     ],
     "sections": [
       {
@@ -4845,7 +4845,7 @@ export const articlesIndex: Article[] = [
     "views": 31800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -5024,7 +5024,7 @@ export const articlesIndex: Article[] = [
     "views": 3400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5219,7 +5219,7 @@ export const articlesIndex: Article[] = [
     "views": 11319,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5369,7 +5369,7 @@ export const articlesIndex: Article[] = [
     "views": 19238,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5505,7 +5505,7 @@ export const articlesIndex: Article[] = [
     "views": 8657,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5623,7 +5623,7 @@ export const articlesIndex: Article[] = [
     "views": 16576,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5754,7 +5754,7 @@ export const articlesIndex: Article[] = [
     "views": 5995,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5784,7 +5784,7 @@ export const articlesIndex: Article[] = [
     },
     "intro": [
       "Mobile devices is now very common now a days and mobile devices has changed the way of bi-directional communication. There are many operating system for mobile devices available but the most common and the best operating system for mobile is Android, it is an OS means you can install other applications (software's) on it. In Android application usually called apps or android apps The risk of hacking by using mobile devices is very common and people are developing and using different apps (application) for their hacking attack. Android has faced different challenges from hacking application and below is the list of application for android hacking 1. SpoofApp",
-      "Here is an app that spies at heart could use – SpoofApp. It allows you to use a fake Caller ID – a number that you are free to specify yourself, in order to protect your privacy or to pull a prank on someone. Sounds like fun, doesn’t it? Well, Apple didn’t think so, which is why it never allowed the app to enter its App Store. Google, however, didn’t mind, which is why SpoofApp was available on the Android Market for about two and a half years. However, it was banned from there last year as it allegedly was in conflict with The Truth in Caller ID Act of 2009.This can be useful in social engineering."
+      "Here is an app that spies at heart could use  to  SpoofApp. It allows you to use a fake Caller ID  to  a number that you are free to specify yourself, in order to protect your privacy or to pull a prank on someone. Sounds like fun, doesn’t it? Well, Apple didn’t think so, which is why it never allowed the app to enter its App Store. Google, however, didn’t mind, which is why SpoofApp was available on the Android Market for about two and a half years. However, it was banned from there last year as it allegedly was in conflict with The Truth in Caller ID Act of 2009.This can be useful in social engineering."
     ],
     "sections": [
       {
@@ -5885,7 +5885,7 @@ export const articlesIndex: Article[] = [
     "views": 13914,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6016,7 +6016,7 @@ export const articlesIndex: Article[] = [
     "views": 21833,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6153,7 +6153,7 @@ export const articlesIndex: Article[] = [
     "views": 11252,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6286,7 +6286,7 @@ export const articlesIndex: Article[] = [
     "views": 19171,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6412,7 +6412,7 @@ export const articlesIndex: Article[] = [
     "views": 8590,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6543,7 +6543,7 @@ export const articlesIndex: Article[] = [
     "views": 16509,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6672,7 +6672,7 @@ export const articlesIndex: Article[] = [
     "views": 5928,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6798,7 +6798,7 @@ export const articlesIndex: Article[] = [
     "views": 13847,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -6928,7 +6928,7 @@ export const articlesIndex: Article[] = [
     "views": 21766,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -7123,7 +7123,7 @@ export const articlesIndex: Article[] = [
     "views": 11185,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -7258,7 +7258,7 @@ export const articlesIndex: Article[] = [
     "views": 19104,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -7471,7 +7471,7 @@ export const articlesIndex: Article[] = [
     "views": 8523,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -7745,7 +7745,7 @@ export const articlesIndex: Article[] = [
     "views": 16442,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -8070,7 +8070,7 @@ export const articlesIndex: Article[] = [
     "views": 5861,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -8204,7 +8204,7 @@ export const articlesIndex: Article[] = [
     "views": 13780,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -8337,7 +8337,7 @@ export const articlesIndex: Article[] = [
     "views": 21699,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -8414,7 +8414,7 @@ export const articlesIndex: Article[] = [
     "views": 11118,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -8866,7 +8866,7 @@ export const articlesIndex: Article[] = [
     "views": 19037,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -9128,7 +9128,7 @@ export const articlesIndex: Article[] = [
     "views": 8456,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -9534,7 +9534,7 @@ export const articlesIndex: Article[] = [
     "views": 16375,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -9764,7 +9764,7 @@ export const articlesIndex: Article[] = [
     "views": 5794,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -9877,7 +9877,7 @@ export const articlesIndex: Article[] = [
     "views": 13713,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -10127,7 +10127,7 @@ export const articlesIndex: Article[] = [
     "views": 21632,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -10164,10 +10164,10 @@ export const articlesIndex: Article[] = [
         "id": "sec-28-1",
         "heading": "Overview & Technical Method",
         "body": [
-          "We give what we have Our doubt is our passion, and our passion is our task The rest is the madness of art. -- Henry James",
+          "We give what we have Our doubt is our passion, and our passion is our task The rest is the madness of art: Henry James",
           "A hacker is someone who is intensely interested in the complicated process of any computer. Most often, the programmers are hackers. As such, hackers gain advanced operating system and programming language knowledge. They may know about cracks and the reasons behind such voids within systems. Hackers are constantly looking for some new information, freely posting what they have discovered and never intentionally damaging data.",
           "A cracker is a person who breaks into remote computers, with malicious intent, or otherwise violates the device integrity. Crackers, having gained unauthorized access, destroy vital data, deny service to legitimate users or, in essence, cause their targets problems. It is easy to recognise crackers, since their acts are malicious.",
-          "The Jargon File -a major source for basic skills, lore and translations. The jargon file contains a set of definitions for the term hacker, mostly related to technical expertise and a pleasure in problem solving and consequence overcoming.",
+          "The Jargon File: a major source for basic skills, lore and translations. The jargon file contains a set of definitions for the term hacker, mostly related to technical expertise and a pleasure in problem solving and consequence overcoming.",
           "The world is full of fascinating problems waiting to be solved. No problem should ever have to be solved twice. Boredom and drudgery are evil. Freedom is good. Attitude is no substitute for competence. Basic Hacking Skills Learn how to program. Get one of the open-source UNIX and learn to use and run it. Learn how to use the World Wide Web and write HTML. If you don't have functional English, learn it. Familiarization with Some Tools SCANNER : A Scanner is a program that automatically detects security weaknesses in a remote or local host.",
           "PASSWORD CRACKER : A Password Cracker is any program that can decrypt passwords or otherwise disable password protection. Sometimes a dictionary attack is performed."
         ]

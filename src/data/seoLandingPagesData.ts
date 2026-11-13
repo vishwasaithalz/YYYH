@@ -62,7 +62,7 @@ export const SEO_LANDING_PAGES: Record<string, SeoLandingPageData> = {
     pillar: 'Yin (Defensive Zero-Trust)',
     overview: [
       'Modern security architecture can no longer rely on perimeter firewalls. Our cybersecurity services implement rigorous Zero-Trust Architecture (ZTA) guided by NIST SP 800-207 and the CISA Zero-Trust Maturity Model.',
-      'Founded by security researcher Vishwas Aithal, YinYangYoHackers provides actionable, code-level cybersecurity engineering. We audit every asset, implement identity-based microsegmentation, harden Linux kernel bastions, and configure real-time anomalous egress surveillance.'
+      'Founded by security researcher YinYangYoHackers Research Staff, YinYangYoHackers provides actionable, code-level cybersecurity engineering. We audit every asset, implement identity-based microsegmentation, harden Linux kernel bastions, and configure real-time anomalous egress surveillance.'
     ],
     keyDeliverables: [
       {
@@ -157,7 +157,7 @@ sysctl -w kernel.unprivileged_bpf_disabled=1`,
       },
       {
         question: 'How can our security team request a cybersecurity services engagement?',
-        answer: 'You can initiate an engagement directly via our /contact consultation terminal or reach out via secure encrypted email at vishwasaithal@proton.me with your scope requirements.'
+        answer: 'You can initiate an engagement directly via our /contact consultation terminal with your scope requirements and technical parameters.'
       }
     ],
     relatedArticleSlugs: [
@@ -189,7 +189,7 @@ sysctl -w kernel.unprivileged_bpf_disabled=1`,
     pillar: 'Yang (Adversarial Offensive)',
     overview: [
       'Automated vulnerability scanners catch only known CVEs with predictable signatures. Real adversaries chain subtle configuration flaws, logic loopholes, and credential exposures to achieve remote code execution and domain dominance.',
-      'Our ethical hacking services put your defenses against relentless, creative human-driven offensive maneuvers. Founded in 2013 by Vishwas Aithal, our red team operates with strict Rules of Engagement (RoE) to deliver verified proofs of concept and actionable remediation blueprints.'
+      'Our ethical hacking services put your defenses against relentless, creative human-driven offensive maneuvers. Founded in 2013 by YinYangYoHackers Research Staff, our red team operates with strict Rules of Engagement (RoE) to deliver verified proofs of concept and actionable remediation blueprints.'
     ],
     keyDeliverables: [
       {
@@ -644,7 +644,7 @@ iptables -A OUTPUT -m owner --uid-owner ollama -j DROP`,
       },
       {
         question: 'Is a sovereign local model as intelligent as proprietary cloud models like GPT-4?',
-        answer: 'Modern open-weight models such as DeepSeek-R1 (671B MoE distilled to 14B/32B/70B) and Llama 3.3 70B match or exceed proprietary models on STEM benchmarks, coding evaluations, and logical reasoning—with zero privacy tradeoffs.'
+        answer: 'Modern open-weight models such as DeepSeek-R1 (671B MoE distilled to 14B/32B/70B) and Llama 3.3 70B match or exceed proprietary models on STEM benchmarks, coding evaluations, and logical reasoning, with zero privacy tradeoffs.'
       },
       {
         question: 'Can our team share a single local autonomous systems server?',
@@ -684,7 +684,7 @@ iptables -A OUTPUT -m owner --uid-owner ollama -j DROP`,
     pillar: 'Holistic Core',
     overview: [
       'True cybersecurity expertise cannot be copied from vendor marketing brochures. It is forged through continuous hands-on laboratory experimentation, packet-level disassembly, reverse engineering, and responsible vulnerability disclosure.',
-      'Since 2013, YinYangYoHackers has published original cybersecurity research founded by Vishwas Aithal. We analyze real-world attacker techniques, dissect zero-day vulnerability classes, publish reproducible proofs of concept, and engineer open-source defensive counter-measures.'
+      'Since 2013, YinYangYoHackers has published original cybersecurity research founded by YinYangYoHackers Research Staff. We analyze real-world attacker techniques, dissect zero-day vulnerability classes, publish reproducible proofs of concept, and engineer open-source defensive counter-measures.'
     ],
     keyDeliverables: [
       {
@@ -767,7 +767,7 @@ tshark -r /tmp/auth_audit.pcap -Y "http.authorization || tls.handshake.extension
       },
       {
         question: 'How can security engineers contribute research or propose collaborations?',
-        answer: 'We welcome peer collaboration with independent researchers. Send encrypted proposals to vishwasaithal@proton.me or connect via our Telegram research channel.'
+        answer: 'We welcome peer collaboration with independent researchers. Send encrypted proposals via our /contact consultation terminal or PGP security disclosure.'
       },
       {
         question: 'Are the research code snippets and tools open-source?',
@@ -1047,7 +1047,7 @@ sudo tcpdump -i eth0 -n "port 11434 or host api.openai.com or host ollama.com" -
     subtitle: 'Run state-of-the-art reasoning models inside physically disconnected facilities with zero outbound network interfaces, unidirectional diodes, and immutable OS bastions.',
     pillar: 'Yo (Sovereign Autonomous Systems)',
     overview: [
-      'In high-assurance environments—including defense installations, critical infrastructure control rooms, and legal vaults—software firewalls are insufficient. Compliance mandates physical air-gapping: computing systems physically separated from any external network.',
+      'In high-assurance environments (including defense installations, critical infrastructure control rooms, and legal vaults), software firewalls are insufficient. Compliance mandates physical air-gapping: computing systems physically separated from any external network.',
       'YinYangYoHackers engineers turnkey air-gapped systems architectures. We package foundation model weights, tokenizers, vector databases, and execution runtimes into cryptographically signed, immutable offline bundles ready for physical deployment via secure media or optical data diodes.'
     ],
     keyDeliverables: [

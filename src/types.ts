@@ -223,6 +223,7 @@ export type ActiveSiteView =
   | 'blog' 
   | 'clusters' 
   | 'tools' 
+  | 'services'
   | 'about'
   | 'disclaimer'
   | 'privacy'
@@ -246,6 +247,8 @@ export type ActiveSiteView =
   | 'ai-data-privacy'
   | 'sovereign-hub'
   | 'security-research'
+  | 'ports'
+  | 'glossary'
   | 'maintenance'
   | '404';
 

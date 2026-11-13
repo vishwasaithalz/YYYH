@@ -9,7 +9,7 @@ import {
 import { Article } from '../types';
 import { calculateReadingTime } from '../utils/readingTime';
 import { getArticleCoverImage, getArticleCardCoverImage, HACKER_COVERS } from '../utils/hackerImages';
-import { getOptimizedImageUrl, getOptimizedSquareImageUrl, getResponsiveSrcSet, CARD_SIZES, FEATURED_HERO_SIZES } from '../utils/responsiveImages';
+import { getArticleCyberVisual } from '../utils/cyberArtworks';
 
 export interface ArticleCardSkeletonProps {
   featured?: boolean;
@@ -136,6 +136,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
     return getArticleCardCoverImage(article);
   }, [article]);
 
+  const cyberVisual = React.useMemo(() => {
+    return getArticleCyberVisual(article);
+  }, [article]);
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -145,10 +149,6 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
   // 1. Featured Layout
   if (featured) {
-    const isCdn = coverImage.src.includes('images.unsplash.com');
-    const avifSrcSet = isCdn ? getResponsiveSrcSet(coverImage.src, [480, 640, 800, 1024], 'avif') : '';
-    const webpSrcSet = isCdn ? getResponsiveSrcSet(coverImage.src, [480, 640, 800, 1024], 'webp') : '';
-    const optimizedHeroSrc = getOptimizedImageUrl(coverImage.src, 640, 72, 'webp', 360);
 
     return (
       <article
@@ -166,31 +166,19 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         <link itemProp="image" href={coverImage.src} />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 relative z-10 items-center">
-          <div className="lg:col-span-5 relative aspect-[16/9] w-full overflow-hidden bg-[#03060f]">
-            <picture className="w-full h-full block">
-              {isCdn && avifSrcSet && (
-                <source type="image/avif" srcSet={avifSrcSet} sizes={FEATURED_HERO_SIZES} />
-              )}
-              {isCdn && webpSrcSet && (
-                <source type="image/webp" srcSet={webpSrcSet} sizes={FEATURED_HERO_SIZES} />
-              )}
-              <img 
-                src={optimizedHeroSrc}
-                srcSet={webpSrcSet || undefined}
-                sizes={FEATURED_HERO_SIZES}
-                alt={coverImage.alt}
-                width={640}
-                height={360}
-                referrerPolicy="no-referrer"
-                fetchPriority="high"
-                decoding="async"
-                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = HACKER_COVERS[0]; }}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 aspect-[16/9]"
-              />
-            </picture>
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-[#090d16]/40 to-[#090d16]" />
-            <div className="absolute top-3 left-3">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-500/60 flex items-center gap-1.5">
+          <div className="lg:col-span-5 relative w-full overflow-hidden aspect-[16/9] lg:aspect-auto lg:h-full min-h-[260px] bg-slate-900">
+            <img
+              src={article.coverImage?.src || coverImage.src}
+              alt={article.coverImage?.alt || article.title}
+              loading={priority ? 'eager' : 'lazy'}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80';
+              }}
+            />
+            <div className="absolute top-3 left-3 z-20">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-500/60 flex items-center gap-1.5 shadow-md">
                 <Sparkles className="w-3 h-3 text-emerald-400" />
                 FEATURED RESEARCH
               </span>
@@ -281,7 +269,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
                   }}
                   className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-lg bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-800/60 text-emerald-300 font-bold group-hover:translate-x-1 transition-all"
                 >
-                  <span>Open Article</span>
+                  <span>Guide</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -294,10 +282,6 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
   // 2. Stream Layout
   if (layout === 'stream') {
-    const isCdn = coverImage.src.includes('images.unsplash.com');
-    const avifSrcSet = isCdn ? getResponsiveSrcSet(coverImage.src, [320, 480], 'avif') : '';
-    const webpSrcSet = isCdn ? getResponsiveSrcSet(coverImage.src, [320, 480], 'webp') : '';
-    const optimizedStreamSrc = getOptimizedImageUrl(coverImage.src, 320, 72, 'webp', 180);
 
     return (
       <article
@@ -315,29 +299,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         <link itemProp="image" href={coverImage.src} />
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-1 min-w-0">
-          <div className="w-full sm:w-44 aspect-[16/9] bg-[#040711] rounded-lg overflow-hidden shrink-0 border border-slate-800/80 relative">
-            <picture className="w-full h-full block">
-              {isCdn && avifSrcSet && (
-                <source type="image/avif" srcSet={avifSrcSet} sizes="(max-width: 640px) 100vw, 176px" />
-              )}
-              {isCdn && webpSrcSet && (
-                <source type="image/webp" srcSet={webpSrcSet} sizes="(max-width: 640px) 100vw, 176px" />
-              )}
-              <img
-                src={optimizedStreamSrc}
-                srcSet={webpSrcSet || undefined}
-                sizes="(max-width: 640px) 100vw, 176px"
-                alt={coverImage.alt}
-                width={320}
-                height={180}
-                loading={priority ? 'eager' : 'lazy'}
-                fetchPriority={priority ? 'high' : 'auto'}
-                decoding="async"
-                referrerPolicy="no-referrer"
-                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = HACKER_COVERS[0]; }}
-                className="w-full h-full object-cover object-center aspect-[16/9] group-hover:scale-105 transition-transform duration-300"
-              />
-            </picture>
+          <div className="w-full sm:w-44 aspect-[16/9] rounded-lg overflow-hidden shrink-0 border border-slate-800/80 relative bg-slate-900">
+            <img
+              src={article.coverImage?.src || coverImage.src}
+              alt={article.coverImage?.alt || article.title}
+              loading="lazy"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80';
+              }}
+            />
           </div>
 
           <div className="space-y-2 min-w-0 flex-1">
@@ -387,7 +359,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             }}
             className="inline-flex items-center gap-1.5 px-3.5 py-2.5 min-h-[44px] rounded-lg bg-slate-900 group-hover:bg-emerald-400 group-hover:text-slate-950 text-emerald-300 text-xs font-mono font-bold transition-colors border border-slate-700 group-hover:border-emerald-400"
           >
-            <span>Open Article</span>
+            <span>Read</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -396,11 +368,6 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   }
 
   // 3. Standard Grid Card
-  const isCdn = coverImage.src.includes('images.unsplash.com');
-  const avifSrcSet = isCdn ? getResponsiveSrcSet(coverImage.src, [320, 480], 'avif') : '';
-  const webpSrcSet = isCdn ? getResponsiveSrcSet(coverImage.src, [320, 480], 'webp') : '';
-  const optimizedCardSrc = getOptimizedImageUrl(coverImage.src, 640, 72, 'webp', 360);
-
   return (
     <article
       id={`article-card-${article.id}`}
@@ -417,36 +384,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       <link itemProp="image" href={coverImage.src} />
 
       <div>
-        <div className="relative aspect-[16/9] w-full bg-[#040711] overflow-hidden border-b border-slate-800/80">
-          <picture className="w-full h-full block">
-            {isCdn && avifSrcSet && (
-              <source type="image/avif" srcSet={avifSrcSet} sizes={CARD_SIZES} />
-            )}
-            {isCdn && webpSrcSet && (
-              <source type="image/webp" srcSet={webpSrcSet} sizes={CARD_SIZES} />
-            )}
-            <img 
-              src={optimizedCardSrc} 
-              srcSet={webpSrcSet || undefined}
-              sizes={CARD_SIZES}
-              alt={coverImage.alt}
-              width={640}
-              height={360}
-              referrerPolicy="no-referrer"
-              loading={priority ? 'eager' : 'lazy'}
-              fetchPriority={priority ? 'high' : 'auto'}
-              decoding="async"
-              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = HACKER_COVERS[0]; }}
-              className="w-full h-full object-cover object-center aspect-[16/9] group-hover:scale-105 transition-transform duration-300"
-            />
-          </picture>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#090d16] via-transparent to-black/20 pointer-events-none" />
-          
-          <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
-            <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-950 text-emerald-300 border border-emerald-700">
-              {article.category}
-            </span>
-          </div>
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900 border-b border-slate-800/80">
+          <img
+            src={article.coverImage?.src || coverImage.src}
+            alt={article.coverImage?.alt || article.title}
+            loading={priority ? 'eager' : 'lazy'}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80';
+            }}
+          />
         </div>
 
         <div className="p-4 sm:p-5">
@@ -512,7 +460,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           }}
           className="flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-lg bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-800/60 text-emerald-300 group-hover:text-emerald-200 font-sans font-semibold transition-colors"
         >
-          <span>Open Article</span>
+          <span>Read</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>

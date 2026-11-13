@@ -158,7 +158,7 @@ export const CidrCalculatorTool: React.FC = () => {
 
     let scope = 'Global Unicast (2000::/3)';
     if (raw.toLowerCase().startsWith('fe80:')) scope = 'Link-Local (fe80::/10)';
-    else if (raw.toLowerCase().startsWith('fc00:') || raw.toLowerCase().startsWith('fd00:')) scope = 'Unique Local Address (ULA - fc00::/7)';
+    else if (raw.toLowerCase().startsWith('fc00:') || raw.toLowerCase().startsWith('fd00:')) scope = 'Unique Local Address (ULA: fc00::/7)';
     else if (raw.toLowerCase().startsWith('ff')) scope = 'Multicast (ff00::/8)';
     else if (raw === '::1' || raw === '0:0:0:0:0:0:0:1') scope = 'Loopback (::1/128)';
 
@@ -367,7 +367,7 @@ export const CidrCalculatorTool: React.FC = () => {
                     <ArrowRight className="w-3.5 h-3.5 text-slate-600" />
                     <span>{ipv4Calculations.lastUsableIp}</span>
                     <button 
-                      onClick={() => copyToClipboard(`${ipv4Calculations.firstUsableIp} - ${ipv4Calculations.lastUsableIp}`, 'range')}
+                      onClick={() => copyToClipboard(`${ipv4Calculations.firstUsableIp} to ${ipv4Calculations.lastUsableIp}`, 'range')}
                       className="ml-2 text-slate-500 hover:text-cyan-400 transition"
                     >
                       {copiedKey === 'range' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -421,7 +421,7 @@ export const CidrCalculatorTool: React.FC = () => {
                           <span className="text-[10px] text-emerald-400">{sub.hosts} hosts</span>
                         </div>
                         <div className="text-[10px] text-slate-400 mt-1">
-                          {sub.first} – {sub.last}
+                          {sub.first}  to  {sub.last}
                         </div>
                       </div>
                     ))}

@@ -149,7 +149,7 @@ export const SEO_LANDING_META: Record<string, SeoLandingMetaItem> = {
       },
       {
         "question": "How can our security team request a cybersecurity services engagement?",
-        "answer": "You can initiate an engagement directly via our /contact consultation terminal or reach out via secure encrypted email at vishwasaithal@proton.me with your scope requirements."
+        "answer": "You can initiate an engagement directly via our /contact consultation terminal with your scope requirements and technical parameters."
       }
     ]
   },
@@ -277,7 +277,7 @@ export const SEO_LANDING_META: Record<string, SeoLandingMetaItem> = {
       },
       {
         "question": "Is a sovereign local model as intelligent as proprietary cloud models like GPT-4?",
-        "answer": "Modern open-weight models such as DeepSeek-R1 (671B MoE distilled to 14B/32B/70B) and Llama 3.3 70B match or exceed proprietary models on STEM benchmarks, coding evaluations, and logical reasoning—with zero privacy tradeoffs."
+        "answer": "Modern open-weight models such as DeepSeek-R1 (671B MoE distilled to 14B/32B/70B) and Llama 3.3 70B match or exceed proprietary models on STEM benchmarks, coding evaluations, and logical reasoning, with zero privacy tradeoffs."
       },
       {
         "question": "Can our team share a single local autonomous systems server?",
@@ -311,7 +311,7 @@ export const SEO_LANDING_META: Record<string, SeoLandingMetaItem> = {
       },
       {
         "question": "How can security engineers contribute research or propose collaborations?",
-        "answer": "We welcome peer collaboration with independent researchers. Send encrypted proposals to vishwasaithal@proton.me or connect via our Telegram research channel."
+        "answer": "We welcome peer collaboration with independent researchers. Send encrypted proposals via our /contact consultation terminal or PGP security disclosure."
       },
       {
         "question": "Are the research code snippets and tools open-source?",
@@ -659,5 +659,59 @@ export const TOOL_PAGES_META: Record<string, ToolPageMetaItem> = {
       "forward secrecy test"
     ],
     "searchIntent": "Infrastructure Diagnostics / Cryptographic Audit"
+  },
+  "packet-tracer": {
+    "slug": "packet-tracer",
+    "path": "/tools/packet-tracer",
+    "h1": "Interactive Network Packet Tracer & Handshake Visualizer",
+    "shortExplanation": "Step-by-step visual exploration of TCP 3-way handshakes, TLS 1.3 1-RTT cryptographic key exchange, DNSSEC queries, and SYN flood defense.",
+    "componentKey": "PacketTracerVisualizer",
+    "title": "Interactive Packet Tracer & Handshake Visualizer | YinYangYo",
+    "metaDescription": "Visualize TCP 3-way handshakes, TLS 1.3 key exchange, DNSSEC queries, and SYN cookie defenses step-by-step with packet inspection. Free tool.",
+    "primaryKeyword": "packet tracer",
+    "secondaryKeywords": [
+      "TCP handshake visualizer",
+      "TLS 1.3 handshake diagram",
+      "DNSSEC query inspection",
+      "SYN flood mitigation",
+      "network packet analyzer"
+    ],
+    "searchIntent": "Technical Education / Network Visualizer"
+  },
+  "sysctl-hardening": {
+    "slug": "sysctl-hardening",
+    "path": "/tools/sysctl-hardening",
+    "h1": "Linux Kernel Sysctl Hardening Switchboard & Defense Auditor",
+    "shortExplanation": "Audit and generate hardened Linux kernel sysctl configurations (/etc/sysctl.d/99-security.conf) for ASLR, SYN cookies, and memory isolation.",
+    "componentKey": "SysctlHardeningTool",
+    "title": "Linux Kernel Sysctl Hardening Tool & Config Generator | YinYangYo",
+    "metaDescription": "Interactive Linux kernel security switchboard. Configure ASLR, BPF JIT hardening, and network stack defenses with 1-click sysctl.conf export.",
+    "primaryKeyword": "linux sysctl hardening",
+    "secondaryKeywords": [
+      "sysctl security configuration",
+      "kernel hardening switchboard",
+      "ASLR linux configuration",
+      "TCP SYN cookie sysctl",
+      "devsecops linux hardening"
+    ],
+    "searchIntent": "DevSecOps / Linux Security Engineering"
+  },
+  "csp-builder": {
+    "slug": "csp-builder",
+    "path": "/tools/csp-builder",
+    "h1": "W3C Content Security Policy (CSP) L3 Generator & Auditor",
+    "shortExplanation": "Build, test, and audit Level 3 Content Security Policy rules with real-time XSS risk evaluation and export for Nginx, Apache, and HTML meta.",
+    "componentKey": "CspBuilderTool",
+    "title": "Content Security Policy (CSP) Builder & Auditor | YinYangYo",
+    "metaDescription": "Build, test, and audit W3C Level 3 Content Security Policy directives with live XSS risk scoring and export for Nginx, Apache, and HTML meta tags.",
+    "primaryKeyword": "CSP builder",
+    "secondaryKeywords": [
+      "content security policy generator",
+      "CSP L3 auditor",
+      "XSS prevention policy",
+      "nginx CSP config",
+      "strict CSP generator"
+    ],
+    "searchIntent": "Web Defense / AppSec Security Utility"
   }
 };

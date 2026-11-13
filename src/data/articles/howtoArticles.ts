@@ -24,7 +24,7 @@ export const howtoArticles: Article[] = [
     "views": 29800,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -106,7 +106,7 @@ export const howtoArticles: Article[] = [
         "id": "unattended-upgrades-lynis-audit",
         "level": 2,
         "body": [
-          "Enable unattended-upgrades to automatically apply critical security patches daily without human intervention. Finally, run Lynis—an open-source security auditing tool—to benchmark your system against CIS standards."
+          "Enable unattended-upgrades to automatically apply critical security patches daily without human intervention. Finally, run Lynis, an open-source security auditing tool, to benchmark your system against CIS standards."
         ],
         "codeBlock": {
           "language": "bash",
@@ -193,7 +193,7 @@ export const howtoArticles: Article[] = [
     "views": 26300,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -361,7 +361,7 @@ export const howtoArticles: Article[] = [
     "views": 24100,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -396,7 +396,7 @@ export const howtoArticles: Article[] = [
     "intro": [
       "Modern web browsing and smart home IoT ecosystems are saturated with invasive advertising networks, behavioral tracking telemetry, and malicious domains. While browser extensions (like uBlock Origin) protect desktop web browsers, they cannot protect smart TVs, IoT appliances, mobile gaming apps, or connected streaming devices.",
       "Pi-hole operates as a network-wide DNS sinkhole. Whenever any device on your Wi-Fi or LAN attempts to resolve an ad or tracking domain, Pi-hole intercepts the request and responds with a null address (0.0.0.0), blocking the advertisement before it ever downloads.",
-      "When combined with Unbound—a private recursive DNS resolver—you eliminate reliance on third-party upstream DNS providers (like Google 8.8.8.8 or Cloudflare 1.1.1.1), resolving DNS records directly from the authoritative root servers."
+      "When combined with Unbound, a private recursive DNS resolver, you eliminate reliance on third-party upstream DNS providers (like Google 8.8.8.8 or Cloudflare 1.1.1.1), resolving DNS records directly from the authoritative root servers."
     ],
     "sections": [
       {
@@ -502,7 +502,7 @@ export const howtoArticles: Article[] = [
     "views": 22800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -643,7 +643,7 @@ export const howtoArticles: Article[] = [
     "views": 20400,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -784,7 +784,7 @@ export const howtoArticles: Article[] = [
     "views": 23100,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -926,7 +926,7 @@ export const howtoArticles: Article[] = [
     "views": 18900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."

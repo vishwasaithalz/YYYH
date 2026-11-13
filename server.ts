@@ -2,9 +2,16 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import compression from "compression";
+import tls from "tls";
+import https from "https";
+import http from "http";
+import dns from "dns";
+import { promisify } from "util";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
+
+const lookupAsync = promisify(dns.lookup);
 
 dotenv.config();
 
@@ -113,12 +120,14 @@ async function startServer() {
     res.sendFile(catalogPath);
   });
 
-  app.get(["/robots.txt", "/security.txt", "/.well-known/security.txt", "/ads.txt"], (req, res) => {
+  app.get(["/robots.txt", "/security.txt", "/.well-known/security.txt", "/ads.txt", "/9f84a1e3b2c54d7e8a9b0c1d2e3f4a5b.txt"], (req, res) => {
     let relPath = "robots.txt";
     if (req.path.includes("security.txt")) {
       relPath = "security.txt";
     } else if (req.path.includes("ads.txt")) {
       relPath = "ads.txt";
+    } else if (req.path.includes("9f84a1e3b2c54d7e8a9b0c1d2e3f4a5b.txt")) {
+      relPath = "9f84a1e3b2c54d7e8a9b0c1d2e3f4a5b.txt";
     }
     const txtPath = path.join(process.cwd(), "public", relPath);
     res.setHeader("Content-Type", "text/plain; charset=utf-8");
@@ -268,6 +277,456 @@ Format strictly:
   // Health check endpoint
   app.get("/api/health", (_req, res) => {
     res.json({ status: "ok", service: "YinYangYoHackers API" });
+  });
+
+  // SSRF defense helper: blocks loopback, RFC 1918 private subnets, cloud metadata, link-local, carrier NAT
+  function isPrivateOrReservedIp(ip: string): boolean {
+    if (!ip) return true;
+    if (ip === "127.0.0.1" || ip === "0.0.0.0" || ip.startsWith("127.")) return true;
+    if (ip.startsWith("10.")) return true;
+    if (ip.startsWith("192.168.")) return true;
+    if (ip.startsWith("169.254.")) return true; // Cloud instance metadata (AWS/GCP/Azure)
+    const match172 = ip.match(/^172\.(\d+)\./);
+    if (match172) {
+      const octet = parseInt(match172[1], 10);
+      if (octet >= 16 && octet <= 31) return true;
+    }
+    const match100 = ip.match(/^100\.(\d+)\./);
+    if (match100) {
+      const octet = parseInt(match100[1], 10);
+      if (octet >= 64 && octet <= 127) return true;
+    }
+    if (ip === "::1" || ip === "::") return true;
+    const lower = ip.toLowerCase();
+    if (lower.startsWith("fe80:") || lower.startsWith("fc00:") || lower.startsWith("fd00:")) return true;
+    return false;
+  }
+
+  // Real SSL/TLS Certificate and Cipher Suite Inspector (Zero Mock Data)
+  app.get("/api/inspect-tls", async (req, res) => {
+    const rawTarget = (req.query.host as string) || (req.query.domain as string) || "";
+    if (!rawTarget) {
+      return res.status(400).json({ error: "Missing required query parameter: host" });
+    }
+
+    const cleanHost = rawTarget
+      .replace(/^https?:\/\//i, "")
+      .replace(/\/.*$/, "")
+      .replace(/:\d+$/, "")
+      .trim()
+      .toLowerCase();
+
+    // Strict domain format validation
+    const domainRegex = /^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$/i;
+    if (!domainRegex.test(cleanHost) || cleanHost.includes("localhost")) {
+      return res.status(400).json({ error: "Invalid hostname format. Please provide a valid public FQDN (e.g., example.com)." });
+    }
+
+    try {
+      // Resolve DNS to verify IP address and block SSRF
+      const { address } = await lookupAsync(cleanHost);
+      if (isPrivateOrReservedIp(address)) {
+        return res.status(403).json({ error: "Access to private, loopback, or metadata addresses is strictly prohibited." });
+      }
+
+      const socket = tls.connect({
+        host: cleanHost,
+        port: 443,
+        servername: cleanHost,
+        timeout: 6000,
+        rejectUnauthorized: false
+      });
+
+      let handled = false;
+
+      const cleanup = () => {
+        if (!socket.destroyed) {
+          socket.destroy();
+        }
+      };
+
+      socket.setTimeout(6000, () => {
+        if (!handled) {
+          handled = true;
+          cleanup();
+          return res.status(504).json({ error: `Connection timed out connecting to ${cleanHost}:443.` });
+        }
+      });
+
+      socket.on("error", (err) => {
+        if (!handled) {
+          handled = true;
+          cleanup();
+          return res.status(502).json({ error: `TLS connection error: ${err.message || "Failed to establish TLS handshake."}` });
+        }
+      });
+
+      socket.on("secureConnect", () => {
+        if (handled) return;
+        handled = true;
+
+        try {
+          const cert = socket.getPeerCertificate(true);
+          const cipher = socket.getCipher();
+          const protocol = socket.getProtocol();
+          const authorized = socket.authorized;
+          const authError = socket.authorizationError;
+
+          if (!cert || Object.keys(cert).length === 0) {
+            cleanup();
+            return res.status(502).json({ error: "No peer certificate presented by the server." });
+          }
+
+          const validFrom = cert.valid_from ? new Date(cert.valid_from).toISOString() : null;
+          const validTo = cert.valid_to ? new Date(cert.valid_to).toISOString() : null;
+          const now = Date.now();
+          const expiryTime = cert.valid_to ? new Date(cert.valid_to).getTime() : 0;
+          const daysRemaining = Math.floor((expiryTime - now) / (1000 * 60 * 60 * 24));
+          const isExpired = expiryTime > 0 && expiryTime < now;
+
+          // Process SANs (Subject Alternative Names)
+          const rawSans = cert.subjectaltname || "";
+          const sans = rawSans.split(",").map(s => s.trim().replace(/^DNS:/i, "")).filter(Boolean);
+
+          cleanup();
+
+          return res.json({
+            host: cleanHost,
+            resolvedIp: address,
+            protocol: protocol || "Unknown",
+            cipher: {
+              name: cipher?.name || "Unknown",
+              standardName: cipher?.standardName || cipher?.name || "Unknown",
+              version: cipher?.version || protocol || "Unknown"
+            },
+            certificate: {
+              subject: {
+                commonName: cert.subject?.CN || cleanHost,
+                organization: cert.subject?.O || "Not Specified",
+                country: cert.subject?.C || ""
+              },
+              issuer: {
+                commonName: cert.issuer?.CN || "Unknown Issuer",
+                organization: cert.issuer?.O || "Unknown CA",
+                country: cert.issuer?.C || ""
+              },
+              validFrom,
+              validTo,
+              daysRemaining,
+              isExpired,
+              serialNumber: cert.serialNumber || "",
+              fingerprint256: cert.fingerprint256 || "",
+              subjectAlternativeNames: sans.slice(0, 20)
+            },
+            validation: {
+              authorized,
+              authorizationError: authError ? String(authError) : null
+            },
+            inspectedAt: new Date().toISOString()
+          });
+        } catch (parseErr: any) {
+          cleanup();
+          return res.status(500).json({ error: `Failed to parse TLS certificate: ${parseErr.message}` });
+        }
+      });
+    } catch (dnsErr: any) {
+      return res.status(400).json({ error: `DNS resolution failed for ${cleanHost}: ${dnsErr.message}` });
+    }
+  });
+
+  // Real HTTP Security Headers Inspector (Zero Mock Data)
+  app.get("/api/inspect-headers", async (req, res) => {
+    const rawUrl = (req.query.url as string) || "";
+    if (!rawUrl) {
+      return res.status(400).json({ error: "Missing required query parameter: url" });
+    }
+
+    let parsedUrl: URL;
+    try {
+      const fullUrl = rawUrl.startsWith("http://") || rawUrl.startsWith("https://")
+        ? rawUrl
+        : `https://${rawUrl}`;
+      parsedUrl = new URL(fullUrl);
+    } catch {
+      return res.status(400).json({ error: "Invalid URL provided. Please provide a valid HTTP or HTTPS address." });
+    }
+
+    if (parsedUrl.protocol !== "http:" && parsedUrl.protocol !== "https:") {
+      return res.status(400).json({ error: "Only http and https protocols are supported." });
+    }
+
+    const hostname = parsedUrl.hostname.toLowerCase();
+    if (hostname.includes("localhost") || hostname === "127.0.0.1") {
+      return res.status(403).json({ error: "Requests to localhost or loopback are strictly prohibited." });
+    }
+
+    try {
+      const { address } = await lookupAsync(hostname);
+      if (isPrivateOrReservedIp(address)) {
+        return res.status(403).json({ error: "Access to private, loopback, or metadata addresses is strictly prohibited." });
+      }
+
+      const client = parsedUrl.protocol === "https:" ? https : http;
+      const options = {
+        method: "HEAD",
+        hostname,
+        port: parsedUrl.port || (parsedUrl.protocol === "https:" ? 443 : 80),
+        path: parsedUrl.pathname || "/",
+        timeout: 6000,
+        headers: {
+          "User-Agent": "YinYangYoHackers-Security-Inspector/2.0 (Audit & Research)",
+          "Accept": "*/*"
+        }
+      };
+
+      let handled = false;
+      const request = client.request(options, (resp) => {
+        if (handled) return;
+        handled = true;
+
+        const rawHeaders = resp.headers;
+        const statusCode = resp.statusCode || 200;
+
+        // Security Header Audit Analysis
+        const hsts = rawHeaders["strict-transport-security"] as string | undefined;
+        const csp = rawHeaders["content-security-policy"] as string | undefined;
+        const xfo = rawHeaders["x-frame-options"] as string | undefined;
+        const xcto = rawHeaders["x-content-type-options"] as string | undefined;
+        const rp = rawHeaders["referrer-policy"] as string | undefined;
+        const pp = rawHeaders["permissions-policy"] as string | undefined;
+        const coop = rawHeaders["cross-origin-opener-policy"] as string | undefined;
+        const corp = rawHeaders["cross-origin-resource-policy"] as string | undefined;
+
+        const checks = [
+          {
+            header: "Strict-Transport-Security",
+            present: Boolean(hsts),
+            value: hsts || null,
+            grade: Boolean(hsts) ? 25 : 0,
+            maxGrade: 25,
+            status: Boolean(hsts) ? "pass" : "fail",
+            recommendation: Boolean(hsts) ? "HSTS enforced." : "Enforce max-age=63072000; includeSubDomains; preload."
+          },
+          {
+            header: "Content-Security-Policy",
+            present: Boolean(csp),
+            value: csp || null,
+            grade: Boolean(csp) ? 30 : 0,
+            maxGrade: 30,
+            status: Boolean(csp) ? "pass" : "fail",
+            recommendation: Boolean(csp) ? "CSP configured." : "Define strict default-src, script-src, and object-src."
+          },
+          {
+            header: "X-Frame-Options",
+            present: Boolean(xfo),
+            value: xfo || null,
+            grade: Boolean(xfo) ? 15 : 0,
+            maxGrade: 15,
+            status: Boolean(xfo) ? "pass" : "fail",
+            recommendation: Boolean(xfo) ? "Clickjacking protection active." : "Set to DENY or SAMEORIGIN."
+          },
+          {
+            header: "X-Content-Type-Options",
+            present: Boolean(xcto),
+            value: xcto || null,
+            grade: Boolean(xcto) ? 10 : 0,
+            maxGrade: 10,
+            status: Boolean(xcto) ? "pass" : "fail",
+            recommendation: Boolean(xcto) ? "MIME-sniffing protection active." : "Set to nosniff."
+          },
+          {
+            header: "Referrer-Policy",
+            present: Boolean(rp),
+            value: rp || null,
+            grade: Boolean(rp) ? 10 : 0,
+            maxGrade: 10,
+            status: Boolean(rp) ? "pass" : "fail",
+            recommendation: Boolean(rp) ? "Referrer protection configured." : "Set to strict-origin-when-cross-origin."
+          },
+          {
+            header: "Permissions-Policy",
+            present: Boolean(pp),
+            value: pp || null,
+            grade: Boolean(pp) ? 10 : 0,
+            maxGrade: 10,
+            status: Boolean(pp) ? "pass" : "fail",
+            recommendation: Boolean(pp) ? "Browser device feature policies enforced." : "Restrict camera, microphone, and geolocation."
+          }
+        ];
+
+        const totalScore = checks.reduce((sum, c) => sum + c.grade, 0);
+
+        let letterGrade = "F";
+        if (totalScore >= 90) letterGrade = "A+";
+        else if (totalScore >= 80) letterGrade = "A";
+        else if (totalScore >= 70) letterGrade = "B";
+        else if (totalScore >= 50) letterGrade = "C";
+        else if (totalScore >= 30) letterGrade = "D";
+
+        return res.json({
+          url: parsedUrl.href,
+          hostname,
+          resolvedIp: address,
+          statusCode,
+          totalScore,
+          letterGrade,
+          checks,
+          rawHeaders: {
+            "strict-transport-security": hsts,
+            "content-security-policy": csp,
+            "x-frame-options": xfo,
+            "x-content-type-options": xcto,
+            "referrer-policy": rp,
+            "permissions-policy": pp,
+            "cross-origin-opener-policy": coop,
+            "cross-origin-resource-policy": corp,
+            "server": rawHeaders["server"]
+          },
+          inspectedAt: new Date().toISOString()
+        });
+      });
+
+      request.setTimeout(6000, () => {
+        if (!handled) {
+          handled = true;
+          request.destroy();
+          return res.status(504).json({ error: `Connection to ${hostname} timed out.` });
+        }
+      });
+
+      request.on("error", (err) => {
+        if (!handled) {
+          handled = true;
+          return res.status(502).json({ error: `HTTP request failed: ${err.message}` });
+        }
+      });
+
+      request.end();
+    } catch (dnsErr: any) {
+      return res.status(400).json({ error: `DNS lookup failed for ${hostname}: ${dnsErr.message}` });
+    }
+  });
+
+  // IndexNow Status and Key Verification
+  app.get("/api/indexnow", (_req, res) => {
+    return res.json({
+      status: "active",
+      protocol: "IndexNow v1.0",
+      host: "yinyangyohackers.com",
+      key: "9f84a1e3b2c54d7e8a9b0c1d2e3f4a5b",
+      keyLocation: "https://yinyangyohackers.com/9f84a1e3b2c54d7e8a9b0c1d2e3f4a5b.txt",
+      endpoints: [
+        "https://api.indexnow.org/indexnow",
+        "https://www.bing.com/indexnow",
+        "https://yandex.com/indexnow"
+      ],
+      description: "Automated instant URL indexing protocol for search engines."
+    });
+  });
+
+  // IndexNow Instant URL Submission Proxy
+  app.post("/api/indexnow", async (req, res) => {
+    try {
+      const { host: reqHost, key: reqKey, keyLocation: reqKeyLocation, urlList } = req.body;
+
+      const host = (typeof reqHost === "string" && reqHost.trim()) || "yinyangyohackers.com";
+      const key = (typeof reqKey === "string" && reqKey.trim()) || "9f84a1e3b2c54d7e8a9b0c1d2e3f4a5b";
+      const keyLocation = (typeof reqKeyLocation === "string" && reqKeyLocation.trim()) || `https://${host}/${key}.txt`;
+
+      if (!Array.isArray(urlList) || urlList.length === 0) {
+        return res.status(400).json({
+          error: "Invalid request payload: 'urlList' must be a non-empty array of URL strings.",
+          example: {
+            host: "yinyangyohackers.com",
+            key: "9f84a1e3b2c54d7e8a9b0c1d2e3f4a5b",
+            urlList: ["https://yinyangyohackers.com/ports", "https://yinyangyohackers.com/glossary"]
+          }
+        });
+      }
+
+      // Enforce maximum batch limit of 100 URLs per request to prevent abuse
+      const sanitizedUrls = urlList
+        .filter((u: any) => typeof u === "string" && u.trim().length > 0)
+        .slice(0, 100)
+        .map((u: string) => u.trim());
+
+      // Validate URL format and domain ownership
+      for (const urlStr of sanitizedUrls) {
+        try {
+          const parsed = new URL(urlStr);
+          if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+            return res.status(400).json({ error: `Invalid URL protocol for: ${urlStr}. Must be http or https.` });
+          }
+        } catch {
+          return res.status(400).json({ error: `Malformed URL in urlList: ${urlStr}` });
+        }
+      }
+
+      const payload = JSON.stringify({
+        host,
+        key,
+        keyLocation,
+        urlList: sanitizedUrls
+      });
+
+      // Submit to IndexNow API (api.indexnow.org)
+      const indexNowReq = https.request(
+        "https://api.indexnow.org/indexnow",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Content-Length": Buffer.byteLength(payload)
+          },
+          timeout: 7000
+        },
+        (indexNowRes) => {
+          let responseBody = "";
+          indexNowRes.on("data", (chunk) => {
+            responseBody += chunk;
+          });
+
+          indexNowRes.on("end", () => {
+            const statusCode = indexNowRes.statusCode || 200;
+            const isSuccess = statusCode >= 200 && statusCode < 300;
+
+            let message = "URLs submitted to IndexNow successfully.";
+            if (statusCode === 200) message = "OK: URLs processed immediately.";
+            else if (statusCode === 202) message = "Accepted: URL submission received and pending verification.";
+            else if (statusCode === 400) message = "Bad Request: Invalid format or parameter.";
+            else if (statusCode === 403) message = "Forbidden: Key not valid or keyLocation mismatch.";
+            else if (statusCode === 422) message = "Unprocessable Entity: In URLs don't belong to the host or key invalid.";
+            else if (statusCode === 429) message = "Too Many Requests: Rate limit exceeded.";
+
+            return res.status(isSuccess ? 200 : statusCode).json({
+              success: isSuccess,
+              indexNowStatusCode: statusCode,
+              message,
+              submittedCount: sanitizedUrls.length,
+              host,
+              keyLocation,
+              urlList: sanitizedUrls,
+              responseBody: responseBody || undefined,
+              timestamp: new Date().toISOString()
+            });
+          });
+        }
+      );
+
+      indexNowReq.on("timeout", () => {
+        indexNowReq.destroy();
+        return res.status(504).json({ error: "IndexNow API timed out after 7000ms." });
+      });
+
+      indexNowReq.on("error", (err) => {
+        return res.status(502).json({ error: `Failed to connect to api.indexnow.org: ${err.message}` });
+      });
+
+      indexNowReq.write(payload);
+      indexNowReq.end();
+    } catch (err: any) {
+      return res.status(500).json({ error: `Internal server error processing IndexNow submission: ${err.message}` });
+    }
   });
 
   // Dedicated custom 404 error page endpoint (responds with HTTP 404 status)

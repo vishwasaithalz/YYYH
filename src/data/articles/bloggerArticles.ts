@@ -22,7 +22,7 @@ export const bloggerArticles: Article[] = [
     "views": 3400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -217,7 +217,7 @@ export const bloggerArticles: Article[] = [
     "views": 11319,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -367,7 +367,7 @@ export const bloggerArticles: Article[] = [
     "views": 19238,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -503,7 +503,7 @@ export const bloggerArticles: Article[] = [
     "views": 8657,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -621,7 +621,7 @@ export const bloggerArticles: Article[] = [
     "views": 16576,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -752,7 +752,7 @@ export const bloggerArticles: Article[] = [
     "views": 5995,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -782,7 +782,7 @@ export const bloggerArticles: Article[] = [
     },
     "intro": [
       "Mobile devices is now very common now a days and mobile devices has changed the way of bi-directional communication. There are many operating system for mobile devices available but the most common and the best operating system for mobile is Android, it is an OS means you can install other applications (software's) on it. In Android application usually called apps or android apps The risk of hacking by using mobile devices is very common and people are developing and using different apps (application) for their hacking attack. Android has faced different challenges from hacking application and below is the list of application for android hacking 1. SpoofApp",
-      "Here is an app that spies at heart could use – SpoofApp. It allows you to use a fake Caller ID – a number that you are free to specify yourself, in order to protect your privacy or to pull a prank on someone. Sounds like fun, doesn’t it? Well, Apple didn’t think so, which is why it never allowed the app to enter its App Store. Google, however, didn’t mind, which is why SpoofApp was available on the Android Market for about two and a half years. However, it was banned from there last year as it allegedly was in conflict with The Truth in Caller ID Act of 2009.This can be useful in social engineering."
+      "Here is an app that spies at heart could use  to  SpoofApp. It allows you to use a fake Caller ID  to  a number that you are free to specify yourself, in order to protect your privacy or to pull a prank on someone. Sounds like fun, doesn’t it? Well, Apple didn’t think so, which is why it never allowed the app to enter its App Store. Google, however, didn’t mind, which is why SpoofApp was available on the Android Market for about two and a half years. However, it was banned from there last year as it allegedly was in conflict with The Truth in Caller ID Act of 2009.This can be useful in social engineering."
     ],
     "sections": [
       {
@@ -883,7 +883,7 @@ export const bloggerArticles: Article[] = [
     "views": 13914,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1014,7 +1014,7 @@ export const bloggerArticles: Article[] = [
     "views": 21833,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1151,7 +1151,7 @@ export const bloggerArticles: Article[] = [
     "views": 11252,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1284,7 +1284,7 @@ export const bloggerArticles: Article[] = [
     "views": 19171,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1410,7 +1410,7 @@ export const bloggerArticles: Article[] = [
     "views": 8590,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1541,7 +1541,7 @@ export const bloggerArticles: Article[] = [
     "views": 16509,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1670,7 +1670,7 @@ export const bloggerArticles: Article[] = [
     "views": 5928,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1796,7 +1796,7 @@ export const bloggerArticles: Article[] = [
     "views": 13847,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -1926,7 +1926,7 @@ export const bloggerArticles: Article[] = [
     "views": 21766,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -2121,7 +2121,7 @@ export const bloggerArticles: Article[] = [
     "views": 11185,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -2256,7 +2256,7 @@ export const bloggerArticles: Article[] = [
     "views": 19104,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -2469,7 +2469,7 @@ export const bloggerArticles: Article[] = [
     "views": 8523,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -2743,7 +2743,7 @@ export const bloggerArticles: Article[] = [
     "views": 16442,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -3068,7 +3068,7 @@ export const bloggerArticles: Article[] = [
     "views": 5861,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -3202,7 +3202,7 @@ export const bloggerArticles: Article[] = [
     "views": 13780,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -3335,7 +3335,7 @@ export const bloggerArticles: Article[] = [
     "views": 21699,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -3412,7 +3412,7 @@ export const bloggerArticles: Article[] = [
     "views": 11118,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -3864,7 +3864,7 @@ export const bloggerArticles: Article[] = [
     "views": 19037,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -4126,7 +4126,7 @@ export const bloggerArticles: Article[] = [
     "views": 8456,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -4532,7 +4532,7 @@ export const bloggerArticles: Article[] = [
     "views": 16375,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -4762,7 +4762,7 @@ export const bloggerArticles: Article[] = [
     "views": 5794,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -4875,7 +4875,7 @@ export const bloggerArticles: Article[] = [
     "views": 13713,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5125,7 +5125,7 @@ export const bloggerArticles: Article[] = [
     "views": 21632,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Lead Security Researcher & Founder",
       "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "bio": "Founder of YinYangYoHackers. Ethical security researcher, local compute architect, and Linux sysadmin."
@@ -5162,10 +5162,10 @@ export const bloggerArticles: Article[] = [
         "id": "sec-28-1",
         "heading": "Overview & Technical Method",
         "body": [
-          "We give what we have Our doubt is our passion, and our passion is our task The rest is the madness of art. -- Henry James",
+          "We give what we have Our doubt is our passion, and our passion is our task The rest is the madness of art: Henry James",
           "A hacker is someone who is intensely interested in the complicated process of any computer. Most often, the programmers are hackers. As such, hackers gain advanced operating system and programming language knowledge. They may know about cracks and the reasons behind such voids within systems. Hackers are constantly looking for some new information, freely posting what they have discovered and never intentionally damaging data.",
           "A cracker is a person who breaks into remote computers, with malicious intent, or otherwise violates the device integrity. Crackers, having gained unauthorized access, destroy vital data, deny service to legitimate users or, in essence, cause their targets problems. It is easy to recognise crackers, since their acts are malicious.",
-          "The Jargon File -a major source for basic skills, lore and translations. The jargon file contains a set of definitions for the term hacker, mostly related to technical expertise and a pleasure in problem solving and consequence overcoming.",
+          "The Jargon File: a major source for basic skills, lore and translations. The jargon file contains a set of definitions for the term hacker, mostly related to technical expertise and a pleasure in problem solving and consequence overcoming.",
           "The world is full of fascinating problems waiting to be solved. No problem should ever have to be solved twice. Boredom and drudgery are evil. Freedom is good. Attitude is no substitute for competence. Basic Hacking Skills Learn how to program. Get one of the open-source UNIX and learn to use and run it. Learn how to use the World Wide Web and write HTML. If you don't have functional English, learn it. Familiarization with Some Tools SCANNER : A Scanner is a program that automatically detects security weaknesses in a remote or local host.",
           "PASSWORD CRACKER : A Password Cracker is any program that can decrypt passwords or otherwise disable password protection. Sometimes a dictionary attack is performed."
         ]

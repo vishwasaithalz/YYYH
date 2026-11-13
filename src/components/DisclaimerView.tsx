@@ -84,7 +84,7 @@ v3D3f3ns3D1sp4tch99238472938472938472938472938472938472938472938
             All code snippets, Docker compose definitions, sysctl configurations, and firewall scripts are provided under the MIT / Apache 2.0 open-source spirit "AS IS", without warranty of any kind, express or implied.
           </p>
           <p className="text-xs sm:text-sm text-slate-400 font-sans leading-relaxed">
-            Neither Vishwas Aithal nor YinYangYoHackers shall be liable for system downtime, data corruption, hardware misconfiguration, or legal ramifications resulting from the misapplication or misuse of information provided on this platform.
+            Neither YinYangYoHackers Research Staff nor YinYangYoHackers shall be liable for system downtime, data corruption, hardware misconfiguration, or legal ramifications resulting from the misapplication or misuse of information provided on this platform.
           </p>
         </div>
       </div>

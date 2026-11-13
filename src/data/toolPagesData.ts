@@ -87,7 +87,7 @@ Usable Hosts   = 256 - 2 = 254 (192.168.1.1 through 192.168.1.254)`
           title: 'IPv4 vs IPv6 Subnetting Architecture',
           content: [
             'IPv4 utilizes a 32-bit address space, yielding approximately 4.29 billion total theoretical addresses. In contrast, IPv6 features a 128-bit address space (2^128, or ~3.4 × 10^38 addresses), completely eliminating the need for NAT (Network Address Translation).',
-            'In IPv6, the standard end-user allocation from an ISP is typically a /48 or /56 prefix. The standard single subnet size in IPv6 is always /64 (comprising 64 network bits and 64 interface identifier bits). A single /64 subnet contains 18,446,744,073,709,551,616 unique addresses—more than the entire IPv4 Internet combined.',
+            'In IPv6, the standard end-user allocation from an ISP is typically a /48 or /56 prefix. The standard single subnet size in IPv6 is always /64 (comprising 64 network bits and 64 interface identifier bits). A single /64 subnet contains 18,446,744,073,709,551,616 unique addresses, more than the entire IPv4 Internet combined.',
             'IPv6 eliminates broadcast addressing entirely, replacing it with efficient multicast groups (e.g., ff02::1 for all nodes on link).'
           ]
         }
@@ -135,7 +135,7 @@ Usable Hosts   = 256 - 2 = 254 (192.168.1.1 through 192.168.1.254)`
           title: 'Cryptographic Checksum vs Password Hashing',
           content: [
             'A critical distinction in cybersecurity is between fast checksum hashes and slow, memory-hard password hashes.',
-            'Fast Hashes (SHA-256, SHA-512, BLAKE3): Designed for rapid file verification and data integrity. They process gigabytes per second on modern hardware. Because they are so fast, using raw SHA-256 for user passwords is dangerous—adversaries can test billions of guesses per second on a single GPU.',
+            'Fast Hashes (SHA-256, SHA-512, BLAKE3): Designed for rapid file verification and data integrity. They process gigabytes per second on modern hardware. Because they are so fast, using raw SHA-256 for user passwords is dangerous, adversaries can test billions of guesses per second on a single GPU.',
             'Slow Key Derivation Functions (Argon2id, bcrypt, PBKDF2): Designed specifically for password authentication. They incorporate configurable work factors (computational rounds) and memory-hardness to deliberately slow down brute-force and ASIC/GPU attacks.'
           ],
           codeSnippet: `# Linux Terminal: Verify file integrity with SHA-256
@@ -226,10 +226,10 @@ Entropy            = 16 × log2(95) ≈ 105.1 bits`
             headers: ['Entropy Tier', 'Bits of Entropy', 'Search Space (Combinations)', 'Crack Time at 100B/sec', 'Security Verdict'],
             rows: [
               ['Very Weak', '< 28 bits', '< 2.6 × 10^8', 'Under 0.003 seconds', 'Trivially cracked instantly.'],
-              ['Weak', '28 – 35 bits', '2.6 × 10^8 to 3.4 × 10^10', 'Under 1 second', 'Unacceptable for any production account.'],
-              ['Moderate', '36 – 59 bits', '6.8 × 10^10 to 5.7 × 10^17', 'Seconds to several months', 'Vulnerable to targeted offline GPU attacks.'],
-              ['Strong', '60 – 79 bits', '1.1 × 10^18 to 6.0 × 10^23', 'Hundreds to thousands of years', 'Secure against current commodity GPU farms.'],
-              ['Very Strong', '80 – 127 bits', '1.2 × 10^24 to 1.7 × 10^38', 'Millions of years', 'Enterprise-grade protection.'],
+              ['Weak', '28 to 35 bits', '2.6 × 10^8 to 3.4 × 10^10', 'Under 1 second', 'Unacceptable for any production account.'],
+              ['Moderate', '36 to 59 bits', '6.8 × 10^10 to 5.7 × 10^17', 'Seconds to several months', 'Vulnerable to targeted offline GPU attacks.'],
+              ['Strong', '60 to 79 bits', '1.1 × 10^18 to 6.0 × 10^23', 'Hundreds to thousands of years', 'Secure against current commodity GPU farms.'],
+              ['Very Strong', '80 to 127 bits', '1.2 × 10^24 to 1.7 × 10^38', 'Millions of years', 'Enterprise-grade protection.'],
               ['Military / Quantum', '128+ bits', '> 3.4 × 10^38', 'Trillions of centuries', 'Resistant to classical and quantum brute-force.']
             ]
           }
@@ -315,7 +315,7 @@ add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment
         {
           title: 'What is SSL/TLS Certificate Verification?',
           content: [
-            'Transport Layer Security (TLS)—the successor to the deprecated Secure Sockets Layer (SSL)—provides confidentiality, data integrity, and mutual authentication for web traffic.',
+            'Transport Layer Security (TLS): the successor to the deprecated Secure Sockets Layer (SSL): provides confidentiality, data integrity, and mutual authentication for web traffic.',
             'When a client connects to an HTTPS server, it validates the server\'s digital certificate against trusted Certificate Authorities (CAs) installed in the operating system root store. The certificate proves that the domain owner possesses the private key corresponding to the public key presented during the handshake.'
           ]
         },

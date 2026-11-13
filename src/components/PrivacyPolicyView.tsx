@@ -34,7 +34,7 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({ onBackToAr
         </h1>
 
         <p className="text-sm sm:text-base text-slate-300 font-sans leading-relaxed mt-3">
-          At <strong className="text-white">YinYangYoHackers</strong> (founded in 2013 by Vishwas Aithal), we believe digital sovereignty and privacy are non-negotiable human rights. We design our technical publications and browser tools with a zero-knowledge, local-first architecture.
+          At <strong className="text-white">YinYangYoHackers</strong> (founded in 2013 by YinYangYoHackers Research Staff), we believe digital sovereignty and privacy are non-negotiable human rights. We design our technical publications and browser tools with a zero-knowledge, local-first architecture.
         </p>
       </div>
 
@@ -149,8 +149,8 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({ onBackToAr
             For any privacy requests, data deletion inquiries, or regulatory verification, contact our founder and lead researcher directly:
           </p>
           <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs space-y-1">
-            <div><strong className="text-white">Author &amp; Lead Researcher:</strong> Vishwas Aithal</div>
-            <div><strong className="text-white">Direct Email:</strong> vishwasaithal@proton.me</div>
+            <div><strong className="text-white">Author &amp; Lead Researcher:</strong> YinYangYoHackers Research Staff</div>
+            <div><strong className="text-white">Direct Email:</strong> contact@yinyangyohackers.ai.studio</div>
             <div><strong className="text-white">Publication:</strong> YinYangYoHackers (Founded 2013)</div>
             <div><strong className="text-white">Location:</strong> Decentralized Global Network &bull; Zero-Log Sovereign Nodes</div>
           </div>

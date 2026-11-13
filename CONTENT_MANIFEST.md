@@ -1,10 +1,10 @@
-# YinYangYoHackers  -  Content & Routes Manifest
+# YinYangYoHackers : Content & Routes Manifest
 
 ## 1. Primary Landing Hubs & Tool Routes
 
 | Route | View Key | Title | Primary Keyword | Search Intent | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `/` | `blog` | YinYangYoHackers  -  Cybersecurity Research & Zero-Trust Hardening | cybersecurity research | Informational | Active |
+| `/` | `blog` | YinYangYoHackers : Cybersecurity Research & Zero-Trust Hardening | cybersecurity research | Informational | Active |
 | `/cybersecurity` | `cybersecurity` | Cybersecurity & Zero-Trust Architecture | zero trust architecture | Informational | Active |
 | `/ethical-hacking` | `ethical-hacking` | Ethical Hacking & Red Team Methodology | ethical hacking guide | Informational | Active |
 | `/penetration-testing` | `penetration-testing` | Penetration Testing Audit Hub | penetration testing methodology | Task-Oriented | Active |
@@ -72,6 +72,6 @@
 | `essential-browser-extensions-for-privacy` | Security Tools | ~2,600 | 11 min | browser privacy extensions |
 | `best-free-developer-tools-for-api-and-code-auditing` | Security Tools | ~3,200 | 14 min | api code auditing tools |
 | `wireshark-packet-analysis-guide-for-beginners` | Cyber Security | ~3,650 | 16 min | wireshark packet analysis guide |
-| *Blogger Historical Articles (29 titles)* | Cyber Security / Security Tools | ~1,200–2,500 each | 6–12 min | technical OSINT, steganography, proxying |
+| *Blogger Historical Articles (29 titles)* | Cyber Security / Security Tools | ~1,200:2,500 each | 6:12 min | technical OSINT, steganography, proxying |
 
 *(Total articles across database: 59. Hardware & gear merchandise completely removed).*

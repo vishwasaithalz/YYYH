@@ -11,7 +11,6 @@ import { HeroBanner } from './components/HeroBanner';
 import { SEO_LANDING_META as SEO_LANDING_PAGES, TOOL_PAGES_META as TOOL_PAGES } from './data/routeMetaData';
 import { BreadcrumbNav } from './components/BreadcrumbNav';
 import { HackerCookieConsent } from './components/HackerCookieConsent';
-import { HackerBannerAd } from './components/HackerBannerAd';
 import { Footer } from './components/Footer';
 import { DirectContactDesk } from './components/DirectContactDesk';
 import { SupportedLanguage } from './utils/i18n';
@@ -32,6 +31,7 @@ import {
 // Code-split secondary modals and views to reduce initial critical JS download size and request chains
 const ArticleModal = React.lazy(() => import('./components/ArticleModal').then(m => ({ default: m.ArticleModal })));
 const AboutView = React.lazy(() => import('./components/AboutView').then(m => ({ default: m.AboutView })));
+const ServicesView = React.lazy(() => import('./components/ServicesView').then(m => ({ default: m.ServicesView })));
 const DisclaimerView = React.lazy(() => import('./components/DisclaimerView').then(m => ({ default: m.DisclaimerView })));
 const ContactView = React.lazy(() => import('./components/ContactView').then(m => ({ default: m.ContactView })));
 const NotFoundView = React.lazy(() => import('./components/NotFoundView').then(m => ({ default: m.NotFoundView })));
@@ -49,6 +49,8 @@ const TerminalWindow = React.lazy(() => import('./components/TerminalWindow').th
 const RssModal = React.lazy(() => import('./components/RssModal').then(m => ({ default: m.RssModal })));
 const SeoInspectorModal = React.lazy(() => import('./components/SeoInspectorModal').then(m => ({ default: m.SeoInspectorModal })));
 const MaintenanceView = React.lazy(() => import('./components/MaintenanceView').then(m => ({ default: m.MaintenanceView })));
+const PortDirectoryView = React.lazy(() => import('./components/PortDirectoryView').then(m => ({ default: m.PortDirectoryView })));
+const GlossaryView = React.lazy(() => import('./components/GlossaryView').then(m => ({ default: m.GlossaryView })));
 
 export default function App() {
   // Articles state initialized with lightweight index metadata (full article bodies lazy-loaded on demand)
@@ -440,6 +442,16 @@ export default function App() {
         setSelectedArticle(null);
         return;
       }
+      if (routeKey === 'ports' || routeKey === 'view=ports' || routeKey === 'port-directory' || routeKey === 'port-lookup') {
+        setActiveView('ports');
+        setSelectedArticle(null);
+        return;
+      }
+      if (routeKey === 'glossary' || routeKey === 'view=glossary' || routeKey === 'cybersecurity-glossary' || routeKey === 'security-glossary') {
+        setActiveView('glossary');
+        setSelectedArticle(null);
+        return;
+      }
       if (routeKey === '404' || routeKey === 'view=404' || routeKey === 'not-found') {
         setActiveView('404');
         setSelectedArticle(null);
@@ -462,6 +474,11 @@ export default function App() {
       }
       if (routeKey === 'about' || routeKey === 'view=about') {
         setActiveView('about');
+        setSelectedArticle(null);
+        return;
+      }
+      if (routeKey === 'services' || routeKey === 'view=services' || routeKey === 'advisory') {
+        setActiveView('services');
         setSelectedArticle(null);
         return;
       }
@@ -964,6 +981,12 @@ export default function App() {
               handleNavigate('blog', '/');
             }}
           />
+        ) : activeView === 'services' ? (
+          <ServicesView
+            onBackToArticles={() => handleNavigate('blog', '/')}
+            onNavigateContact={() => handleNavigate('contact', '/contact')}
+            onNavigateDisclaimer={() => handleNavigate('disclaimer', '/disclaimer')}
+          />
         ) : activeView === 'disclaimer' ? (
           <DisclaimerView onBack={() => handleNavigate('blog', '/')} />
         ) : activeView === 'contact' ? (
@@ -1016,6 +1039,39 @@ export default function App() {
               }
             }}
           />
+        ) : activeView === 'ports' ? (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <button 
+                onClick={() => handleNavigate('blog', '/')}
+                className="text-xs font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 py-2 px-3 min-h-[48px] cursor-pointer"
+              >
+                &larr; Back to Security Feed
+              </button>
+            </div>
+            <PortDirectoryView 
+              onNavigateView={(view, path) => handleNavigate(view, path)} 
+              onOpenTools={(slug) => {
+                setActiveToolSlug(slug);
+                setActiveView('tools');
+              }} 
+            />
+          </div>
+        ) : activeView === 'glossary' ? (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <button 
+                onClick={() => handleNavigate('blog', '/')}
+                className="text-xs font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 py-2 px-3 min-h-[48px] cursor-pointer"
+              >
+                &larr; Back to Security Feed
+              </button>
+            </div>
+            <GlossaryView 
+              onSelectArticle={handleSelectArticle} 
+              onNavigateView={(view, path) => handleNavigate(view, path)} 
+            />
+          </div>
         ) : SEO_LANDING_PAGES[activeView as keyof typeof SEO_LANDING_PAGES] ? (
           <SeoLandingView
             viewKey={activeView}
@@ -1177,26 +1233,16 @@ export default function App() {
                     ))
                   ) : (
                     paginatedArticles.map((article, idx) => (
-                      <React.Fragment key={article.id}>
-                        <ArticleCard
-                          article={article}
-                          onSelect={handleSelectArticle}
-                          onToggleBookmark={handleToggleBookmark}
-                          onSelectTag={handleSelectTag}
-                          isBookmarked={bookmarks.includes(article.id)}
-                          layout={layoutMode}
-                          priority={idx < 2}
-                        />
-                        {/* Mid-Feed In-Article Native Sponsor Card at index 3 */}
-                        {idx === 3 && (
-                          <div className={layoutMode === 'grid' ? 'sm:col-span-2' : ''}>
-                            <HackerBannerAd 
-                              placement="in-feed-native" 
-                              sponsorKey="cyber-vpn" 
-                            />
-                          </div>
-                        )}
-                      </React.Fragment>
+                      <ArticleCard
+                        key={article.id}
+                        article={article}
+                        onSelect={handleSelectArticle}
+                        onToggleBookmark={handleToggleBookmark}
+                        onSelectTag={handleSelectTag}
+                        isBookmarked={bookmarks.includes(article.id)}
+                        layout={layoutMode}
+                        priority={idx < 2}
+                      />
                     ))
                   )}
                 </div>
@@ -1210,7 +1256,7 @@ export default function App() {
                       className="px-6 py-3 min-h-[48px] bg-[#090d16] hover:bg-slate-900 text-emerald-300 hover:text-emerald-200 border border-emerald-700 hover:border-emerald-500 rounded-xl font-mono text-xs sm:text-sm font-bold transition-colors shadow-lg flex items-center gap-2 cursor-pointer"
                     >
                       <ChevronDown className="w-4 h-4" />
-                      <span>Load More Security Intelligence ({filteredArticles.length - visibleCount} remaining)</span>
+                      <span>Load More ({filteredArticles.length - visibleCount})</span>
                     </button>
                   </div>
                 )}

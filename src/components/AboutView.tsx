@@ -82,7 +82,7 @@ export const AboutView: React.FC = () => {
             </div>
 
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-sans">
-              Vishwas Aithal is an independent cybersecurity researcher, systems enthusiast, and technical author who established YinYangYoHackers in 2013. Focusing on hands-on defensive engineering, penetration testing methodology, Linux kernel hardening, and sovereign computing workloads, Vishwas Aithal produces comprehensive, reproducible technical documentation designed to bridge theory and production-grade security practice.
+              Vishwas Aithal established YinYangYoHackers in 2013 as an independent cybersecurity research and systems engineering project. Focusing on hands-on defensive engineering, penetration testing methodology, Linux kernel hardening, and sovereign computing workloads, the publication produces comprehensive, reproducible technical documentation designed to bridge theory and production-grade security practice.
             </p>
 
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 pt-2 text-xs font-mono text-slate-400">
@@ -157,7 +157,7 @@ export const AboutView: React.FC = () => {
             <div className="absolute -left-[23px] sm:-left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[#090d16]" />
             <span className="font-mono text-xs font-bold text-emerald-400 block">2013 &bull; Genesis of YinYangYoHackers</span>
             <p className="text-slate-300 mt-1">
-              Started by Vishwas Aithal as a curious high school/college tech blog publishing batch file tricks, Windows tweaks, Wi-Fi security experiments, and early open-source utilities.
+              Started in 2013 as an experimental security research blog publishing batch file diagnostics, operating system tweaks, Wi-Fi security experiments, and early open-source utilities.
             </p>
           </div>
 

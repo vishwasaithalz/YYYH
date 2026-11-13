@@ -1,6 +1,6 @@
 # YinYangYoHackers - Complete Knowledge Base Index
 # Website: https://yinyangyohackers.ai.studio
-# Founder: Vishwas Aithal
+# Founder: YinYangYoHackers Research Staff
 # Mission: Sovereign AI, Offensive Security & Defensive Hardening
 # Generated: 2026-09-23
 

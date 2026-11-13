@@ -23,7 +23,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 18450,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -56,7 +56,7 @@ export const cybersecurityArticles: Article[] = [
       "targetWordCount": 1500
     },
     "intro": [
-      "Ethical hacking—often referred to in industry standards as penetration testing or white-hat offensive auditing—is the structured, legally authorized discipline of probing computer systems, local networks, cloud perimeters, and distributed applications to identify latent vulnerabilities before malicious adversaries can exploit them.",
+      "Ethical hacking, often referred to in industry standards as penetration testing or white-hat offensive auditing, is the structured, legally authorized discipline of probing computer systems, local networks, cloud perimeters, and distributed applications to identify latent vulnerabilities before malicious adversaries can exploit them.",
       "In a modern threat landscape characterized by automated zero-day brokers, state-sponsored advanced persistent threats (APTs), and widespread supply chain vulnerabilities, organizations cannot rely solely on passive defensive perimeters. True defensive resilience requires engineers to comprehend the exact mechanics, mindsets, and execution vectors utilized during offensive operations.",
       "Unlike black-hat attackers whose sole objective is unauthorized data exfiltration, extortion, or service disruption, ethical hackers operate under strict, mathematically rigorous Rules of Engagement (RoE). Understanding the technical anatomy of an exploit allows system architects to build immutable configurations, apply defense-in-depth, and eliminate attack surfaces."
     ],
@@ -66,7 +66,7 @@ export const cybersecurityArticles: Article[] = [
         "id": "five-core-phases",
         "level": 2,
         "body": [
-          "Every standardized penetration testing engagement—whether executed under NIST SP 800-115, the Open Source Security Testing Methodology Manual (OSSTMM), or the Penetration Testing Execution Standard (PTES)—proceeds through five distinct, chronological phases. Skipping stages or rushing into active exploitation invariably causes missed vulnerabilities, network instability, and incomplete reporting.",
+          "Every standardized penetration testing engagement, whether executed under NIST SP 800-115, the Open Source Security Testing Methodology Manual (OSSTMM), or the Penetration Testing Execution Standard (PTES), proceeds through five distinct, chronological phases. Skipping stages or rushing into active exploitation invariably causes missed vulnerabilities, network instability, and incomplete reporting.",
           "The first phase, Reconnaissance (or Information Gathering), is divided into passive and active discovery. Passive discovery relies exclusively on publicly indexed OSINT data (DNS records, certificate transparency logs, job postings, archive snapshots) without transmitting a single probe packet to the target IP range. Active reconnaissance involves interacting directly with the target perimeter through port scans, DNS zone transfers, and banner grabbing.",
           "The second phase, Scanning and Enumeration, transforms raw discovery data into an actionable inventory of open TCP/UDP ports, operating system fingerprints, exposed API endpoints, and running service daemon versions. This directly feeds into Phase 3 (Vulnerability Assessment and Exploitation), where vulnerabilities are validated against public CVE registries and targeted exploit payloads.",
           "Phase 4 focuses on Post-Exploitation and Privilege Escalation. Here, an auditor establishes persistence, extracts session credentials from memory or filesystem configuration files, maps internal subnets, and attempts to pivot toward domain controller assets. Finally, Phase 5 concludes with comprehensive Technical Reporting and Remediation Guidance, documenting executive risk ratings, reproducible proof-of-concept steps, and precise configuration patches."
@@ -187,7 +187,7 @@ export const cybersecurityArticles: Article[] = [
       },
       {
         "question": "How long does it typically take to become an entry-level penetration tester?",
-        "answer": "With dedicated, structured daily study (10–15 hours per week) covering networking, Linux administration, web security, and hands-on CTF labs, most learners reach junior security analyst or associate penetration tester readiness within 6 to 12 months."
+        "answer": "With dedicated, structured daily study (10 to 15 hours per week) covering networking, Linux administration, web security, and hands-on CTF labs, most learners reach junior security analyst or associate penetration tester readiness within 6 to 12 months."
       }
     ],
     "relatedArticleSlugs": [
@@ -219,7 +219,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 14210,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -254,7 +254,7 @@ export const cybersecurityArticles: Article[] = [
     "intro": [
       "A penetration test is a goal-oriented, simulated cyberattack against an organization’s digital infrastructure, conducted by authorized security professionals to measure real-world defensive efficacy. While an automated vulnerability scan simply generates a list of potential software flaws, a penetration test actively chains vulnerabilities together to prove whether business-critical systems can be breached.",
       "Professional security assessments are governed by strict methodology frameworks to ensure exhaustive coverage, reproducibility, safety, and measurable value. Adhering to standards like PTES (Penetration Testing Execution Standard) and NIST SP 800-115 guarantees that assessments remain controlled and do not trigger unexpected production outages.",
-      "In this comprehensive field manual, we break down every operational phase of a modern penetration testing lifecycle—from legal contract scoping and non-invasive intelligence gathering, to perimeter breach execution, lateral network pivoting, and executive remediation reporting."
+      "In this comprehensive field manual, we break down every operational phase of a modern penetration testing lifecycle, from legal contract scoping and non-invasive intelligence gathering, to perimeter breach execution, lateral network pivoting, and executive remediation reporting."
     ],
     "sections": [
       {
@@ -414,7 +414,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 22180,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -458,7 +458,7 @@ export const cybersecurityArticles: Article[] = [
         "level": 2,
         "body": [
           "Nmap (Network Mapper) remains the undisputed gold standard for network mapping, port scanning, and OS fingerprinting. Powered by the Lua-based Nmap Scripting Engine (NSE), it allows engineers to perform everything from basic host discovery to advanced vulnerability detection.",
-          "For ultra-high-speed enumeration across massive class-B/class-A subnets, modern auditors pair Nmap with RustScan—a blazing-fast scanner written in Rust that can scan all 65,535 ports in under 3 seconds before automatically piping open ports directly into Nmap for deep service inspection."
+          "For ultra-high-speed enumeration across massive class-B/class-A subnets, modern auditors pair Nmap with RustScan, a blazing-fast scanner written in Rust that can scan all 65,535 ports in under 3 seconds before automatically piping open ports directly into Nmap for deep service inspection."
         ],
         "codeBlock": {
           "language": "bash",
@@ -640,7 +640,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 19800,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -849,7 +849,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 25400,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1009,7 +1009,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 16900,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1042,7 +1042,7 @@ export const cybersecurityArticles: Article[] = [
       "targetWordCount": 1500
     },
     "intro": [
-      "Modern enterprise organizations rarely operate on a single monolithic web server. Growth through acquisitions, rapid cloud migrations, and microservice architectures result in sprawling digital attack surfaces containing hundreds—or thousands—of exposed subdomains, staging portals, Jenkins build servers, and unauthenticated API endpoints.",
+      "Modern enterprise organizations rarely operate on a single monolithic web server. Growth through acquisitions, rapid cloud migrations, and microservice architectures result in sprawling digital attack surfaces containing hundreds, or thousands, of exposed subdomains, staging portals, Jenkins build servers, and unauthenticated API endpoints.",
       "Web reconnaissance is the art and science of mapping this vast digital footprint. In bug bounty hunting and professional penetration testing, the practitioner who performs the most exhaustive reconnaissance almost invariably finds the highest-severity vulnerabilities.",
       "In this technical guide, we break down the four progressive tiers of web reconnaissance: Passive OSINT Scraping, High-Speed DNS Resolution and Permutation Brute-Forcing, Live HTTP Verification, and Technology Stack Fingerprinting."
     ],
@@ -1052,7 +1052,7 @@ export const cybersecurityArticles: Article[] = [
         "id": "passive-subdomain-osint",
         "level": 2,
         "body": [
-          "Passive enumeration harvests subdomain records from public aggregators without transmitting a single probe packet to the target domain’s name servers. Certificate Transparency (CT) logs—mandated by modern web browsers to prevent rogue SSL certificates—record every SSL/TLS certificate ever issued for a domain.",
+          "Passive enumeration harvests subdomain records from public aggregators without transmitting a single probe packet to the target domain’s name servers. Certificate Transparency (CT) logs, mandated by modern web browsers to prevent rogue SSL certificates, record every SSL/TLS certificate ever issued for a domain.",
           "Using tools like OWASP Amass, Subfinder, and Chaos, we can extract thousands of historical and actively deployed subdomains within seconds."
         ],
         "codeBlock": {
@@ -1196,7 +1196,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 15300,
     "featured": false,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1352,7 +1352,7 @@ export const cybersecurityArticles: Article[] = [
     "views": 24800,
     "featured": true,
     "author": {
-      "name": "Vishwas Aithal",
+      "name": "YinYangYoHackers Research Staff",
       "role": "Certified Ethical Hacker (CEH) & CISSP",
       "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
       "bio": "Cybersecurity instructor, CEH, and founder of YinYangYoHackers teaching offensive security and defensive engineering."
@@ -1396,7 +1396,7 @@ export const cybersecurityArticles: Article[] = [
         "id": "cia-triad",
         "level": 2,
         "body": [
-          "Every security standard—from NIST CSF and ISO/IEC 27001 to SOC 2 and the CIS Critical Security Controls—is grounded in the CIA Triad: Confidentiality, Integrity, and Availability.",
+          "Every security standard, from NIST CSF and ISO/IEC 27001 to SOC 2 and the CIS Critical Security Controls, is grounded in the CIA Triad: Confidentiality, Integrity, and Availability.",
           "Confidentiality ensures that sensitive data, credentials, and telemetry are accessible strictly to authenticated and authorized entities. Violations occur through unauthorized database dumps, eavesdropping on unencrypted traffic, or credential stuffing attacks. Mitigation relies on modern symmetric/asymmetric encryption (AES-256-GCM, RSA-4096, Ed25519) and strict Identity and Access Management (IAM).",
           "Integrity guarantees that data and software configurations remain authentic, accurate, and completely unaltered in transit or at rest. Cryptographic hash functions (SHA-256, BLAKE3), digital code signatures, and immutable storage protect against tampering.",
           "Availability ensures that authorized users have continuous, reliable access to applications, compute resources, and data. Mitigating distributed denial-of-service (DDoS) attacks, enforcing redundant failover topologies, and implementing automated disaster recovery are vital to preserving availability."
@@ -1436,7 +1436,7 @@ export const cybersecurityArticles: Article[] = [
         "id": "threat-modeling-stride",
         "level": 2,
         "body": [
-          "Threat modeling is the proactive engineering process of identifying potential security vulnerabilities, threat actors, and attack vectors during the architecture phase—before a single line of production code is deployed.",
+          "Threat modeling is the proactive engineering process of identifying potential security vulnerabilities, threat actors, and attack vectors during the architecture phase, before a single line of production code is deployed.",
           "Developed by Microsoft security engineers, the STRIDE methodology categorizes software and architectural threats into six primary categories:",
           "1. Spoofing: An adversary pretending to be another authorized user, server, or process (e.g., DNS spoofing, session hijacking). Mitigate via mutual TLS, strong authentication, and cryptographic certificates.",
           "2. Tampering: Unauthorized modification of data in transit or memory (e.g., modifying database balances or kernel binaries). Mitigate via digital signatures and integrity hashing.",
@@ -1453,7 +1453,7 @@ export const cybersecurityArticles: Article[] = [
         "body": [
           "For decades, enterprise security relied on perimeter castle-and-moat security: trust everything inside the corporate intranet, distrust everything outside. Modern lateral movement techniques have completely invalidated this model.",
           "Zero-Trust Architecture (ZTA), codified in NIST SP 800-207, operates on three non-negotiable principles:",
-          "1. Verify Explicitly: Always authenticate and authorize based on all available data points—including user identity, device health, geolocation, service role, and behavioral anomalies.",
+          "1. Verify Explicitly: Always authenticate and authorize based on all available data points, including user identity, device health, geolocation, service role, and behavioral anomalies.",
           "2. Use Least-Privilege Access: Limit user and service access with Just-In-Time (JIT) and Just-Enough-Access (JEA) models, adaptive risk policies, and data protection.",
           "3. Assume Breach: Minimize blast radius by segmenting networks, encrypting all internal communications, and verifying security posture continuously rather than once at login."
         ]
@@ -1482,7 +1482,7 @@ export const cybersecurityArticles: Article[] = [
         "level": 2,
         "body": [
           "Securing a career in cybersecurity begins with practical, hands-on labs rather than abstract memorization. Start by setting up an isolated virtual laboratory, practicing network packet captures with Wireshark, auditing open-source code repositories, and understanding standard security frameworks like the MITRE ATT&CK matrix.",
-          "Industry standard certifications—such as CompTIA Security+, CEH, and CISSP—help validate theoretical knowledge, but real-world engineering projects and documented code audits carry the greatest weight with leading security teams."
+          "Industry standard certifications, such as CompTIA Security+, CEH, and CISSP, help validate theoretical knowledge, but real-world engineering projects and documented code audits carry the greatest weight with leading security teams."
         ]
       }
     ],

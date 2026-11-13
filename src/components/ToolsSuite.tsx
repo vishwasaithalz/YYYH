@@ -27,6 +27,7 @@ import {
   Lock,
   ArrowRight,
   Sparkles,
+  Server,
   X
 } from 'lucide-react';
 import { commonPortsData } from '../data/portsData';
@@ -41,6 +42,9 @@ import { HashAnalyzerTool } from './tools/HashAnalyzerTool';
 import { PasswordEntropyTool } from './tools/PasswordEntropyTool';
 import { HttpSecurityHeadersTool } from './tools/HttpSecurityHeadersTool';
 import { SslCheckerTool } from './tools/SslCheckerTool';
+import { PacketTracerVisualizer } from './tools/PacketTracerVisualizer';
+import { SysctlHardeningTool } from './tools/SysctlHardeningTool';
+import { CspBuilderTool } from './tools/CspBuilderTool';
 
 interface ToolsSuiteProps {
   initialTool?: string;
@@ -316,6 +320,30 @@ export const ToolsSuite: React.FC<ToolsSuiteProps> = ({ initialTool = 'password-
       category: 'Reconnaissance',
       desc: 'Comprehensive TCP/UDP port directory, common service mappings, protocol signatures, and known exploitation vectors.',
       icon: Activity
+    },
+    {
+      id: 'packet-tracer',
+      name: 'Packet Tracer & Handshakes',
+      category: 'Network & SSL',
+      desc: 'Interactive TCP 3-way handshake, TLS 1.3 key exchange, DNSSEC resolution, and SYN flood defense simulation.',
+      icon: Activity,
+      highlight: true
+    },
+    {
+      id: 'sysctl-hardening',
+      name: 'Linux Sysctl Hardening',
+      category: 'Defensive Infrastructure',
+      desc: 'Interactive kernel hardening switchboard, host protection scoring, and /etc/sysctl.d/99-security.conf export.',
+      icon: Server,
+      highlight: true
+    },
+    {
+      id: 'csp-builder',
+      name: 'CSP Builder & Auditor',
+      category: 'Web Security',
+      desc: 'Construct hardened Content-Security-Policy rules, audit XSS vulnerabilities, and export Nginx/Apache configs.',
+      icon: ShieldCheck,
+      highlight: true
     },
     {
       id: 'revshell-tool',
@@ -991,6 +1019,21 @@ export const ToolsSuite: React.FC<ToolsSuiteProps> = ({ initialTool = 'password-
             </pre>
           </div>
         </div>
+      )}
+
+      {/* 8. Interactive Packet Tracer & Handshake Inspector */}
+      {activeTab === 'packet-tracer' && (
+        <PacketTracerVisualizer />
+      )}
+
+      {/* 9. Linux Kernel Sysctl Hardening Switchboard */}
+      {activeTab === 'sysctl-hardening' && (
+        <SysctlHardeningTool />
+      )}
+
+      {/* 10. Content Security Policy (CSP) Builder & Auditor */}
+      {activeTab === 'csp-builder' && (
+        <CspBuilderTool />
       )}
     </div>
   );
