@@ -1,0 +1,37 @@
+name: YYH Blogger create draft (manual only)
+on:
+  workflow_dispatch:
+    inputs:
+      manifest_path:
+        description: JSON article path under drafts/
+        required: true
+        type: string
+      create_draft:
+        description: Create PRIVATE Blogger draft (never public)
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    environment: blogger-drafts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate content without publishing
+        env:
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+        run: python scripts/blogger_draft.py --manifest "$MANIFEST_PATH"
+      - name: Create private draft only with manual checkbox
+        if: inputs.create_draft == true
+        env:
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: python scripts/blogger_draft.py --manifest "$MANIFEST_PATH" --apply --confirm CREATE_BLOGGER_DRAFT
