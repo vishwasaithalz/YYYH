@@ -1,0 +1,30 @@
+name: YYH Blogger daily health audit
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 3 * * *' # about 08:50 IST, GitHub may delay
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit public Blogger content (read only)
+        run: python scripts/blogger_health.py --post-limit 75
+      - name: Publish job summary
+        if: always()
+        run: |
+          if [ -f reports/latest.md ]; then cat reports/latest.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Retain machine-readable and human-readable reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yyh-blogger-daily-audit
+          path: reports/
+          retention-days: 30
+          if-no-files-found: warn
